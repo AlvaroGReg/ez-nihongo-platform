@@ -41,6 +41,7 @@ public sealed class VocabularyCatalog
                     entry.Uuid ?? CreateContentId(entry.Word!, entry.Furigana ?? string.Empty),
                     entry.Word!,
                     entry.Meaning!.En!,
+                    entry.Meaning.Es,
                     entry.Furigana ?? string.Empty,
                     entry.Romaji!,
                     level)));
@@ -57,7 +58,7 @@ public sealed class VocabularyCatalog
             .OrderBy(group => group.Key)
             .ToDictionary(group => group.Key, group => group.Count());
 
-    public VocabularyPage GetPage(int? level, int offset, int limit)
+    public VocabularyPage GetPage(int? level, int offset, int limit, string language)
     {
         var filteredEntries = level is null
             ? _entries
@@ -67,11 +68,11 @@ public sealed class VocabularyCatalog
             filteredEntries.Count,
             offset,
             limit,
-            filteredEntries.Skip(offset).Take(limit).ToArray());
+            filteredEntries.Skip(offset).Take(limit).Select(entry => entry.ForLocale(language)).ToArray());
     }
 
-    public VocabularyEntry? Find(string contentId) =>
-        _entriesById.GetValueOrDefault(contentId);
+    public VocabularyEntry? Find(string contentId, string language) =>
+        _entriesById.GetValueOrDefault(contentId)?.ForLocale(language);
 
     private static string CreateContentId(string word, string furigana) =>
         $"vocabulary:{Uri.EscapeDataString(word.Normalize())}:{Uri.EscapeDataString(furigana.Normalize())}";

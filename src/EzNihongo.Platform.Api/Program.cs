@@ -22,7 +22,7 @@ vocabulary.MapGet("/levels", (VocabularyCatalog catalog) =>
         TypedResults.Ok(catalog.GetLevelCounts()))
     .WithName("GetVocabularyLevels");
 
-vocabulary.MapGet("/", (VocabularyCatalog catalog, int? level = null, int offset = 0, int limit = 50) =>
+vocabulary.MapGet("/", (VocabularyCatalog catalog, int? level = null, int offset = 0, int limit = 50, string language = "en") =>
     {
         if (level is < 1 or > 5)
         {
@@ -40,13 +40,29 @@ vocabulary.MapGet("/", (VocabularyCatalog catalog, int? level = null, int offset
                 detail: "Offset must be zero or greater and limit must be between 1 and 200.");
         }
 
-        return (IResult)TypedResults.Ok(catalog.GetPage(level, offset, limit));
+        if (language is not ("en" or "es"))
+        {
+            return (IResult)TypedResults.Problem(
+                statusCode: StatusCodes.Status400BadRequest,
+                title: "Invalid language",
+                detail: "The language query parameter must be 'en' or 'es'.");
+        }
+
+        return (IResult)TypedResults.Ok(catalog.GetPage(level, offset, limit, language));
     })
     .WithName("GetVocabulary");
 
-vocabulary.MapGet("/{contentId}", (string contentId, VocabularyCatalog catalog) =>
+vocabulary.MapGet("/{contentId}", (string contentId, VocabularyCatalog catalog, string language = "en") =>
     {
-        var entry = catalog.Find(contentId);
+        if (language is not ("en" or "es"))
+        {
+            return (IResult)TypedResults.Problem(
+                statusCode: StatusCodes.Status400BadRequest,
+                title: "Invalid language",
+                detail: "The language query parameter must be 'en' or 'es'.");
+        }
+
+        var entry = catalog.Find(contentId, language);
         return entry is null
             ? (IResult)TypedResults.NotFound()
             : TypedResults.Ok(entry);
