@@ -3,7 +3,7 @@
         "word": "雲",
         "meaning": {
             "en": "cloud",
-            "es": ""
+            "es": "nube"
         },
         "furigana": "くも",
         "romaji": "kumo",
@@ -13,9 +13,9 @@
         "word": "サンドイッチ",
         "meaning": {
             "en": "sandwich",
-            "es": ""
+            "es": "sándwich"
         },
-        "furigana": "",
+        "furigana": "さんどいっち",
         "romaji": "sandoitchi",
         "level": 4
     },
@@ -23,7 +23,7 @@
         "word": "故障",
         "meaning": {
             "en": "to break-down",
-            "es": ""
+            "es": "averiarse; estropearse"
         },
         "furigana": "こしょう・する",
         "romaji": "koshō-suru",
@@ -33,7 +33,7 @@
         "word": "怖い",
         "meaning": {
             "en": "frightening",
-            "es": ""
+            "es": "aterrador; dar miedo"
         },
         "furigana": "こわい",
         "romaji": "kowai",
@@ -43,9 +43,9 @@
         "word": "エスカレーター",
         "meaning": {
             "en": "escalator",
-            "es": ""
+            "es": "escalera mecánica"
         },
-        "furigana": "",
+        "furigana": "えすかれーたー",
         "romaji": "esukarētā",
         "level": 4
     },
@@ -53,7 +53,7 @@
         "word": "運ぶ",
         "meaning": {
             "en": "to transport",
-            "es": ""
+            "es": "transportar; llevar"
         },
         "furigana": "はこぶ",
         "romaji": "hakobu",
@@ -63,7 +63,7 @@
         "word": "受ける",
         "meaning": {
             "en": "to take a lesson or test",
-            "es": ""
+            "es": "tomar (una clase o un examen)"
         },
         "furigana": "うける",
         "romaji": "ukeru",
@@ -73,7 +73,7 @@
         "word": "お嬢さん",
         "meaning": {
             "en": "young lady",
-            "es": ""
+            "es": "joven; señorita"
         },
         "furigana": "おじょうさん",
         "romaji": "ojōsan",
@@ -83,7 +83,7 @@
         "word": "首",
         "meaning": {
             "en": "neck",
-            "es": ""
+            "es": "cuello"
         },
         "furigana": "くび",
         "romaji": "kubi",
@@ -93,7 +93,7 @@
         "word": "市民",
         "meaning": {
             "en": "citizen",
-            "es": ""
+            "es": "ciudadano"
         },
         "furigana": "しみん",
         "romaji": "shimin",
@@ -103,7 +103,7 @@
         "word": "付く",
         "meaning": {
             "en": "to be attached",
-            "es": ""
+            "es": "estar adherido; estar pegado"
         },
         "furigana": "つく",
         "romaji": "tsuku",
@@ -113,9 +113,9 @@
         "word": "すく",
         "meaning": {
             "en": "to become empty",
-            "es": ""
+            "es": "quedarse vacío"
         },
-        "furigana": "",
+        "furigana": "すく",
         "romaji": "suku",
         "level": 4
     },
@@ -123,9 +123,9 @@
         "word": "こと",
         "meaning": {
             "en": "thing, matter",
-            "es": ""
+            "es": "cosa; asunto"
         },
-        "furigana": "",
+        "furigana": "こと",
         "romaji": "koto",
         "level": 4
     },
@@ -133,7 +133,7 @@
         "word": "訪ねる",
         "meaning": {
             "en": "to visit",
-            "es": ""
+            "es": "visitar"
         },
         "furigana": "たずねる",
         "romaji": "tazuneru",
@@ -143,7 +143,7 @@
         "word": "お祝い",
         "meaning": {
             "en": "congratulation",
-            "es": ""
+            "es": "felicitación; celebración"
         },
         "furigana": "おいわい",
         "romaji": "oiwai",
@@ -153,7 +153,7 @@
         "word": "一生懸命",
         "meaning": {
             "en": "with utmost effort",
-            "es": ""
+            "es": "con todas sus fuerzas; con empeño"
         },
         "furigana": "いっしょうけんめい",
         "romaji": "isshōkenmei",
@@ -163,7 +163,7 @@
         "word": "済む",
         "meaning": {
             "en": "to finish",
-            "es": ""
+            "es": "terminar; concluir"
         },
         "furigana": "すむ",
         "romaji": "sumu",
@@ -173,9 +173,9 @@
         "word": "アメリカ",
         "meaning": {
             "en": "America",
-            "es": ""
+            "es": "Estados Unidos; América"
         },
-        "furigana": "",
+        "furigana": "あめりか",
         "romaji": "amerika",
         "level": 4
     },
@@ -183,7 +183,7 @@
         "word": "復習",
         "meaning": {
             "en": "revision",
-            "es": ""
+            "es": "repaso"
         },
         "furigana": "ふくしゅう",
         "romaji": "fukushū",
@@ -193,7 +193,7 @@
         "word": "急",
         "meaning": {
             "en": "urgent, steep",
-            "es": ""
+            "es": "urgente; empinado"
         },
         "furigana": "きゅう",
         "romaji": "kyū",
@@ -203,9 +203,9 @@
         "word": "これから",
         "meaning": {
             "en": "after this",
-            "es": ""
+            "es": "a partir de ahora"
         },
-        "furigana": "",
+        "furigana": "これから",
         "romaji": "korekara",
         "level": 4
     },
@@ -213,7 +213,7 @@
         "word": "指輪",
         "meaning": {
             "en": "finger ring",
-            "es": ""
+            "es": "anillo"
         },
         "furigana": "ゆびわ",
         "romaji": "yubiwa",
@@ -223,7 +223,7 @@
         "word": "美しい",
         "meaning": {
             "en": "beautiful",
-            "es": ""
+            "es": "hermoso; bello"
         },
         "furigana": "うつくしい",
         "romaji": "utsukushii",
@@ -233,7 +233,7 @@
         "word": "直る",
         "meaning": {
             "en": "to be fixed, to be repaired",
-            "es": ""
+            "es": "arreglarse; repararse"
         },
         "furigana": "なおる",
         "romaji": "naoru",
@@ -243,7 +243,7 @@
         "word": "水泳",
         "meaning": {
             "en": "swimming",
-            "es": ""
+            "es": "natación"
         },
         "furigana": "すいえい",
         "romaji": "suiei",
@@ -253,7 +253,7 @@
         "word": "真中",
         "meaning": {
             "en": "middle",
-            "es": ""
+            "es": "centro; mitad"
         },
         "furigana": "まんなか",
         "romaji": "mannaka",
@@ -263,7 +263,7 @@
         "word": "発音",
         "meaning": {
             "en": "pronunciation",
-            "es": ""
+            "es": "pronunciación"
         },
         "furigana": "はつおん",
         "romaji": "hatsuon",
@@ -273,7 +273,7 @@
         "word": "手伝う",
         "meaning": {
             "en": "to assist",
-            "es": ""
+            "es": "ayudar; echar una mano"
         },
         "furigana": "てつだう",
         "romaji": "tetsudau",
@@ -283,7 +283,7 @@
         "word": "折れる",
         "meaning": {
             "en": "to break or be folded",
-            "es": ""
+            "es": "romperse; doblarse"
         },
         "furigana": "おれる",
         "romaji": "oreru",
@@ -293,7 +293,7 @@
         "word": "一度",
         "meaning": {
             "en": "once",
-            "es": ""
+            "es": "una vez"
         },
         "furigana": "いちど",
         "romaji": "ichido",
@@ -303,7 +303,7 @@
         "word": "高等学校",
         "meaning": {
             "en": "high school",
-            "es": ""
+            "es": "instituto; escuela secundaria"
         },
         "furigana": "こうとうがっこう",
         "romaji": "kōtōgakkō",
@@ -313,9 +313,9 @@
         "word": "アルコール",
         "meaning": {
             "en": "alcohol",
-            "es": ""
+            "es": "alcohol"
         },
-        "furigana": "",
+        "furigana": "あるこーる",
         "romaji": "arukōru",
         "level": 4
     },
@@ -323,9 +323,9 @@
         "word": "アナウンサー",
         "meaning": {
             "en": "announcer",
-            "es": ""
+            "es": "locutor; presentador"
         },
-        "furigana": "",
+        "furigana": "あなうんさー",
         "romaji": "anaunsā",
         "level": 4
     },
@@ -333,7 +333,7 @@
         "word": "最初",
         "meaning": {
             "en": "beginning, first",
-            "es": ""
+            "es": "principio; primero"
         },
         "furigana": "さいしょ",
         "romaji": "saisho",
@@ -343,7 +343,7 @@
         "word": "投げる",
         "meaning": {
             "en": "to throw or cast away",
-            "es": ""
+            "es": "lanzar; tirar"
         },
         "furigana": "なげる",
         "romaji": "nageru",
@@ -353,7 +353,7 @@
         "word": "変える",
         "meaning": {
             "en": "to change",
-            "es": ""
+            "es": "cambiar; modificar"
         },
         "furigana": "かえる",
         "romaji": "kaeru",
@@ -363,7 +363,7 @@
         "word": "昼間",
         "meaning": {
             "en": "daytime, during the day",
-            "es": ""
+            "es": "durante el día"
         },
         "furigana": "ひるま",
         "romaji": "hiruma",
@@ -373,7 +373,7 @@
         "word": "神社",
         "meaning": {
             "en": "Shinto shrine",
-            "es": ""
+            "es": "santuario sintoísta"
         },
         "furigana": "じんじゃ",
         "romaji": "jinja",
@@ -383,7 +383,7 @@
         "word": "食料品",
         "meaning": {
             "en": "groceries",
-            "es": ""
+            "es": "comestibles; alimentos"
         },
         "furigana": "しょくりょうひん",
         "romaji": "shokuryōhin",
@@ -393,7 +393,7 @@
         "word": "丁寧",
         "meaning": {
             "en": "polite",
-            "es": ""
+            "es": "educado; cortés"
         },
         "furigana": "ていねい",
         "romaji": "teinei",
@@ -403,7 +403,7 @@
         "word": "規則",
         "meaning": {
             "en": "regulations",
-            "es": ""
+            "es": "normas; reglamento"
         },
         "furigana": "きそく",
         "romaji": "kisoku",
@@ -413,9 +413,9 @@
         "word": "もうすぐ",
         "meaning": {
             "en": "soon",
-            "es": ""
+            "es": "pronto; dentro de poco"
         },
-        "furigana": "",
+        "furigana": "もうすぐ",
         "romaji": "mōsugu",
         "level": 4
     },
@@ -423,7 +423,7 @@
         "word": "絹",
         "meaning": {
             "en": "silk",
-            "es": ""
+            "es": "seda"
         },
         "furigana": "きぬ",
         "romaji": "kinu",
@@ -433,7 +433,7 @@
         "word": "怒る",
         "meaning": {
             "en": "to get angry, to be angry",
-            "es": ""
+            "es": "enfadarse; estar enfadado"
         },
         "furigana": "おこる",
         "romaji": "okoru",
@@ -443,7 +443,7 @@
         "word": "用",
         "meaning": {
             "en": "use",
-            "es": ""
+            "es": "uso; propósito"
         },
         "furigana": "よう",
         "romaji": "yō",
@@ -453,7 +453,7 @@
         "word": "致す",
         "meaning": {
             "en": "(humble) to do",
-            "es": ""
+            "es": "hacer (humilde)"
         },
         "furigana": "いたす",
         "romaji": "itasu",
@@ -463,7 +463,7 @@
         "word": "海岸",
         "meaning": {
             "en": "coast",
-            "es": ""
+            "es": "costa"
         },
         "furigana": "かいがん",
         "romaji": "kaigan",
@@ -473,7 +473,7 @@
         "word": "経済",
         "meaning": {
             "en": "finance, economy",
-            "es": ""
+            "es": "finanzas; economía"
         },
         "furigana": "けいざい",
         "romaji": "keizai",
@@ -483,7 +483,7 @@
         "word": "以上",
         "meaning": {
             "en": "more than, this is all",
-            "es": ""
+            "es": "más de; esto es todo"
         },
         "furigana": "いじょう",
         "romaji": "ijō",
@@ -493,7 +493,7 @@
         "word": "掛ける",
         "meaning": {
             "en": "to hang something",
-            "es": ""
+            "es": "colgar algo"
         },
         "furigana": "かける",
         "romaji": "kakeru",
@@ -503,7 +503,7 @@
         "word": "届ける",
         "meaning": {
             "en": "to reach",
-            "es": ""
+            "es": "entregar; hacer llegar"
         },
         "furigana": "とどける",
         "romaji": "todokeru",
@@ -513,7 +513,7 @@
         "word": "適当",
         "meaning": {
             "en": "suitability",
-            "es": ""
+            "es": "adecuación; conveniencia"
         },
         "furigana": "てきとう",
         "romaji": "tekitō",
@@ -523,7 +523,7 @@
         "word": "祖父",
         "meaning": {
             "en": "grandfather",
-            "es": ""
+            "es": "abuelo"
         },
         "furigana": "そふ",
         "romaji": "sofu",
@@ -533,7 +533,7 @@
         "word": "研究室",
         "meaning": {
             "en": "study room, laboratory",
-            "es": ""
+            "es": "sala de estudio; laboratorio"
         },
         "furigana": "けんきゅうしつ",
         "romaji": "kenkyūshitsu",
@@ -543,7 +543,7 @@
         "word": "文学",
         "meaning": {
             "en": "literature",
-            "es": ""
+            "es": "literatura"
         },
         "furigana": "ぶんがく",
         "romaji": "bungaku",
@@ -553,7 +553,7 @@
         "word": "生きる",
         "meaning": {
             "en": "to live",
-            "es": ""
+            "es": "vivir"
         },
         "furigana": "いきる",
         "romaji": "ikiru",
@@ -563,9 +563,9 @@
         "word": "それほど",
         "meaning": {
             "en": "to that extent",
-            "es": ""
+            "es": "hasta ese punto; tanto"
         },
-        "furigana": "",
+        "furigana": "それほど",
         "romaji": "sorehodo",
         "level": 4
     },
@@ -573,9 +573,9 @@
         "word": "うまい",
         "meaning": {
             "en": "delicious",
-            "es": ""
+            "es": "delicioso; rico"
         },
-        "furigana": "",
+        "furigana": "うまい",
         "romaji": "umai",
         "level": 4
     },
@@ -583,9 +583,9 @@
         "word": "ずいぶん",
         "meaning": {
             "en": "extremely",
-            "es": ""
+            "es": "muchísimo; bastante"
         },
-        "furigana": "",
+        "furigana": "ずいぶん",
         "romaji": "zuibun",
         "level": 4
     },
@@ -593,7 +593,7 @@
         "word": "お・金持ち",
         "meaning": {
             "en": "rich man",
-            "es": ""
+            "es": "persona rica; rico"
         },
         "furigana": "かねもち / おかねもち",
         "romaji": "kanemochi / okanemochi",
@@ -603,7 +603,7 @@
         "word": "続く",
         "meaning": {
             "en": "to be continued",
-            "es": ""
+            "es": "continuar; seguir"
         },
         "furigana": "つづく",
         "romaji": "tsuzuku",
@@ -613,7 +613,7 @@
         "word": "受付",
         "meaning": {
             "en": "receipt",
-            "es": ""
+            "es": "recepción; mostrador de recepción"
         },
         "furigana": "うけつけ",
         "romaji": "uketsuke",
@@ -623,7 +623,7 @@
         "word": "代わり",
         "meaning": {
             "en": "substitute, alternate",
-            "es": ""
+            "es": "sustituto; alternativa"
         },
         "furigana": "かわり",
         "romaji": "kawari",
@@ -633,7 +633,7 @@
         "word": "残る",
         "meaning": {
             "en": "to remain",
-            "es": ""
+            "es": "quedar; permanecer"
         },
         "furigana": "のこる",
         "romaji": "nokoru",
@@ -643,7 +643,7 @@
         "word": "世話",
         "meaning": {
             "en": "to look after",
-            "es": ""
+            "es": "cuidar de; atender"
         },
         "furigana": "せわ・する",
         "romaji": "sewa-suru",
@@ -653,9 +653,9 @@
         "word": "スーツケース",
         "meaning": {
             "en": "suitcase",
-            "es": ""
+            "es": "maleta"
         },
-        "furigana": "",
+        "furigana": "すーつけーす",
         "romaji": "sūtsukēsu",
         "level": 4
     },
@@ -663,9 +663,9 @@
         "word": "くれる",
         "meaning": {
             "en": "to give",
-            "es": ""
+            "es": "dar (a alguien)"
         },
-        "furigana": "",
+        "furigana": "くれる",
         "romaji": "kureru",
         "level": 4
     },
@@ -673,7 +673,7 @@
         "word": "会話",
         "meaning": {
             "en": "conversation",
-            "es": ""
+            "es": "conversación"
         },
         "furigana": "かいわ",
         "romaji": "kaiwa",
@@ -683,7 +683,7 @@
         "word": "向かう",
         "meaning": {
             "en": "to face",
-            "es": ""
+            "es": "dirigirse hacia; enfrentar"
         },
         "furigana": "むかう",
         "romaji": "mukau",
@@ -693,7 +693,7 @@
         "word": "増える",
         "meaning": {
             "en": "to increase",
-            "es": ""
+            "es": "aumentar; crecer"
         },
         "furigana": "ふえる",
         "romaji": "fueru",
@@ -703,7 +703,7 @@
         "word": "紹介",
         "meaning": {
             "en": "introduction",
-            "es": ""
+            "es": "presentación"
         },
         "furigana": "しょうかい",
         "romaji": "shōkai",
@@ -713,9 +713,9 @@
         "word": "だから",
         "meaning": {
             "en": "so, therefore",
-            "es": ""
+            "es": "así que; por eso"
         },
-        "furigana": "",
+        "furigana": "だから",
         "romaji": "dakara",
         "level": 4
     },
@@ -723,7 +723,7 @@
         "word": "季節",
         "meaning": {
             "en": "season",
-            "es": ""
+            "es": "estación"
         },
         "furigana": "きせつ",
         "romaji": "kisetsu",
@@ -733,9 +733,9 @@
         "word": "そんなに",
         "meaning": {
             "en": "so much, like that",
-            "es": ""
+            "es": "tanto; de esa manera"
         },
-        "furigana": "",
+        "furigana": "そんなに",
         "romaji": "sonnani",
         "level": 4
     },
@@ -743,9 +743,9 @@
         "word": "このあいだ",
         "meaning": {
             "en": "the other day, recently",
-            "es": ""
+            "es": "el otro día; hace poco"
         },
-        "furigana": "",
+        "furigana": "このあいだ",
         "romaji": "konoaida",
         "level": 4
     },
@@ -753,7 +753,7 @@
         "word": "虫",
         "meaning": {
             "en": "insect",
-            "es": ""
+            "es": "insecto"
         },
         "furigana": "むし",
         "romaji": "mushi",
@@ -763,7 +763,7 @@
         "word": "祖母",
         "meaning": {
             "en": "grandmother",
-            "es": ""
+            "es": "abuela"
         },
         "furigana": "そぼ",
         "romaji": "sobo",
@@ -773,9 +773,9 @@
         "word": "いらっしゃる",
         "meaning": {
             "en": "(respectful) to be, to come or to go",
-            "es": ""
+            "es": "estar; venir; ir (honorífico)"
         },
-        "furigana": "",
+        "furigana": "いらっしゃる",
         "romaji": "irassharu",
         "level": 4
     },
@@ -783,7 +783,7 @@
         "word": "変",
         "meaning": {
             "en": "strange",
-            "es": ""
+            "es": "extraño; raro"
         },
         "furigana": "へん",
         "romaji": "hen",
@@ -793,9 +793,9 @@
         "word": "ぶどう",
         "meaning": {
             "en": "grapes",
-            "es": ""
+            "es": "uvas"
         },
-        "furigana": "",
+        "furigana": "ぶどう",
         "romaji": "budō",
         "level": 4
     },
@@ -803,7 +803,7 @@
         "word": "直す",
         "meaning": {
             "en": "to fix, to repair",
-            "es": ""
+            "es": "arreglar; reparar"
         },
         "furigana": "なおす",
         "romaji": "naosu",
@@ -813,7 +813,7 @@
         "word": "世界",
         "meaning": {
             "en": "the world",
-            "es": ""
+            "es": "el mundo"
         },
         "furigana": "せかい",
         "romaji": "sekai",
@@ -823,7 +823,7 @@
         "word": "食事",
         "meaning": {
             "en": "to have a meal",
-            "es": ""
+            "es": "comer; tomar una comida"
         },
         "furigana": "しょくじ・する",
         "romaji": "shokuji-suru",
@@ -833,9 +833,9 @@
         "word": "うそ",
         "meaning": {
             "en": "a lie",
-            "es": ""
+            "es": "mentira"
         },
-        "furigana": "",
+        "furigana": "うそ",
         "romaji": "uso",
         "level": 4
     },
@@ -843,7 +843,7 @@
         "word": "合う",
         "meaning": {
             "en": "to match",
-            "es": ""
+            "es": "coincidir; encajar"
         },
         "furigana": "あう",
         "romaji": "au",
@@ -853,7 +853,7 @@
         "word": "小鳥",
         "meaning": {
             "en": "small bird",
-            "es": ""
+            "es": "pajarito"
         },
         "furigana": "ことり",
         "romaji": "kotori",
@@ -863,7 +863,7 @@
         "word": "電報",
         "meaning": {
             "en": "telegram",
-            "es": ""
+            "es": "telegrama"
         },
         "furigana": "でんぽう",
         "romaji": "denpō",
@@ -873,7 +873,7 @@
         "word": "星",
         "meaning": {
             "en": "star",
-            "es": ""
+            "es": "estrella"
         },
         "furigana": "ほし",
         "romaji": "hoshi",
@@ -883,7 +883,7 @@
         "word": "申す",
         "meaning": {
             "en": "(humble) to be called, to say",
-            "es": ""
+            "es": "llamarse; decir (humilde)"
         },
         "furigana": "もうす",
         "romaji": "mōsu",
@@ -893,7 +893,7 @@
         "word": "失敗",
         "meaning": {
             "en": "failure, mistake",
-            "es": ""
+            "es": "fracaso; error"
         },
         "furigana": "しっぱい",
         "romaji": "shippai",
@@ -903,7 +903,7 @@
         "word": "汽車",
         "meaning": {
             "en": "steam train",
-            "es": ""
+            "es": "tren de vapor"
         },
         "furigana": "きしゃ",
         "romaji": "kisha",
@@ -913,7 +913,7 @@
         "word": "下宿",
         "meaning": {
             "en": "lodging",
-            "es": ""
+            "es": "alojamiento; pensión"
         },
         "furigana": "げしゅく",
         "romaji": "geshuku",
@@ -923,7 +923,7 @@
         "word": "思う",
         "meaning": {
             "en": "to think, to feel",
-            "es": ""
+            "es": "pensar; sentir"
         },
         "furigana": "おもう",
         "romaji": "omō",
@@ -933,7 +933,7 @@
         "word": "機会",
         "meaning": {
             "en": "opportunity",
-            "es": ""
+            "es": "oportunidad"
         },
         "furigana": "きかい",
         "romaji": "kikai",
@@ -943,7 +943,7 @@
         "word": "皆",
         "meaning": {
             "en": "everybody",
-            "es": ""
+            "es": "todos; todo el mundo"
         },
         "furigana": "みな",
         "romaji": "mina",
@@ -953,7 +953,7 @@
         "word": "苦い",
         "meaning": {
             "en": "bitter",
-            "es": ""
+            "es": "amargo"
         },
         "furigana": "にがい",
         "romaji": "nigai",
@@ -963,7 +963,7 @@
         "word": "特に",
         "meaning": {
             "en": "particularly, especially",
-            "es": ""
+            "es": "particularmente; especialmente"
         },
         "furigana": "とくに",
         "romaji": "tokuni",
@@ -973,7 +973,7 @@
         "word": "乾く",
         "meaning": {
             "en": "to get dry",
-            "es": ""
+            "es": "secarse"
         },
         "furigana": "かわく",
         "romaji": "kawaku",
@@ -983,7 +983,7 @@
         "word": "葉",
         "meaning": {
             "en": "leaf",
-            "es": ""
+            "es": "hoja"
         },
         "furigana": "は",
         "romaji": "ha",
@@ -993,9 +993,9 @@
         "word": "かっこう",
         "meaning": {
             "en": "appearance",
-            "es": ""
+            "es": "apariencia; aspecto"
         },
-        "furigana": "",
+        "furigana": "かっこう",
         "romaji": "kakkō",
         "level": 4
     },
@@ -1003,7 +1003,7 @@
         "word": "昼休み",
         "meaning": {
             "en": "noon break",
-            "es": ""
+            "es": "pausa del mediodía; descanso para comer"
         },
         "furigana": "ひるやすみ",
         "romaji": "hiruyasumi",
@@ -1013,7 +1013,7 @@
         "word": "以下",
         "meaning": {
             "en": "less than",
-            "es": ""
+            "es": "como máximo; hasta (incluido)"
         },
         "furigana": "いか",
         "romaji": "ika",
@@ -1023,7 +1023,7 @@
         "word": "彼ら",
         "meaning": {
             "en": "they",
-            "es": ""
+            "es": "ellos; ellas"
         },
         "furigana": "かれら",
         "romaji": "karera",
@@ -1033,7 +1033,7 @@
         "word": "寄る",
         "meaning": {
             "en": "to visit",
-            "es": ""
+            "es": "pasar por; visitar"
         },
         "furigana": "よる",
         "romaji": "yoru",
@@ -1043,7 +1043,7 @@
         "word": "字",
         "meaning": {
             "en": "character",
-            "es": ""
+            "es": "carácter; letra"
         },
         "furigana": "じ",
         "romaji": "ji",
@@ -1053,7 +1053,7 @@
         "word": "厳しい",
         "meaning": {
             "en": "strict",
-            "es": ""
+            "es": "estricto; severo"
         },
         "furigana": "きびしい",
         "romaji": "kibishii",
@@ -1063,7 +1063,7 @@
         "word": "優しい",
         "meaning": {
             "en": "kind",
-            "es": ""
+            "es": "amable; bondadoso"
         },
         "furigana": "やさしい",
         "romaji": "yasashii",
@@ -1073,9 +1073,9 @@
         "word": "たいてい",
         "meaning": {
             "en": "usually",
-            "es": ""
+            "es": "normalmente; por lo general"
         },
-        "furigana": "",
+        "furigana": "たいてい",
         "romaji": "taitei",
         "level": 4
     },
@@ -1083,7 +1083,7 @@
         "word": "花見",
         "meaning": {
             "en": "cherry-blossom viewing",
-            "es": ""
+            "es": "contemplación de los cerezos en flor"
         },
         "furigana": "はなみ",
         "romaji": "hanami",
@@ -1093,7 +1093,7 @@
         "word": "注射",
         "meaning": {
             "en": "injection",
-            "es": ""
+            "es": "inyección"
         },
         "furigana": "ちゅうしゃ",
         "romaji": "chūsha",
@@ -1103,7 +1103,7 @@
         "word": "大分",
         "meaning": {
             "en": "greatly",
-            "es": ""
+            "es": "mucho; considerablemente"
         },
         "furigana": "だいぶ",
         "romaji": "daibu",
@@ -1113,9 +1113,9 @@
         "word": "ベル",
         "meaning": {
             "en": "bell",
-            "es": ""
+            "es": "campana; timbre"
         },
-        "furigana": "",
+        "furigana": "べる",
         "romaji": "beru",
         "level": 4
     },
@@ -1123,7 +1123,7 @@
         "word": "景色",
         "meaning": {
             "en": "scene, landscape",
-            "es": ""
+            "es": "paisaje; vista"
         },
         "furigana": "けしき",
         "romaji": "keshiki",
@@ -1133,9 +1133,9 @@
         "word": "しかる",
         "meaning": {
             "en": "a particular",
-            "es": ""
+            "es": "reprender; regañar"
         },
-        "furigana": "",
+        "furigana": "しかる",
         "romaji": "shikaru",
         "level": 4
     },
@@ -1143,7 +1143,7 @@
         "word": "日記",
         "meaning": {
             "en": "journal",
-            "es": ""
+            "es": "diario"
         },
         "furigana": "にっき",
         "romaji": "nikki",
@@ -1153,7 +1153,7 @@
         "word": "お礼",
         "meaning": {
             "en": "expression of gratitude",
-            "es": ""
+            "es": "agradecimiento; expresión de gratitud"
         },
         "furigana": "おれい",
         "romaji": "orei",
@@ -1163,7 +1163,7 @@
         "word": "集る",
         "meaning": {
             "en": "to gather",
-            "es": ""
+            "es": "reunirse; congregarse"
         },
         "furigana": "あつまる",
         "romaji": "atsumaru",
@@ -1173,7 +1173,7 @@
         "word": "大体",
         "meaning": {
             "en": "generally",
-            "es": ""
+            "es": "por lo general; aproximadamente"
         },
         "furigana": "だいたい",
         "romaji": "daitai",
@@ -1183,9 +1183,9 @@
         "word": "なるほど",
         "meaning": {
             "en": "now I understand",
-            "es": ""
+            "es": "ya veo; ahora entiendo"
         },
-        "furigana": "",
+        "furigana": "なるほど",
         "romaji": "naruhodo",
         "level": 4
     },
@@ -1193,7 +1193,7 @@
         "word": "公務員",
         "meaning": {
             "en": "government worker",
-            "es": ""
+            "es": "funcionario público"
         },
         "furigana": "こうむいん",
         "romaji": "kōmuin",
@@ -1203,7 +1203,7 @@
         "word": "警察",
         "meaning": {
             "en": "police",
-            "es": ""
+            "es": "policía; fuerzas policiales"
         },
         "furigana": "けいさつ",
         "romaji": "keisatsu",
@@ -1213,7 +1213,7 @@
         "word": "空気",
         "meaning": {
             "en": "air, atmosphere",
-            "es": ""
+            "es": "aire; ambiente"
         },
         "furigana": "くうき",
         "romaji": "kūki",
@@ -1223,7 +1223,7 @@
         "word": "周り",
         "meaning": {
             "en": "surroundings",
-            "es": ""
+            "es": "alrededores; entorno"
         },
         "furigana": "まわり",
         "romaji": "mawari",
@@ -1233,7 +1233,7 @@
         "word": "汚れる",
         "meaning": {
             "en": "to get dirty",
-            "es": ""
+            "es": "ensuciarse"
         },
         "furigana": "よごれる",
         "romaji": "yogoreru",
@@ -1243,7 +1243,7 @@
         "word": "約束",
         "meaning": {
             "en": "promise",
-            "es": ""
+            "es": "promesa; compromiso"
         },
         "furigana": "やくそく",
         "romaji": "yakusoku",
@@ -1253,7 +1253,7 @@
         "word": "砂",
         "meaning": {
             "en": "sand",
-            "es": ""
+            "es": "arena"
         },
         "furigana": "すな",
         "romaji": "suna",
@@ -1263,7 +1263,7 @@
         "word": "笑う",
         "meaning": {
             "en": "to laugh, to smile",
-            "es": ""
+            "es": "reír; sonreír"
         },
         "furigana": "わらう",
         "romaji": "warau",
@@ -1273,9 +1273,9 @@
         "word": "しっかり",
         "meaning": {
             "en": "firmly, steadily",
-            "es": ""
+            "es": "firmemente; con constancia"
         },
-        "furigana": "",
+        "furigana": "しっかり",
         "romaji": "shikkari",
         "level": 4
     },
@@ -1283,7 +1283,7 @@
         "word": "住所",
         "meaning": {
             "en": "an address, a residence",
-            "es": ""
+            "es": "dirección; domicilio"
         },
         "furigana": "じゅうしょ",
         "romaji": "jūsho",
@@ -1293,9 +1293,9 @@
         "word": "すり",
         "meaning": {
             "en": "pickpocket",
-            "es": ""
+            "es": "carterista"
         },
-        "furigana": "",
+        "furigana": "すり",
         "romaji": "suri",
         "level": 4
     },
@@ -1303,7 +1303,7 @@
         "word": "注意",
         "meaning": {
             "en": "caution",
-            "es": ""
+            "es": "precaución; cuidado"
         },
         "furigana": "ちゅうい",
         "romaji": "chūi",
@@ -1313,7 +1313,7 @@
         "word": "仕方",
         "meaning": {
             "en": "method",
-            "es": ""
+            "es": "método; manera"
         },
         "furigana": "しかた",
         "romaji": "shikata",
@@ -1323,7 +1323,7 @@
         "word": "無理",
         "meaning": {
             "en": "impossible",
-            "es": ""
+            "es": "imposible; irrazonable"
         },
         "furigana": "むり",
         "romaji": "muri",
@@ -1333,7 +1333,7 @@
         "word": "触る",
         "meaning": {
             "en": "to touch",
-            "es": ""
+            "es": "tocar"
         },
         "furigana": "さわる",
         "romaji": "sawaru",
@@ -1343,7 +1343,7 @@
         "word": "押し入れ",
         "meaning": {
             "en": "closet",
-            "es": ""
+            "es": "armario empotrado"
         },
         "furigana": "おしいれ",
         "romaji": "oshiire",
@@ -1353,7 +1353,7 @@
         "word": "さ来月",
         "meaning": {
             "en": "the month after next",
-            "es": ""
+            "es": "dentro de dos meses; el mes siguiente al próximo"
         },
         "furigana": "さらいげつ",
         "romaji": "saraigetsu",
@@ -1363,9 +1363,9 @@
         "word": "ビル",
         "meaning": {
             "en": "building or bill",
-            "es": ""
+            "es": "edificio; rascacielos"
         },
-        "furigana": "",
+        "furigana": "びる",
         "romaji": "biru",
         "level": 4
     },
@@ -1373,7 +1373,7 @@
         "word": "歯医者",
         "meaning": {
             "en": "dentist",
-            "es": ""
+            "es": "dentista"
         },
         "furigana": "はいしゃ",
         "romaji": "haisha",
@@ -1383,7 +1383,7 @@
         "word": "知らせる",
         "meaning": {
             "en": "to notify",
-            "es": ""
+            "es": "avisar; informar"
         },
         "furigana": "しらせる",
         "romaji": "shiraseru",
@@ -1393,7 +1393,7 @@
         "word": "点",
         "meaning": {
             "en": "point, dot",
-            "es": ""
+            "es": "punto"
         },
         "furigana": "てん",
         "romaji": "ten",
@@ -1403,7 +1403,7 @@
         "word": "予定",
         "meaning": {
             "en": "arrangement",
-            "es": ""
+            "es": "plan; disposición"
         },
         "furigana": "よてい",
         "romaji": "yotei",
@@ -1413,7 +1413,7 @@
         "word": "火事",
         "meaning": {
             "en": "fire",
-            "es": ""
+            "es": "incendio"
         },
         "furigana": "かじ",
         "romaji": "kaji",
@@ -1423,7 +1423,7 @@
         "word": "出席",
         "meaning": {
             "en": "to attend",
-            "es": ""
+            "es": "asistir"
         },
         "furigana": "しゅっせき・する",
         "romaji": "shusseki-suru",
@@ -1433,7 +1433,7 @@
         "word": "壁",
         "meaning": {
             "en": "wall",
-            "es": ""
+            "es": "pared; muro"
         },
         "furigana": "かべ",
         "romaji": "kabe",
@@ -1443,7 +1443,7 @@
         "word": "植える",
         "meaning": {
             "en": "to plant, to grow",
-            "es": ""
+            "es": "plantar; cultivar"
         },
         "furigana": "うえる",
         "romaji": "ueru",
@@ -1453,7 +1453,7 @@
         "word": "生産",
         "meaning": {
             "en": "to produce",
-            "es": ""
+            "es": "producir"
         },
         "furigana": "せいさん・する",
         "romaji": "seisan-suru",
@@ -1463,7 +1463,7 @@
         "word": "法律",
         "meaning": {
             "en": "law",
-            "es": ""
+            "es": "ley; legislación"
         },
         "furigana": "ほうりつ",
         "romaji": "hōritsu",
@@ -1473,7 +1473,7 @@
         "word": "見つかる",
         "meaning": {
             "en": "to be discovered",
-            "es": ""
+            "es": "ser encontrado; aparecer"
         },
         "furigana": "みつかる",
         "romaji": "mitsukaru",
@@ -1483,7 +1483,7 @@
         "word": "港",
         "meaning": {
             "en": "harbour",
-            "es": ""
+            "es": "puerto"
         },
         "furigana": "みなと",
         "romaji": "minato",
@@ -1493,7 +1493,7 @@
         "word": "連れる",
         "meaning": {
             "en": "to lead",
-            "es": ""
+            "es": "llevar consigo; acompañar"
         },
         "furigana": "つれる",
         "romaji": "tsureru",
@@ -1503,7 +1503,7 @@
         "word": "見つける",
         "meaning": {
             "en": "to discover",
-            "es": ""
+            "es": "encontrar; descubrir"
         },
         "furigana": "みつける",
         "romaji": "mitsukeru",
@@ -1513,7 +1513,7 @@
         "word": "辞典",
         "meaning": {
             "en": "dictionary",
-            "es": ""
+            "es": "diccionario"
         },
         "furigana": "じてん",
         "romaji": "jiten",
@@ -1523,7 +1523,7 @@
         "word": "乗り換える",
         "meaning": {
             "en": "to change between buses or trains",
-            "es": ""
+            "es": "hacer transbordo; cambiar de tren o autobús"
         },
         "furigana": "のりかえる",
         "romaji": "norikaeru",
@@ -1533,7 +1533,7 @@
         "word": "役に立つ",
         "meaning": {
             "en": "to be helpful",
-            "es": ""
+            "es": "ser útil; servir de ayuda"
         },
         "furigana": "やくにたつ",
         "romaji": "yakunitatsu",
@@ -1543,7 +1543,7 @@
         "word": "写す",
         "meaning": {
             "en": "to copy or photograph",
-            "es": ""
+            "es": "copiar; fotografiar"
         },
         "furigana": "うつす",
         "romaji": "utsusu",
@@ -1553,7 +1553,7 @@
         "word": "理由",
         "meaning": {
             "en": "reason",
-            "es": ""
+            "es": "razón; motivo"
         },
         "furigana": "りゆう",
         "romaji": "riyū",
@@ -1563,9 +1563,9 @@
         "word": "たまに",
         "meaning": {
             "en": "occasionally",
-            "es": ""
+            "es": "de vez en cuando; ocasionalmente"
         },
-        "furigana": "",
+        "furigana": "たまに",
         "romaji": "tamani",
         "level": 4
     },
@@ -1573,9 +1573,9 @@
         "word": "プレゼント",
         "meaning": {
             "en": "present",
-            "es": ""
+            "es": "regalo"
         },
-        "furigana": "",
+        "furigana": "ぷれぜんと",
         "romaji": "purezento",
         "level": 4
     },
@@ -1583,9 +1583,9 @@
         "word": "いっぱい",
         "meaning": {
             "en": "full",
-            "es": ""
+            "es": "lleno; abundante"
         },
-        "furigana": "",
+        "furigana": "いっぱい",
         "romaji": "ippai",
         "level": 4
     },
@@ -1593,7 +1593,7 @@
         "word": "運動",
         "meaning": {
             "en": "to exercise",
-            "es": ""
+            "es": "hacer ejercicio"
         },
         "furigana": "うんどう・する",
         "romaji": "undō-suru",
@@ -1603,7 +1603,7 @@
         "word": "見える",
         "meaning": {
             "en": "to be in sight",
-            "es": ""
+            "es": "verse; estar a la vista"
         },
         "furigana": "みえる",
         "romaji": "mieru",
@@ -1613,7 +1613,7 @@
         "word": "申し上げる",
         "meaning": {
             "en": "(humble) to say, to tell",
-            "es": ""
+            "es": "decir; comunicar (forma humilde)"
         },
         "furigana": "もうしあげる",
         "romaji": "mōshiageru",
@@ -1623,7 +1623,7 @@
         "word": "冷える",
         "meaning": {
             "en": "to grow cold",
-            "es": ""
+            "es": "enfriarse"
         },
         "furigana": "ひえる",
         "romaji": "hieru",
@@ -1633,7 +1633,7 @@
         "word": "痩せる",
         "meaning": {
             "en": "to become thin",
-            "es": ""
+            "es": "adelgazar"
         },
         "furigana": "やせる",
         "romaji": "yaseru",
@@ -1643,7 +1643,7 @@
         "word": "屋上",
         "meaning": {
             "en": "rooftop",
-            "es": ""
+            "es": "azotea; terraza"
         },
         "furigana": "おくじょう",
         "romaji": "okujō",
@@ -1653,9 +1653,9 @@
         "word": "ステレオ",
         "meaning": {
             "en": "stereo",
-            "es": ""
+            "es": "equipo estéreo"
         },
-        "furigana": "",
+        "furigana": "すてれお",
         "romaji": "sutereo",
         "level": 4
     },
@@ -1663,9 +1663,9 @@
         "word": "そう",
         "meaning": {
             "en": "really",
-            "es": ""
+            "es": "así; de ese modo"
         },
-        "furigana": "",
+        "furigana": "そう",
         "romaji": "sō",
         "level": 4
     },
@@ -1673,7 +1673,7 @@
         "word": "お土産",
         "meaning": {
             "en": "souvenir",
-            "es": ""
+            "es": "recuerdo; suvenir"
         },
         "furigana": "おみやげ",
         "romaji": "omiyage",
@@ -1683,7 +1683,7 @@
         "word": "泥棒",
         "meaning": {
             "en": "thief",
-            "es": ""
+            "es": "ladrón"
         },
         "furigana": "どろぼう",
         "romaji": "dorobō",
@@ -1693,7 +1693,7 @@
         "word": "お祭り",
         "meaning": {
             "en": "festival",
-            "es": ""
+            "es": "festival; fiesta"
         },
         "furigana": "おまつり",
         "romaji": "omatsuri",
@@ -1703,7 +1703,7 @@
         "word": "浅い",
         "meaning": {
             "en": "shallow, superficial",
-            "es": ""
+            "es": "poco profundo; superficial"
         },
         "furigana": "あさい",
         "romaji": "asai",
@@ -1713,7 +1713,7 @@
         "word": "お見舞い",
         "meaning": {
             "en": "calling on someone who is ill, enquiry",
-            "es": ""
+            "es": "visita a un enfermo; visita de cortesía"
         },
         "furigana": "おみまい",
         "romaji": "omimai",
@@ -1723,9 +1723,9 @@
         "word": "アルバイト",
         "meaning": {
             "en": "part-time job",
-            "es": ""
+            "es": "trabajo a tiempo parcial"
         },
-        "furigana": "",
+        "furigana": "あるばいと",
         "romaji": "arubaito",
         "level": 4
     },
@@ -1733,9 +1733,9 @@
         "word": "おつり",
         "meaning": {
             "en": "change from purchase, balance",
-            "es": ""
+            "es": "cambio (dinero devuelto)"
         },
-        "furigana": "",
+        "furigana": "おつり",
         "romaji": "otsuri",
         "level": 4
     },
@@ -1743,7 +1743,7 @@
         "word": "輸入",
         "meaning": {
             "en": "to import",
-            "es": ""
+            "es": "importar"
         },
         "furigana": "ゆにゅう・する",
         "romaji": "yunyū-suru",
@@ -1753,7 +1753,7 @@
         "word": "人口",
         "meaning": {
             "en": "population",
-            "es": ""
+            "es": "población"
         },
         "furigana": "じんこう",
         "romaji": "jinkō",
@@ -1763,7 +1763,7 @@
         "word": "興味",
         "meaning": {
             "en": "an interest",
-            "es": ""
+            "es": "interés"
         },
         "furigana": "きょうみ",
         "romaji": "kyōmi",
@@ -1773,7 +1773,7 @@
         "word": "時代",
         "meaning": {
             "en": "era",
-            "es": ""
+            "es": "época; era"
         },
         "furigana": "じだい",
         "romaji": "jidai",
@@ -1783,7 +1783,7 @@
         "word": "特急",
         "meaning": {
             "en": "limited express train (faster than an express train)",
-            "es": ""
+            "es": "tren expreso limitado (más rápido que el expreso)"
         },
         "furigana": "とっきゅう",
         "romaji": "tokkyū",
@@ -1793,7 +1793,7 @@
         "word": "腕",
         "meaning": {
             "en": "arm",
-            "es": ""
+            "es": "brazo"
         },
         "furigana": "うで",
         "romaji": "ude",
@@ -1803,7 +1803,7 @@
         "word": "気分",
         "meaning": {
             "en": "mood",
-            "es": ""
+            "es": "estado de ánimo"
         },
         "furigana": "きぶん",
         "romaji": "kibun",
@@ -1813,7 +1813,7 @@
         "word": "上る",
         "meaning": {
             "en": "to rise",
-            "es": ""
+            "es": "subir; elevarse"
         },
         "furigana": "あがる",
         "romaji": "agaru",
@@ -1823,9 +1823,9 @@
         "word": "いただく",
         "meaning": {
             "en": "(humble) to receive",
-            "es": ""
+            "es": "recibir (forma humilde)"
         },
-        "furigana": "",
+        "furigana": "いただく",
         "romaji": "itadaku",
         "level": 4
     },
@@ -1833,7 +1833,7 @@
         "word": "泊まる",
         "meaning": {
             "en": "to lodge at",
-            "es": ""
+            "es": "alojarse; hospedarse"
         },
         "furigana": "とまる",
         "romaji": "tomaru",
@@ -1843,7 +1843,7 @@
         "word": "盗む",
         "meaning": {
             "en": "to steal",
-            "es": ""
+            "es": "robar"
         },
         "furigana": "ぬすむ",
         "romaji": "nusumu",
@@ -1853,9 +1853,9 @@
         "word": "ひげ",
         "meaning": {
             "en": "beard",
-            "es": ""
+            "es": "barba; bigote"
         },
-        "furigana": "",
+        "furigana": "ひげ",
         "romaji": "hige",
         "level": 4
     },
@@ -1863,7 +1863,7 @@
         "word": "坂",
         "meaning": {
             "en": "slope, hill",
-            "es": ""
+            "es": "cuesta; colina"
         },
         "furigana": "さか",
         "romaji": "saka",
@@ -1873,9 +1873,9 @@
         "word": "よろしい",
         "meaning": {
             "en": "(respectful) OK, all right",
-            "es": ""
+            "es": "bien; de acuerdo (forma respetuosa)"
         },
-        "furigana": "",
+        "furigana": "よろしい",
         "romaji": "yoroshii",
         "level": 4
     },
@@ -1883,7 +1883,7 @@
         "word": "技術",
         "meaning": {
             "en": "art, technology, skill",
-            "es": ""
+            "es": "arte; tecnología; habilidad"
         },
         "furigana": "ぎじゅつ",
         "romaji": "gijutsu",
@@ -1893,7 +1893,7 @@
         "word": "為",
         "meaning": {
             "en": "in order to",
-            "es": ""
+            "es": "para; con el fin de"
         },
         "furigana": "ため",
         "romaji": "tame",
@@ -1903,7 +1903,7 @@
         "word": "小説",
         "meaning": {
             "en": "novel",
-            "es": ""
+            "es": "novela"
         },
         "furigana": "しょうせつ",
         "romaji": "shōsetsu",
@@ -1913,7 +1913,7 @@
         "word": "調べる",
         "meaning": {
             "en": "to investigate",
-            "es": ""
+            "es": "investigar"
         },
         "furigana": "しらべる",
         "romaji": "shiraberu",
@@ -1923,7 +1923,7 @@
         "word": "趣味",
         "meaning": {
             "en": "hobby",
-            "es": ""
+            "es": "afición; pasatiempo"
         },
         "furigana": "しゅみ",
         "romaji": "shumi",
@@ -1933,7 +1933,7 @@
         "word": "運転手",
         "meaning": {
             "en": "driver",
-            "es": ""
+            "es": "conductor; chófer"
         },
         "furigana": "うんてんしゅ",
         "romaji": "untenshu",
@@ -1943,7 +1943,7 @@
         "word": "深い",
         "meaning": {
             "en": "deep",
-            "es": ""
+            "es": "profundo"
         },
         "furigana": "ふかい",
         "romaji": "fukai",
@@ -1953,7 +1953,7 @@
         "word": "林",
         "meaning": {
             "en": "woods, forester",
-            "es": ""
+            "es": "bosque; arboleda"
         },
         "furigana": "はやし",
         "romaji": "hayashi",
@@ -1963,7 +1963,7 @@
         "word": "小学校",
         "meaning": {
             "en": "elementary school",
-            "es": ""
+            "es": "escuela primaria"
         },
         "furigana": "しょうがっこう",
         "romaji": "shōgakkō",
@@ -1973,9 +1973,9 @@
         "word": "まず",
         "meaning": {
             "en": "first of all",
-            "es": ""
+            "es": "antes que nada; primero"
         },
-        "furigana": "",
+        "furigana": "まず",
         "romaji": "mazu",
         "level": 4
     },
@@ -1983,7 +1983,7 @@
         "word": "気持ち",
         "meaning": {
             "en": "feeling, mood",
-            "es": ""
+            "es": "sentimiento; estado de ánimo"
         },
         "furigana": "きもち",
         "romaji": "kimochi",
@@ -1993,7 +1993,7 @@
         "word": "思い出す",
         "meaning": {
             "en": "to remember",
-            "es": ""
+            "es": "recordar"
         },
         "furigana": "おもいだす",
         "romaji": "omoidasu",
@@ -2003,7 +2003,7 @@
         "word": "留守",
         "meaning": {
             "en": "absence",
-            "es": ""
+            "es": "(informal) sí"
         },
         "furigana": "るす",
         "romaji": "rusu",
@@ -2013,7 +2013,7 @@
         "word": "続ける",
         "meaning": {
             "en": "to continue",
-            "es": ""
+            "es": "regreso; vuelta"
         },
         "furigana": "つづける",
         "romaji": "tsuzukeru",
@@ -2023,7 +2023,7 @@
         "word": "草",
         "meaning": {
             "en": "grass",
-            "es": ""
+            "es": "agua caliente"
         },
         "furigana": "くさ",
         "romaji": "kusa",
@@ -2033,7 +2033,7 @@
         "word": "途中",
         "meaning": {
             "en": "on the way",
-            "es": ""
+            "es": "antaño; antiguo"
         },
         "furigana": "とちゅう",
         "romaji": "tochū",
@@ -2043,9 +2043,9 @@
         "word": "できるだけ",
         "meaning": {
             "en": "as much as possible",
-            "es": ""
+            "es": "sabor"
         },
-        "furigana": "",
+        "furigana": "できるだけ",
         "romaji": "dekirudake",
         "level": 4
     },
@@ -2053,7 +2053,7 @@
         "word": "お宅",
         "meaning": {
             "en": "(polite) your house",
-            "es": ""
+            "es": "Asia"
         },
         "furigana": "おたく",
         "romaji": "otaku",
@@ -2063,7 +2063,7 @@
         "word": "召し上がる",
         "meaning": {
             "en": "(polite) to eat",
-            "es": ""
+            "es": "muñeca; figura"
         },
         "furigana": "めしあがる",
         "romaji": "meshiagaru",
@@ -2073,7 +2073,7 @@
         "word": "悲しい",
         "meaning": {
             "en": "sad",
-            "es": ""
+            "es": "curarse; sanar"
         },
         "furigana": "かなしい",
         "romaji": "kanashii",
@@ -2083,7 +2083,7 @@
         "word": "子",
         "meaning": {
             "en": "child",
-            "es": ""
+            "es": "libertad"
         },
         "furigana": "こ",
         "romaji": "ko",
@@ -2093,7 +2093,7 @@
         "word": "運転",
         "meaning": {
             "en": "to drive",
-            "es": ""
+            "es": "trabajo a tiempo parcial"
         },
         "furigana": "うんてん・する",
         "romaji": "unten-suru",
@@ -2103,9 +2103,9 @@
         "word": "はっきり",
         "meaning": {
             "en": "clearly",
-            "es": ""
+            "es": "cristal (de una ventana)"
         },
-        "furigana": "",
+        "furigana": "はっきり",
         "romaji": "hakkiri",
         "level": 4
     },
@@ -2113,7 +2113,7 @@
         "word": "折る",
         "meaning": {
             "en": "to break or to fold",
-            "es": ""
+            "es": "importante; valioso; asunto grave"
         },
         "furigana": "おる",
         "romaji": "oru",
@@ -2123,7 +2123,7 @@
         "word": "今度",
         "meaning": {
             "en": "now, next time",
-            "es": ""
+            "es": "llegar tarde; retrasarse"
         },
         "furigana": "こんど",
         "romaji": "kondo",
@@ -2133,9 +2133,9 @@
         "word": "アフリカ",
         "meaning": {
             "en": "Africa",
-            "es": ""
+            "es": "lugar de reunión; recinto"
         },
-        "furigana": "",
+        "furigana": "あふりか",
         "romaji": "afurika",
         "level": 4
     },
@@ -2143,7 +2143,7 @@
         "word": "壊れる",
         "meaning": {
             "en": "to be broken",
-            "es": ""
+            "es": "dar"
         },
         "furigana": "こわれる",
         "romaji": "kowareru",
@@ -2153,7 +2153,7 @@
         "word": "番組",
         "meaning": {
             "en": "television or radio program",
-            "es": ""
+            "es": "uso; utilización"
         },
         "furigana": "ばんぐみ",
         "romaji": "bangumi",
@@ -2163,7 +2163,7 @@
         "word": "捕まえる",
         "meaning": {
             "en": "to seize",
-            "es": ""
+            "es": "manera de nadar"
         },
         "furigana": "つかまえる",
         "romaji": "tsukamaeru",
@@ -2173,9 +2173,9 @@
         "word": "タイプ",
         "meaning": {
             "en": "type, style",
-            "es": ""
+            "es": "normalmente; tren local (que para en todas las estaciones)"
         },
-        "furigana": "",
+        "furigana": "たいぷ",
         "romaji": "taipu",
         "level": 4
     },
@@ -2183,7 +2183,7 @@
         "word": "毛",
         "meaning": {
             "en": "hair or fur",
-            "es": ""
+            "es": "gasolina"
         },
         "furigana": "け",
         "romaji": "ke",
@@ -2193,7 +2193,7 @@
         "word": "落る",
         "meaning": {
             "en": "to fall or drop",
-            "es": ""
+            "es": "sin falta; necesariamente"
         },
         "furigana": "おちる",
         "romaji": "ochiru",
@@ -2203,7 +2203,7 @@
         "word": "場合",
         "meaning": {
             "en": "situation",
-            "es": ""
+            "es": "competición"
         },
         "furigana": "ばあい",
         "romaji": "baai",
@@ -2213,7 +2213,7 @@
         "word": "意見",
         "meaning": {
             "en": "opinion",
-            "es": ""
+            "es": "aceptar; estar de acuerdo"
         },
         "furigana": "いけん",
         "romaji": "iken",
@@ -2223,7 +2223,7 @@
         "word": "通る",
         "meaning": {
             "en": "to go through",
-            "es": ""
+            "es": "asar; hornear"
         },
         "furigana": "とおる",
         "romaji": "tōru",
@@ -2233,7 +2233,7 @@
         "word": "着物",
         "meaning": {
             "en": "kimono",
-            "es": ""
+            "es": "diferente"
         },
         "furigana": "きもの",
         "romaji": "kimono",
@@ -2243,7 +2243,7 @@
         "word": "森",
         "meaning": {
             "en": "forest",
-            "es": ""
+            "es": "superar; exceder"
         },
         "furigana": "もり",
         "romaji": "mori",
@@ -2253,7 +2253,7 @@
         "word": "市",
         "meaning": {
             "en": "city",
-            "es": ""
+            "es": "contacto; comunicación"
         },
         "furigana": "し",
         "romaji": "shi",
@@ -2263,9 +2263,9 @@
         "word": "ほど",
         "meaning": {
             "en": "extent",
-            "es": ""
+            "es": "entonces; al hacerlo"
         },
-        "furigana": "",
+        "furigana": "ほど",
         "romaji": "hodo",
         "level": 4
     },
@@ -2273,7 +2273,7 @@
         "word": "入院",
         "meaning": {
             "en": "to hospitalise",
-            "es": ""
+            "es": "anochecer; llegar a su fin"
         },
         "furigana": "にゅういん・する",
         "romaji": "nyūin-suru",
@@ -2283,9 +2283,9 @@
         "word": "カーテン",
         "meaning": {
             "en": "curtain",
-            "es": ""
+            "es": "alegrarse"
         },
-        "furigana": "",
+        "furigana": "かーてん",
         "romaji": "kāten",
         "level": 4
     },
@@ -2293,7 +2293,7 @@
         "word": "動く",
         "meaning": {
             "en": "to move",
-            "es": ""
+            "es": "costumbre; hábitos"
         },
         "furigana": "うごく",
         "romaji": "ugoku",
@@ -2303,9 +2303,9 @@
         "word": "ぜひ",
         "meaning": {
             "en": "without fail",
-            "es": ""
+            "es": "jefe de departamento"
         },
-        "furigana": "",
+        "furigana": "ぜひ",
         "romaji": "zehi",
         "level": 4
     },
@@ -2313,9 +2313,9 @@
         "word": "すばらしい",
         "meaning": {
             "en": "wonderful",
-            "es": ""
+            "es": "rezar"
         },
-        "furigana": "",
+        "furigana": "すばらしい",
         "romaji": "subarashii",
         "level": 4
     },
@@ -2323,7 +2323,7 @@
         "word": "参る",
         "meaning": {
             "en": "(humble) to go, to come",
-            "es": ""
+            "es": "suministro de agua; agua corriente"
         },
         "furigana": "まいる",
         "romaji": "mairu",
@@ -2333,9 +2333,9 @@
         "word": "ねっしん",
         "meaning": {
             "en": "enthusiasm",
-            "es": ""
+            "es": "por fin; finalmente"
         },
-        "furigana": "",
+        "furigana": "ねっしん",
         "romaji": "nesshin",
         "level": 4
     },
@@ -2343,7 +2343,7 @@
         "word": "講堂",
         "meaning": {
             "en": "auditorium",
-            "es": ""
+            "es": "herramienta; medio"
         },
         "furigana": "こうどう",
         "romaji": "kōdō",
@@ -2353,9 +2353,9 @@
         "word": "もし",
         "meaning": {
             "en": "if",
-            "es": ""
+            "es": "pastel; tarta"
         },
-        "furigana": "",
+        "furigana": "もし",
         "romaji": "moshi",
         "level": 4
     },
@@ -2363,9 +2363,9 @@
         "word": "ぬれる",
         "meaning": {
             "en": "to get wet",
-            "es": ""
+            "es": "afueras"
         },
-        "furigana": "",
+        "furigana": "ぬれる",
         "romaji": "nureru",
         "level": 4
     },
@@ -2373,7 +2373,7 @@
         "word": "非常に",
         "meaning": {
             "en": "extremely",
-            "es": ""
+            "es": "juguete"
         },
         "furigana": "ひじょうに",
         "romaji": "hijōni",
@@ -2383,7 +2383,7 @@
         "word": "文法",
         "meaning": {
             "en": "grammar",
-            "es": ""
+            "es": "últimamente; hoy en día"
         },
         "furigana": "ぶんぽう",
         "romaji": "bunpō",
@@ -2393,7 +2393,7 @@
         "word": "表",
         "meaning": {
             "en": "the front",
-            "es": ""
+            "es": "por supuesto"
         },
         "furigana": "おもて",
         "romaji": "omote",
@@ -2403,9 +2403,9 @@
         "word": "おっしゃる",
         "meaning": {
             "en": "(respectful) to say",
-            "es": ""
+            "es": "pronóstico del tiempo"
         },
-        "furigana": "",
+        "furigana": "おっしゃる",
         "romaji": "ossharu",
         "level": 4
     },
@@ -2413,7 +2413,7 @@
         "word": "西洋",
         "meaning": {
             "en": "western countries",
-            "es": ""
+            "es": "medio de transporte; vehículo"
         },
         "furigana": "せいよう",
         "romaji": "seiyō",
@@ -2423,7 +2423,7 @@
         "word": "両方",
         "meaning": {
             "en": "both sides",
-            "es": ""
+            "es": "fallecer"
         },
         "furigana": "りょうほう",
         "romaji": "ryōhō",
@@ -2433,7 +2433,7 @@
         "word": "払う",
         "meaning": {
             "en": "to pay",
-            "es": ""
+            "es": "preguntar"
         },
         "furigana": "はらう",
         "romaji": "harau",
@@ -2443,7 +2443,7 @@
         "word": "地理",
         "meaning": {
             "en": "geography",
-            "es": ""
+            "es": "pelo; cabello"
         },
         "furigana": "ちり",
         "romaji": "chiri",
@@ -2453,9 +2453,9 @@
         "word": "あかちゃん",
         "meaning": {
             "en": "infant",
-            "es": ""
+            "es": "sección de ventas; mostrador"
         },
-        "furigana": "",
+        "furigana": "あかちゃん",
         "romaji": "akachan",
         "level": 4
     },
@@ -2463,7 +2463,7 @@
         "word": "似る",
         "meaning": {
             "en": "to be similar",
-            "es": ""
+            "es": "ropa interior"
         },
         "furigana": "にる",
         "romaji": "niru",
@@ -2473,7 +2473,7 @@
         "word": "踊る",
         "meaning": {
             "en": "to dance",
-            "es": ""
+            "es": "sonar"
         },
         "furigana": "おどる",
         "romaji": "odoru",
@@ -2483,9 +2483,9 @@
         "word": "うれしい",
         "meaning": {
             "en": "glad",
-            "es": ""
+            "es": "aeródromo"
         },
-        "furigana": "",
+        "furigana": "うれしい",
         "romaji": "ureshii",
         "level": 4
     },
@@ -2493,7 +2493,7 @@
         "word": "事故",
         "meaning": {
             "en": "accident",
-            "es": ""
+            "es": "capital; prefectura metropolitana"
         },
         "furigana": "じこ",
         "romaji": "jiko",
@@ -2503,9 +2503,9 @@
         "word": "さっき",
         "meaning": {
             "en": "some time ago",
-            "es": ""
+            "es": "amabilidad"
         },
-        "furigana": "",
+        "furigana": "さっき",
         "romaji": "sakki",
         "level": 4
     },
@@ -2513,7 +2513,7 @@
         "word": "赤ん坊",
         "meaning": {
             "en": "baby",
-            "es": ""
+            "es": "política; gobierno"
         },
         "furigana": "あかんぼう",
         "romaji": "akanbō",
@@ -2523,7 +2523,7 @@
         "word": "寂しい",
         "meaning": {
             "en": "lonely",
-            "es": ""
+            "es": "reserva"
         },
         "furigana": "さびしい",
         "romaji": "sabishii",
@@ -2533,7 +2533,7 @@
         "word": "複雑",
         "meaning": {
             "en": "complexity, complication",
-            "es": ""
+            "es": "llorar"
         },
         "furigana": "ふくざつ",
         "romaji": "fukuzatsu",
@@ -2543,7 +2543,7 @@
         "word": "眠る",
         "meaning": {
             "en": "to sleep",
-            "es": ""
+            "es": "de forma recta; de repente"
         },
         "furigana": "ねむる",
         "romaji": "nemuru",
@@ -2553,7 +2553,7 @@
         "word": "近所",
         "meaning": {
             "en": "neighbourhood",
-            "es": ""
+            "es": "(informal) tú (usado por hombres al dirigirse a mujeres)"
         },
         "furigana": "きんじょ",
         "romaji": "kinjo",
@@ -2563,9 +2563,9 @@
         "word": "ごみ",
         "meaning": {
             "en": "rubbish",
-            "es": ""
+            "es": "hija"
         },
-        "furigana": "",
+        "furigana": "ごみ",
         "romaji": "gomi",
         "level": 4
     },
@@ -2573,7 +2573,7 @@
         "word": "例えば",
         "meaning": {
             "en": "for example",
-            "es": ""
+            "es": "pisar"
         },
         "furigana": "たとえば",
         "romaji": "tatoeba",
@@ -2583,9 +2583,9 @@
         "word": "チェック・する",
         "meaning": {
             "en": "to check",
-            "es": ""
+            "es": "dependiente; empleado de tienda"
         },
-        "furigana": "",
+        "furigana": "ちぇっく・する",
         "romaji": "chekku-suru",
         "level": 4
     },
@@ -2593,7 +2593,7 @@
         "word": "御主人",
         "meaning": {
             "en": "(honorable) your husband",
-            "es": ""
+            "es": "ir regularmente; desplazarse (al trabajo o los estudios)"
         },
         "furigana": "ごしゅじん",
         "romaji": "goshujin",
@@ -2603,9 +2603,9 @@
         "word": "テキスト",
         "meaning": {
             "en": "text, text book",
-            "es": ""
+            "es": "ella; novia"
         },
-        "furigana": "",
+        "furigana": "てきすと",
         "romaji": "tekisuto",
         "level": 4
     },
@@ -2613,9 +2613,9 @@
         "word": "ごちそう",
         "meaning": {
             "en": "a feast",
-            "es": ""
+            "es": "lugar; ubicación"
         },
-        "furigana": "",
+        "furigana": "ごちそう",
         "romaji": "gochisō",
         "level": 4
     },
@@ -2623,7 +2623,7 @@
         "word": "起す",
         "meaning": {
             "en": "to wake",
-            "es": ""
+            "es": "algodón"
         },
         "furigana": "おこす",
         "romaji": "okosu",
@@ -2633,9 +2633,9 @@
         "word": "テニス",
         "meaning": {
             "en": "tennis",
-            "es": ""
+            "es": "tatami; estera japonesa de paja"
         },
-        "furigana": "",
+        "furigana": "てにす",
         "romaji": "tenisu",
         "level": 4
     },
@@ -2643,9 +2643,9 @@
         "word": "パソコン",
         "meaning": {
             "en": "personal computer",
-            "es": ""
+            "es": "parte de atrás; reverso"
         },
-        "furigana": "",
+        "furigana": "ぱそこん",
         "romaji": "pasokon",
         "level": 4
     },
@@ -2653,7 +2653,7 @@
         "word": "研究",
         "meaning": {
             "en": "research",
-            "es": ""
+            "es": "sorprenderse"
         },
         "furigana": "けんきゅう",
         "romaji": "kenkyū",
@@ -2663,7 +2663,7 @@
         "word": "聞こえる",
         "meaning": {
             "en": "to be heard",
-            "es": ""
+            "es": "terremoto"
         },
         "furigana": "きこえる",
         "romaji": "kikoeru",
@@ -2673,7 +2673,7 @@
         "word": "間違える",
         "meaning": {
             "en": "to make a mistake",
-            "es": ""
+            "es": "lago"
         },
         "furigana": "まちがえる",
         "romaji": "machigaeru",
@@ -2683,7 +2683,7 @@
         "word": "看護婦",
         "meaning": {
             "en": "female nurse",
-            "es": ""
+            "es": "peligro"
         },
         "furigana": "かんごふ",
         "romaji": "kangofu",
@@ -2693,7 +2693,7 @@
         "word": "会議室",
         "meaning": {
             "en": "meeting room",
-            "es": ""
+            "es": "partir; salir"
         },
         "furigana": "かいぎしつ",
         "romaji": "kaigishitsu",
@@ -2703,9 +2703,9 @@
         "word": "とこや",
         "meaning": {
             "en": "barber",
-            "es": ""
+            "es": "preparación anticipada de una lección"
         },
-        "furigana": "",
+        "furigana": "とこや",
         "romaji": "tokoya",
         "level": 4
     },
@@ -2713,7 +2713,7 @@
         "word": "試合",
         "meaning": {
             "en": "match, game",
-            "es": ""
+            "es": "futuro; perspectivas"
         },
         "furigana": "しあい",
         "romaji": "shiai",
@@ -2723,7 +2723,7 @@
         "word": "止む",
         "meaning": {
             "en": "to stop",
-            "es": ""
+            "es": "juego; diversión"
         },
         "furigana": "やむ",
         "romaji": "yamu",
@@ -2733,9 +2733,9 @@
         "word": "のど",
         "meaning": {
             "en": "throat",
-            "es": ""
+            "es": "cambiar"
         },
-        "furigana": "",
+        "furigana": "のど",
         "romaji": "nodo",
         "level": 4
     },
@@ -2743,7 +2743,7 @@
         "word": "戦争",
         "meaning": {
             "en": "war",
-            "es": ""
+            "es": "judo"
         },
         "furigana": "せんそう",
         "romaji": "sensō",
@@ -2753,7 +2753,7 @@
         "word": "降り出す",
         "meaning": {
             "en": "to start to rain",
-            "es": ""
+            "es": "explicación"
         },
         "furigana": "ふりだす",
         "romaji": "furidasu",
@@ -2763,9 +2763,9 @@
         "word": "コンピュータ / コンピューター",
         "meaning": {
             "en": "computer",
-            "es": ""
+            "es": "respuesta; contestación"
         },
-        "furigana": "",
+        "furigana": "こんぴゅーた / こんぴゅーたー",
         "romaji": "konpyūta / konpyūtā",
         "level": 4
     },
@@ -2773,7 +2773,7 @@
         "word": "盛ん",
         "meaning": {
             "en": "popularity, prosperous",
-            "es": ""
+            "es": "especial"
         },
         "furigana": "さかん",
         "romaji": "sakan",
@@ -2783,7 +2783,7 @@
         "word": "取り替える",
         "meaning": {
             "en": "to exchange",
-            "es": ""
+            "es": "bajarse; descender"
         },
         "furigana": "とりかえる",
         "romaji": "torikaeru",
@@ -2793,7 +2793,7 @@
         "word": "支度",
         "meaning": {
             "en": "to prepare",
-            "es": ""
+            "es": "calefacción"
         },
         "furigana": "したく・する",
         "romaji": "shitaku-suru",
@@ -2803,7 +2803,7 @@
         "word": "社会",
         "meaning": {
             "en": "society, public",
-            "es": ""
+            "es": "transmitir; comunicar"
         },
         "furigana": "しゃかい",
         "romaji": "shakai",
@@ -2813,7 +2813,7 @@
         "word": "沸く",
         "meaning": {
             "en": "to boil, to grow hot, to get excited",
-            "es": ""
+            "es": "exposición"
         },
         "furigana": "わく",
         "romaji": "waku",
@@ -2823,9 +2823,9 @@
         "word": "ちっとも",
         "meaning": {
             "en": "not at all (used with a negative verb)",
-            "es": ""
+            "es": "gasolina"
         },
-        "furigana": "",
+        "furigana": "ちっとも",
         "romaji": "chittomo",
         "level": 4
     },
@@ -2833,9 +2833,9 @@
         "word": "おかげ",
         "meaning": {
             "en": "owing to",
-            "es": ""
+            "es": "bastante; considerablemente"
         },
-        "furigana": "",
+        "furigana": "おかげ",
         "romaji": "okage",
         "level": 4
     },
@@ -2843,9 +2843,9 @@
         "word": "ステーキ",
         "meaning": {
             "en": "steak",
-            "es": ""
+            "es": "hilo"
         },
-        "furigana": "",
+        "furigana": "すてーき",
         "romaji": "sutēki",
         "level": 4
     },
@@ -2853,7 +2853,7 @@
         "word": "消しゴム",
         "meaning": {
             "en": "eraser",
-            "es": ""
+            "es": "el doble; dos veces más"
         },
         "furigana": "けしゴム",
         "romaji": "keshigomu",
@@ -2863,7 +2863,7 @@
         "word": "遠慮",
         "meaning": {
             "en": "to be reserved, to be restrained",
-            "es": ""
+            "es": "jefe de sección"
         },
         "furigana": "えんりょ・する",
         "romaji": "enryo-suru",
@@ -2873,7 +2873,7 @@
         "word": "工場",
         "meaning": {
             "en": "factory",
-            "es": ""
+            "es": "visita turística; contemplación"
         },
         "furigana": "こうじょう",
         "romaji": "kōjō",
@@ -2883,7 +2883,7 @@
         "word": "僕",
         "meaning": {
             "en": "I (used by males)",
-            "es": ""
+            "es": "gasolinera"
         },
         "furigana": "ぼく",
         "romaji": "boku",
@@ -2893,7 +2893,7 @@
         "word": "招待",
         "meaning": {
             "en": "to invite",
-            "es": ""
+            "es": "asiento; sitio"
         },
         "furigana": "しょうたい・する",
         "romaji": "shōtai-suru",
@@ -2903,7 +2903,7 @@
         "word": "彼",
         "meaning": {
             "en": "he, boyfriend",
-            "es": ""
+            "es": "relación"
         },
         "furigana": "かれ",
         "romaji": "kare",
@@ -2913,7 +2913,7 @@
         "word": "妻",
         "meaning": {
             "en": "(humble) wife",
-            "es": ""
+            "es": "(humilde) mirar; ver"
         },
         "furigana": "つま",
         "romaji": "tsuma",
@@ -2923,7 +2923,7 @@
         "word": "石",
         "meaning": {
             "en": "stone",
-            "es": ""
+            "es": "tifón"
         },
         "furigana": "いし",
         "romaji": "ishi",
@@ -2933,7 +2933,7 @@
         "word": "簡単",
         "meaning": {
             "en": "simple",
-            "es": ""
+            "es": "ordenar; recoger"
         },
         "furigana": "かんたん",
         "romaji": "kantan",
@@ -2943,7 +2943,7 @@
         "word": "残念",
         "meaning": {
             "en": "disappointment",
-            "es": ""
+            "es": "barca; barco"
         },
         "furigana": "ざんねん",
         "romaji": "zannen",
@@ -2953,7 +2953,7 @@
         "word": "血",
         "meaning": {
             "en": "blood",
-            "es": ""
+            "es": "o; de lo contrario"
         },
         "furigana": "ち",
         "romaji": "chi",
@@ -2963,9 +2963,9 @@
         "word": "ピアノ",
         "meaning": {
             "en": "piano",
-            "es": ""
+            "es": "educación"
         },
-        "furigana": "",
+        "furigana": "ぴあの",
         "romaji": "piano",
         "level": 4
     },
@@ -2973,9 +2973,9 @@
         "word": "おかしい",
         "meaning": {
             "en": "strange or funny",
-            "es": ""
+            "es": "mudarse de casa"
         },
-        "furigana": "",
+        "furigana": "おかしい",
         "romaji": "okashii",
         "level": 4
     },
@@ -2983,7 +2983,7 @@
         "word": "家内",
         "meaning": {
             "en": "housewife",
-            "es": ""
+            "es": "reunión"
         },
         "furigana": "かない",
         "romaji": "kanai",
@@ -2993,7 +2993,7 @@
         "word": "試験",
         "meaning": {
             "en": "examination",
-            "es": ""
+            "es": "arroz crudo (sin cocer)"
         },
         "furigana": "しけん",
         "romaji": "shiken",
@@ -3003,7 +3003,7 @@
         "word": "布団",
         "meaning": {
             "en": "Japanese bedding, futon",
-            "es": ""
+            "es": "futón japonés"
         },
         "furigana": "ふとん",
         "romaji": "futon",
@@ -3013,7 +3013,7 @@
         "word": "枝",
         "meaning": {
             "en": "branch, twig",
-            "es": ""
+            "es": "rama; ramita"
         },
         "furigana": "えだ",
         "romaji": "eda",
@@ -3023,7 +3023,7 @@
         "word": "二階建て",
         "meaning": {
             "en": "two storied",
-            "es": ""
+            "es": "de dos plantas; de dos pisos"
         },
         "furigana": "にかいだて",
         "romaji": "nikaidate",
@@ -3033,7 +3033,7 @@
         "word": "大学生",
         "meaning": {
             "en": "university student",
-            "es": ""
+            "es": "estudiante universitario"
         },
         "furigana": "だいがくせい",
         "romaji": "daigakusei",
@@ -3043,7 +3043,7 @@
         "word": "楽む",
         "meaning": {
             "en": "to enjoy oneself",
-            "es": ""
+            "es": "disfrutar; pasarlo bien"
         },
         "furigana": "たのしむ",
         "romaji": "tanoshimu",
@@ -3053,7 +3053,7 @@
         "word": "遠く",
         "meaning": {
             "en": "distant",
-            "es": ""
+            "es": "lejano; a lo lejos"
         },
         "furigana": "とおく",
         "romaji": "tōku",
@@ -3063,7 +3063,7 @@
         "word": "今夜",
         "meaning": {
             "en": "tonight",
-            "es": ""
+            "es": "esta noche"
         },
         "furigana": "こんや",
         "romaji": "kon'ya",
@@ -3073,7 +3073,7 @@
         "word": "決める",
         "meaning": {
             "en": "to decide",
-            "es": ""
+            "es": "decidir"
         },
         "furigana": "きめる",
         "romaji": "kimeru",
@@ -3083,9 +3083,9 @@
         "word": "なるべく",
         "meaning": {
             "en": "as much as possible",
-            "es": ""
+            "es": "en la medida de lo posible"
         },
-        "furigana": "",
+        "furigana": "なるべく",
         "romaji": "narubeku",
         "level": 4
     },
@@ -3093,7 +3093,7 @@
         "word": "引き出す",
         "meaning": {
             "en": "to withdraw",
-            "es": ""
+            "es": "retirar; sacar"
         },
         "furigana": "ひきだす",
         "romaji": "hikidasu",
@@ -3103,7 +3103,7 @@
         "word": "明日",
         "meaning": {
             "en": "tomorrow",
-            "es": ""
+            "es": "mañana"
         },
         "furigana": "あす",
         "romaji": "asu",
@@ -3113,7 +3113,7 @@
         "word": "割れる",
         "meaning": {
             "en": "to break",
-            "es": ""
+            "es": "romperse"
         },
         "furigana": "われる",
         "romaji": "wareru",
@@ -3123,7 +3123,7 @@
         "word": "田舎",
         "meaning": {
             "en": "countryside",
-            "es": ""
+            "es": "campo; zona rural"
         },
         "furigana": "いなか",
         "romaji": "inaka",
@@ -3133,7 +3133,7 @@
         "word": "寺",
         "meaning": {
             "en": "temple",
-            "es": ""
+            "es": "templo"
         },
         "furigana": "てら",
         "romaji": "tera",
@@ -3143,7 +3143,7 @@
         "word": "釣る",
         "meaning": {
             "en": "to fish",
-            "es": ""
+            "es": "pescar"
         },
         "furigana": "つる",
         "romaji": "tsuru",
@@ -3153,7 +3153,7 @@
         "word": "建てる",
         "meaning": {
             "en": "to build",
-            "es": ""
+            "es": "construir; edificar"
         },
         "furigana": "たてる",
         "romaji": "tateru",
@@ -3163,7 +3163,7 @@
         "word": "久しぶり",
         "meaning": {
             "en": "after a long time",
-            "es": ""
+            "es": "después de mucho tiempo; hacía mucho que"
         },
         "furigana": "ひさしぶり",
         "romaji": "hisashiburi",
@@ -3173,7 +3173,7 @@
         "word": "男性",
         "meaning": {
             "en": "male",
-            "es": ""
+            "es": "hombre; masculino"
         },
         "furigana": "だんせい",
         "romaji": "dansei",
@@ -3183,7 +3183,7 @@
         "word": "割合",
         "meaning": {
             "en": "rate, ratio, percentage",
-            "es": ""
+            "es": "proporción; tasa; porcentaje"
         },
         "furigana": "わりあい",
         "romaji": "wariai",
@@ -3193,7 +3193,7 @@
         "word": "相談",
         "meaning": {
             "en": "to discuss",
-            "es": ""
+            "es": "consultar; hablar sobre"
         },
         "furigana": "そうだん・する",
         "romaji": "sōdan-suru",
@@ -3203,7 +3203,7 @@
         "word": "足す",
         "meaning": {
             "en": "to add a number",
-            "es": ""
+            "es": "sumar; añadir un número"
         },
         "furigana": "たす",
         "romaji": "tasu",
@@ -3213,7 +3213,7 @@
         "word": "社長",
         "meaning": {
             "en": "company president",
-            "es": ""
+            "es": "presidente de empresa"
         },
         "furigana": "しゃちょう",
         "romaji": "shachō",
@@ -3223,7 +3223,7 @@
         "word": "経験",
         "meaning": {
             "en": "to experience",
-            "es": ""
+            "es": "experimentar; tener experiencia"
         },
         "furigana": "けいけん・する",
         "romaji": "keiken-suru",
@@ -3233,7 +3233,7 @@
         "word": "訳",
         "meaning": {
             "en": "meaning, reason",
-            "es": ""
+            "es": "significado; razón"
         },
         "furigana": "わけ",
         "romaji": "wake",
@@ -3243,7 +3243,7 @@
         "word": "足りる",
         "meaning": {
             "en": "to be enough",
-            "es": ""
+            "es": "ser suficiente; bastar"
         },
         "furigana": "たりる",
         "romaji": "tariru",
@@ -3253,7 +3253,7 @@
         "word": "味噌",
         "meaning": {
             "en": "bean paste",
-            "es": ""
+            "es": "pasta de soja fermentada (miso)"
         },
         "furigana": "みそ",
         "romaji": "miso",
@@ -3263,9 +3263,9 @@
         "word": "もらう",
         "meaning": {
             "en": "to receive",
-            "es": ""
+            "es": "recibir"
         },
-        "furigana": "",
+        "furigana": "もらう",
         "romaji": "morau",
         "level": 4
     },
@@ -3273,9 +3273,9 @@
         "word": "どんどん",
         "meaning": {
             "en": "more and more",
-            "es": ""
+            "es": "cada vez más; sin parar"
         },
-        "furigana": "",
+        "furigana": "どんどん",
         "romaji": "dondon",
         "level": 4
     },
@@ -3283,7 +3283,7 @@
         "word": "工業",
         "meaning": {
             "en": "the manufacturing industry",
-            "es": ""
+            "es": "industria manufacturera"
         },
         "furigana": "こうぎょう",
         "romaji": "kōgyō",
@@ -3293,7 +3293,7 @@
         "word": "終わり",
         "meaning": {
             "en": "the end",
-            "es": ""
+            "es": "final; fin"
         },
         "furigana": "おわり",
         "romaji": "owari",
@@ -3303,9 +3303,9 @@
         "word": "いじめる",
         "meaning": {
             "en": "to tease",
-            "es": ""
+            "es": "burlarse de; tomar el pelo"
         },
-        "furigana": "",
+        "furigana": "いじめる",
         "romaji": "ijimeru",
         "level": 4
     },
@@ -3313,7 +3313,7 @@
         "word": "立てる",
         "meaning": {
             "en": "to stand something up",
-            "es": ""
+            "es": "poner de pie; erigir"
         },
         "furigana": "たてる",
         "romaji": "tateru",
@@ -3323,7 +3323,7 @@
         "word": "歴史",
         "meaning": {
             "en": "history",
-            "es": ""
+            "es": "historia"
         },
         "furigana": "れきし",
         "romaji": "rekishi",
@@ -3333,9 +3333,9 @@
         "word": "おいでになる",
         "meaning": {
             "en": "(respectful) to be",
-            "es": ""
+            "es": "estar; encontrarse (honorífico)"
         },
-        "furigana": "",
+        "furigana": "おいでになる",
         "romaji": "oideninaru",
         "level": 4
     },
@@ -3343,9 +3343,9 @@
         "word": "うち",
         "meaning": {
             "en": "within",
-            "es": ""
+            "es": "dentro; en el interior"
         },
-        "furigana": "",
+        "furigana": "うち",
         "romaji": "uchi",
         "level": 4
     },
@@ -3353,9 +3353,9 @@
         "word": "それで",
         "meaning": {
             "en": "because of that",
-            "es": ""
+            "es": "por eso; debido a eso"
         },
-        "furigana": "",
+        "furigana": "それで",
         "romaji": "sorede",
         "level": 4
     },
@@ -3363,9 +3363,9 @@
         "word": "ワープロ",
         "meaning": {
             "en": "word processor",
-            "es": ""
+            "es": "procesador de textos"
         },
-        "furigana": "",
+        "furigana": "わーぷろ",
         "romaji": "wāpuro",
         "level": 4
     },
@@ -3373,7 +3373,7 @@
         "word": "漫画",
         "meaning": {
             "en": "comic",
-            "es": ""
+            "es": "cómic; manga"
         },
         "furigana": "まんが",
         "romaji": "manga",
@@ -3383,7 +3383,7 @@
         "word": "親",
         "meaning": {
             "en": "parents",
-            "es": ""
+            "es": "padre o madre; padres"
         },
         "furigana": "おや",
         "romaji": "oya",
@@ -3393,7 +3393,7 @@
         "word": "安全",
         "meaning": {
             "en": "safety",
-            "es": ""
+            "es": "seguridad"
         },
         "furigana": "あんぜん",
         "romaji": "anzen",
@@ -3403,7 +3403,7 @@
         "word": "案内",
         "meaning": {
             "en": "to guide",
-            "es": ""
+            "es": "guiar; informar"
         },
         "furigana": "あんない・する",
         "romaji": "annai-suru",
@@ -3413,7 +3413,7 @@
         "word": "棚",
         "meaning": {
             "en": "shelves",
-            "es": ""
+            "es": "estantería; estantes"
         },
         "furigana": "たな",
         "romaji": "tana",
@@ -3423,7 +3423,7 @@
         "word": "不便",
         "meaning": {
             "en": "inconvenience",
-            "es": ""
+            "es": "inconveniente; falta de comodidad"
         },
         "furigana": "ふべん",
         "romaji": "fuben",
@@ -3433,7 +3433,7 @@
         "word": "間",
         "meaning": {
             "en": "a space",
-            "es": ""
+            "es": "espacio; intervalo"
         },
         "furigana": "あいだ",
         "romaji": "aida",
@@ -3443,7 +3443,7 @@
         "word": "恥ずかしい",
         "meaning": {
             "en": "embarrassed",
-            "es": ""
+            "es": "avergonzado; sentir vergüenza"
         },
         "furigana": "はずかしい",
         "romaji": "hazukashii",
@@ -3453,7 +3453,7 @@
         "word": "打つ",
         "meaning": {
             "en": "to hit",
-            "es": ""
+            "es": "golpear; pegar"
         },
         "furigana": "うつ",
         "romaji": "utsu",
@@ -3463,7 +3463,7 @@
         "word": "倒れる",
         "meaning": {
             "en": "to break down",
-            "es": ""
+            "es": "derrumbarse; averiarse"
         },
         "furigana": "たおれる",
         "romaji": "taoreru",
@@ -3473,7 +3473,7 @@
         "word": "光",
         "meaning": {
             "en": "light",
-            "es": ""
+            "es": "luz"
         },
         "furigana": "ひかり",
         "romaji": "hikari",
@@ -3483,7 +3483,7 @@
         "word": "交通",
         "meaning": {
             "en": "traffic, transportation",
-            "es": ""
+            "es": "tráfico; transporte"
         },
         "furigana": "こうつう",
         "romaji": "kōtsū",
@@ -3493,9 +3493,9 @@
         "word": "やはり / やっぱり",
         "meaning": {
             "en": "as I thought, absolutely",
-            "es": ""
+            "es": "como pensaba; efectivamente"
         },
-        "furigana": "",
+        "furigana": "やはり / やっぱり",
         "romaji": "yahari / yappari",
         "level": 4
     },
@@ -3503,9 +3503,9 @@
         "word": "スクリーン",
         "meaning": {
             "en": "screen",
-            "es": ""
+            "es": "pantalla"
         },
-        "furigana": "",
+        "furigana": "すくりーん",
         "romaji": "sukurīn",
         "level": 4
     },
@@ -3513,7 +3513,7 @@
         "word": "細かい",
         "meaning": {
             "en": "small, fine",
-            "es": ""
+            "es": "pequeño; fino; minucioso"
         },
         "furigana": "こまかい",
         "romaji": "komakai",
@@ -3523,7 +3523,7 @@
         "word": "夫",
         "meaning": {
             "en": "husband",
-            "es": ""
+            "es": "marido; esposo"
         },
         "furigana": "おっと",
         "romaji": "otto",
@@ -3533,7 +3533,7 @@
         "word": "差し上げる",
         "meaning": {
             "en": "(polite) to give",
-            "es": ""
+            "es": "dar (humilde y cortés)"
         },
         "furigana": "さしあげる",
         "romaji": "sashiageru",
@@ -3543,7 +3543,7 @@
         "word": "壊す",
         "meaning": {
             "en": "to break",
-            "es": ""
+            "es": "romper; estropear"
         },
         "furigana": "こわす",
         "romaji": "kowasu",
@@ -3553,9 +3553,9 @@
         "word": "そんな",
         "meaning": {
             "en": "that sort of",
-            "es": ""
+            "es": "ese tipo de; tal"
         },
-        "furigana": "",
+        "furigana": "そんな",
         "romaji": "sonna",
         "level": 4
     },
@@ -3563,9 +3563,9 @@
         "word": "レジ",
         "meaning": {
             "en": "register",
-            "es": ""
+            "es": "caja; caja registradora"
         },
-        "furigana": "",
+        "furigana": "れじ",
         "romaji": "reji",
         "level": 4
     },
@@ -3573,7 +3573,7 @@
         "word": "戻る",
         "meaning": {
             "en": "to turn back",
-            "es": ""
+            "es": "volver; regresar"
         },
         "furigana": "もどる",
         "romaji": "modoru",
@@ -3583,7 +3583,7 @@
         "word": "国際",
         "meaning": {
             "en": "international",
-            "es": ""
+            "es": "internacional"
         },
         "furigana": "こくさい",
         "romaji": "kokusai",
@@ -3593,7 +3593,7 @@
         "word": "音",
         "meaning": {
             "en": "sound, note",
-            "es": ""
+            "es": "sonido; nota musical"
         },
         "furigana": "おと",
         "romaji": "oto",
@@ -3603,9 +3603,9 @@
         "word": "はず",
         "meaning": {
             "en": "it should be so",
-            "es": ""
+            "es": "debería ser así; se supone que"
         },
-        "furigana": "",
+        "furigana": "はず",
         "romaji": "hazu",
         "level": 4
     },
@@ -3613,7 +3613,7 @@
         "word": "必要",
         "meaning": {
             "en": "necessary",
-            "es": ""
+            "es": "necesario; necesario/a"
         },
         "furigana": "ひつよう",
         "romaji": "hitsuyō",
@@ -3623,7 +3623,7 @@
         "word": "産業",
         "meaning": {
             "en": "industry",
-            "es": ""
+            "es": "industria"
         },
         "furigana": "さんぎょう",
         "romaji": "sangyō",
@@ -3633,7 +3633,7 @@
         "word": "進む",
         "meaning": {
             "en": "to make progress",
-            "es": ""
+            "es": "avanzar; progresar"
         },
         "furigana": "すすむ",
         "romaji": "susumu",
@@ -3643,9 +3643,9 @@
         "word": "しばらく",
         "meaning": {
             "en": "little while",
-            "es": ""
+            "es": "un rato; durante un tiempo"
         },
-        "furigana": "",
+        "furigana": "しばらく",
         "romaji": "shibaraku",
         "level": 4
     },
@@ -3653,7 +3653,7 @@
         "word": "鏡",
         "meaning": {
             "en": "mirror",
-            "es": ""
+            "es": "espejo"
         },
         "furigana": "かがみ",
         "romaji": "kagami",
@@ -3663,9 +3663,9 @@
         "word": "ソフト",
         "meaning": {
             "en": "soft",
-            "es": ""
+            "es": "software; blando"
         },
-        "furigana": "",
+        "furigana": "そふと",
         "romaji": "sofuto",
         "level": 4
     },
@@ -3673,9 +3673,9 @@
         "word": "ちゃん",
         "meaning": {
             "en": "suffix for familiar female person",
-            "es": ""
+            "es": "sufijo familiar para una mujer o niña"
         },
-        "furigana": "",
+        "furigana": "ちゃん",
         "romaji": "chan",
         "level": 4
     },
@@ -3683,7 +3683,7 @@
         "word": "日",
         "meaning": {
             "en": "day, sun",
-            "es": ""
+            "es": "día; sol"
         },
         "furigana": "ひ",
         "romaji": "hi",
@@ -3693,7 +3693,7 @@
         "word": "珍しい",
         "meaning": {
             "en": "rare",
-            "es": ""
+            "es": "raro; poco común"
         },
         "furigana": "めずらしい",
         "romaji": "mezurashii",
@@ -3703,7 +3703,7 @@
         "word": "都合",
         "meaning": {
             "en": "circumstances, convenience",
-            "es": ""
+            "es": "circunstancias; conveniencia"
         },
         "furigana": "つごう",
         "romaji": "tsugō",
@@ -3713,7 +3713,7 @@
         "word": "忘れ物",
         "meaning": {
             "en": "lost article",
-            "es": ""
+            "es": "objeto perdido; cosa olvidada"
         },
         "furigana": "わすれもの",
         "romaji": "wasuremono",
@@ -3723,7 +3723,7 @@
         "word": "驚く",
         "meaning": {
             "en": "to be surprised",
-            "es": ""
+            "es": "sorprenderse; asombrarse"
         },
         "furigana": "おどろく",
         "romaji": "odoroku",
@@ -3733,7 +3733,7 @@
         "word": "逃げる",
         "meaning": {
             "en": "to escape",
-            "es": ""
+            "es": "escapar; huir"
         },
         "furigana": "にげる",
         "romaji": "nigeru",
@@ -3743,7 +3743,7 @@
         "word": "心",
         "meaning": {
             "en": "core, heart",
-            "es": ""
+            "es": "corazón; esencia"
         },
         "furigana": "こころ",
         "romaji": "kokoro",
@@ -3753,9 +3753,9 @@
         "word": "つもり",
         "meaning": {
             "en": "intention",
-            "es": ""
+            "es": "intención; tener pensado"
         },
-        "furigana": "",
+        "furigana": "つもり",
         "romaji": "tsumori",
         "level": 4
     },
@@ -3763,7 +3763,7 @@
         "word": "中学校",
         "meaning": {
             "en": "junior high school, middle school",
-            "es": ""
+            "es": "escuela secundaria (primer ciclo)"
         },
         "furigana": "ちゅうがっこう",
         "romaji": "chūgakkō",
@@ -3773,7 +3773,7 @@
         "word": "隅",
         "meaning": {
             "en": "corner, nook",
-            "es": ""
+            "es": "rincón; esquina"
         },
         "furigana": "すみ",
         "romaji": "sumi",
@@ -3783,7 +3783,7 @@
         "word": "開く",
         "meaning": {
             "en": "to open an event",
-            "es": ""
+            "es": "inaugurar; abrir (un evento)"
         },
         "furigana": "ひらく",
         "romaji": "hiraku",
@@ -3793,9 +3793,9 @@
         "word": "ジャム",
         "meaning": {
             "en": "jam",
-            "es": ""
+            "es": "mermelada"
         },
-        "furigana": "",
+        "furigana": "じゃむ",
         "romaji": "jamu",
         "level": 4
     },
@@ -3803,7 +3803,7 @@
         "word": "決る",
         "meaning": {
             "en": "to be decided",
-            "es": ""
+            "es": "decidirse; quedar decidido"
         },
         "furigana": "きまる",
         "romaji": "kimaru",
@@ -3813,7 +3813,7 @@
         "word": "力",
         "meaning": {
             "en": "strength, power",
-            "es": ""
+            "es": "fuerza; poder"
         },
         "furigana": "ちから",
         "romaji": "chikara",
@@ -3823,9 +3823,9 @@
         "word": "ねだん",
         "meaning": {
             "en": "price",
-            "es": ""
+            "es": "precio"
         },
-        "furigana": "",
+        "furigana": "ねだん",
         "romaji": "nedan",
         "level": 4
     },
@@ -3833,7 +3833,7 @@
         "word": "太る",
         "meaning": {
             "en": "to become fat",
-            "es": ""
+            "es": "engordar"
         },
         "furigana": "ふとる",
         "romaji": "futoru",
@@ -3843,7 +3843,7 @@
         "word": "計画",
         "meaning": {
             "en": "to plan",
-            "es": ""
+            "es": "planificar; plan"
         },
         "furigana": "けいかく・する",
         "romaji": "keikaku-suru",
@@ -3853,7 +3853,7 @@
         "word": "勝つ",
         "meaning": {
             "en": "to win",
-            "es": ""
+            "es": "ganar; vencer"
         },
         "furigana": "かつ",
         "romaji": "katsu",
@@ -3863,7 +3863,7 @@
         "word": "眠い",
         "meaning": {
             "en": "sleepy",
-            "es": ""
+            "es": "tener sueño; estar soñoliento"
         },
         "furigana": "ねむい",
         "romaji": "nemui",
@@ -3873,7 +3873,7 @@
         "word": "先輩",
         "meaning": {
             "en": "senior",
-            "es": ""
+            "es": "compañero/a veterano/a; superior"
         },
         "furigana": "せんぱい",
         "romaji": "senpai",
@@ -3883,7 +3883,7 @@
         "word": "翻訳",
         "meaning": {
             "en": "translation",
-            "es": ""
+            "es": "traducción; traducir"
         },
         "furigana": "ほんやく",
         "romaji": "hon'yaku",
@@ -3893,7 +3893,7 @@
         "word": "女性",
         "meaning": {
             "en": "woman",
-            "es": ""
+            "es": "mujer; femenino"
         },
         "furigana": "じょせい",
         "romaji": "josei",
@@ -3903,7 +3903,7 @@
         "word": "形",
         "meaning": {
             "en": "shape",
-            "es": ""
+            "es": "forma; figura"
         },
         "furigana": "かたち",
         "romaji": "katachi",
@@ -3913,7 +3913,7 @@
         "word": "ご存じ",
         "meaning": {
             "en": "knowing, acquaintance",
-            "es": ""
+            "es": "conocer (honorífico); conocimiento"
         },
         "furigana": "ごぞんじ",
         "romaji": "gozonji",
@@ -3923,9 +3923,9 @@
         "word": "あんな",
         "meaning": {
             "en": "such",
-            "es": ""
+            "es": "ese tipo de; así de"
         },
-        "furigana": "",
+        "furigana": "あんな",
         "romaji": "anna",
         "level": 4
     },
@@ -3933,9 +3933,9 @@
         "word": "このごろ",
         "meaning": {
             "en": "these days, nowadays",
-            "es": ""
+            "es": "últimamente; estos días"
         },
-        "furigana": "",
+        "furigana": "このごろ",
         "romaji": "konogoro",
         "level": 4
     },
@@ -3943,7 +3943,7 @@
         "word": "滑る",
         "meaning": {
             "en": "to slide, to slip",
-            "es": ""
+            "es": "resbalar; deslizarse"
         },
         "furigana": "すべる",
         "romaji": "suberu",
@@ -3953,7 +3953,7 @@
         "word": "沸かす",
         "meaning": {
             "en": "to boil, to heat",
-            "es": ""
+            "es": "hervir; calentar"
         },
         "furigana": "わかす",
         "romaji": "wakasu",
@@ -3963,7 +3963,7 @@
         "word": "移る",
         "meaning": {
             "en": "to move house or transfer",
-            "es": ""
+            "es": "mudarse; trasladarse"
         },
         "furigana": "うつる",
         "romaji": "utsuru",
@@ -3973,7 +3973,7 @@
         "word": "選ぶ",
         "meaning": {
             "en": "to choose",
-            "es": ""
+            "es": "elegir; escoger"
         },
         "furigana": "えらぶ",
         "romaji": "erabu",
@@ -3983,7 +3983,7 @@
         "word": "高校生",
         "meaning": {
             "en": "high school student",
-            "es": ""
+            "es": "estudiante de secundaria (segundo ciclo)"
         },
         "furigana": "こうこうせい",
         "romaji": "kōkōsei",
@@ -3993,7 +3993,7 @@
         "word": "さ来週",
         "meaning": {
             "en": "the week after next",
-            "es": ""
+            "es": "la semana después de la próxima; dentro de dos semanas"
         },
         "furigana": "さらいしゅう",
         "romaji": "saraishū",
@@ -4003,9 +4003,9 @@
         "word": "うん",
         "meaning": {
             "en": "(informal) yes",
-            "es": ""
+            "es": "(informal) sí"
         },
-        "furigana": "",
+        "furigana": "うん",
         "romaji": "un",
         "level": 4
     },
@@ -4013,7 +4013,7 @@
         "word": "帰り",
         "meaning": {
             "en": "return",
-            "es": ""
+            "es": "regreso; vuelta"
         },
         "furigana": "かえり",
         "romaji": "kaeri",
@@ -4023,7 +4023,7 @@
         "word": "湯",
         "meaning": {
             "en": "hot water",
-            "es": ""
+            "es": "agua caliente"
         },
         "furigana": "ゆ",
         "romaji": "yu",
@@ -4033,7 +4033,7 @@
         "word": "昔",
         "meaning": {
             "en": "olden days, former",
-            "es": ""
+            "es": "antaño; antiguo"
         },
         "furigana": "むかし",
         "romaji": "mukashi",
@@ -4043,7 +4043,7 @@
         "word": "味",
         "meaning": {
             "en": "flavour",
-            "es": ""
+            "es": "sabor"
         },
         "furigana": "あじ",
         "romaji": "aji",
@@ -4053,9 +4053,9 @@
         "word": "アジア",
         "meaning": {
             "en": "Asia",
-            "es": ""
+            "es": "Asia"
         },
-        "furigana": "",
+        "furigana": "あじあ",
         "romaji": "ajia",
         "level": 4
     },
@@ -4063,7 +4063,7 @@
         "word": "人形",
         "meaning": {
             "en": "doll, figure",
-            "es": ""
+            "es": "muñeca; figura"
         },
         "furigana": "にんぎょう",
         "romaji": "ningyō",
@@ -4073,7 +4073,7 @@
         "word": "治る",
         "meaning": {
             "en": "to be cured, to heal",
-            "es": ""
+            "es": "curarse; sanar"
         },
         "furigana": "なおる",
         "romaji": "naoru",
@@ -4083,7 +4083,7 @@
         "word": "自由",
         "meaning": {
             "en": "freedom",
-            "es": ""
+            "es": "libertad"
         },
         "furigana": "じゆう",
         "romaji": "jiyū",
@@ -4093,9 +4093,9 @@
         "word": "パート",
         "meaning": {
             "en": "part time",
-            "es": ""
+            "es": "trabajo a tiempo parcial"
         },
-        "furigana": "",
+        "furigana": "ぱーと",
         "romaji": "pāto",
         "level": 4
     },
@@ -4103,9 +4103,9 @@
         "word": "ガラス",
         "meaning": {
             "en": "a glass pane",
-            "es": ""
+            "es": "cristal (de una ventana)"
         },
-        "furigana": "",
+        "furigana": "がらす",
         "romaji": "garasu",
         "level": 4
     },
@@ -4113,7 +4113,7 @@
         "word": "大事",
         "meaning": {
             "en": "important, valuable, serious matter",
-            "es": ""
+            "es": "importante; valioso; asunto grave"
         },
         "furigana": "だいじ",
         "romaji": "daiji",
@@ -4123,7 +4123,7 @@
         "word": "遅れる",
         "meaning": {
             "en": "to be late",
-            "es": ""
+            "es": "llegar tarde; retrasarse"
         },
         "furigana": "おくれる",
         "romaji": "okureru",
@@ -4133,7 +4133,7 @@
         "word": "会場",
         "meaning": {
             "en": "assembly hall or meeting place",
-            "es": ""
+            "es": "lugar de reunión; recinto"
         },
         "furigana": "かいじょう",
         "romaji": "kaijō",
@@ -4143,9 +4143,9 @@
         "word": "あげる",
         "meaning": {
             "en": "to give",
-            "es": ""
+            "es": "dar"
         },
-        "furigana": "",
+        "furigana": "あげる",
         "romaji": "ageru",
         "level": 4
     },
@@ -4153,7 +4153,7 @@
         "word": "利用",
         "meaning": {
             "en": "utilization",
-            "es": ""
+            "es": "uso; utilización"
         },
         "furigana": "りよう",
         "romaji": "riyō",
@@ -4163,7 +4163,7 @@
         "word": "泳ぎ方",
         "meaning": {
             "en": "way of swimming",
-            "es": ""
+            "es": "manera de nadar"
         },
         "furigana": "およぎかた",
         "romaji": "oyogikata",
@@ -4173,7 +4173,7 @@
         "word": "普通",
         "meaning": {
             "en": "usually, or a train that stops at every station",
-            "es": ""
+            "es": "normalmente; tren local (que para en todas las estaciones)"
         },
         "furigana": "ふつう",
         "romaji": "futsū",
@@ -4183,9 +4183,9 @@
         "word": "ガス",
         "meaning": {
             "en": "petrol",
-            "es": ""
+            "es": "gasolina"
         },
-        "furigana": "",
+        "furigana": "がす",
         "romaji": "gasu",
         "level": 4
     },
@@ -4193,7 +4193,7 @@
         "word": "必ず",
         "meaning": {
             "en": "certainly, necessarily",
-            "es": ""
+            "es": "sin falta; necesariamente"
         },
         "furigana": "かならず",
         "romaji": "kanarazu",
@@ -4203,7 +4203,7 @@
         "word": "競争",
         "meaning": {
             "en": "competition",
-            "es": ""
+            "es": "competición"
         },
         "furigana": "きょうそう",
         "romaji": "kyōsō",
@@ -4213,7 +4213,7 @@
         "word": "承知",
         "meaning": {
             "en": "to consent",
-            "es": ""
+            "es": "aceptar; estar de acuerdo"
         },
         "furigana": "しょうち・する",
         "romaji": "shōchi-suru",
@@ -4223,7 +4223,7 @@
         "word": "焼く",
         "meaning": {
             "en": "to bake, to grill",
-            "es": ""
+            "es": "asar; hornear"
         },
         "furigana": "やく",
         "romaji": "yaku",
@@ -4233,7 +4233,7 @@
         "word": "別",
         "meaning": {
             "en": "different",
-            "es": ""
+            "es": "diferente"
         },
         "furigana": "べつ",
         "romaji": "betsu",
@@ -4243,7 +4243,7 @@
         "word": "過ぎる",
         "meaning": {
             "en": "to exceed",
-            "es": ""
+            "es": "superar; exceder"
         },
         "furigana": "すぎる",
         "romaji": "sugiru",
@@ -4253,7 +4253,7 @@
         "word": "連絡",
         "meaning": {
             "en": "contact",
-            "es": ""
+            "es": "contacto; comunicación"
         },
         "furigana": "れんらく",
         "romaji": "renraku",
@@ -4263,9 +4263,9 @@
         "word": "すると",
         "meaning": {
             "en": "then",
-            "es": ""
+            "es": "entonces"
         },
-        "furigana": "",
+        "furigana": "すると",
         "romaji": "suruto",
         "level": 4
     },
@@ -4273,7 +4273,7 @@
         "word": "暮れる",
         "meaning": {
             "en": "to get dark, to come to an end",
-            "es": ""
+            "es": "anochecer; llegar a su fin"
         },
         "furigana": "くれる",
         "romaji": "kureru",
@@ -4283,7 +4283,7 @@
         "word": "喜ぶ",
         "meaning": {
             "en": "to be delighted",
-            "es": ""
+            "es": "alegrarse"
         },
         "furigana": "よろこぶ",
         "romaji": "yorokobu",
@@ -4293,7 +4293,7 @@
         "word": "習慣",
         "meaning": {
             "en": "custom, manners",
-            "es": ""
+            "es": "costumbre; hábitos"
         },
         "furigana": "しゅうかん",
         "romaji": "shūkan",
@@ -4303,7 +4303,7 @@
         "word": "部長",
         "meaning": {
             "en": "head of a section",
-            "es": ""
+            "es": "jefe de departamento"
         },
         "furigana": "ぶちょう",
         "romaji": "buchō",
@@ -4313,7 +4313,7 @@
         "word": "祈る",
         "meaning": {
             "en": "to pray",
-            "es": ""
+            "es": "rezar"
         },
         "furigana": "いのる",
         "romaji": "inoru",
@@ -4323,7 +4323,7 @@
         "word": "水道",
         "meaning": {
             "en": "water supply",
-            "es": ""
+            "es": "suministro de agua; agua corriente"
         },
         "furigana": "すいどう",
         "romaji": "suidō",
@@ -4333,9 +4333,9 @@
         "word": "とうとう",
         "meaning": {
             "en": "finally, after all",
-            "es": ""
+            "es": "por fin; finalmente"
         },
-        "furigana": "",
+        "furigana": "とうとう",
         "romaji": "tōtō",
         "level": 4
     },
@@ -4343,7 +4343,7 @@
         "word": "道具",
         "meaning": {
             "en": "tool, means",
-            "es": ""
+            "es": "herramienta; medio"
         },
         "furigana": "どうぐ",
         "romaji": "dōgu",
@@ -4353,9 +4353,9 @@
         "word": "ケーキ",
         "meaning": {
             "en": "cake",
-            "es": ""
+            "es": "pastel; tarta"
         },
-        "furigana": "",
+        "furigana": "けーき",
         "romaji": "kēki",
         "level": 4
     },
@@ -4363,7 +4363,7 @@
         "word": "郊外",
         "meaning": {
             "en": "outskirts",
-            "es": ""
+            "es": "afueras"
         },
         "furigana": "こうがい",
         "romaji": "kōgai",
@@ -4373,9 +4373,9 @@
         "word": "おもちゃ",
         "meaning": {
             "en": "toy",
-            "es": ""
+            "es": "juguete"
         },
-        "furigana": "",
+        "furigana": "おもちゃ",
         "romaji": "omocha",
         "level": 4
     },
@@ -4383,7 +4383,7 @@
         "word": "最近",
         "meaning": {
             "en": "latest, nowadays",
-            "es": ""
+            "es": "últimamente; hoy en día"
         },
         "furigana": "さいきん",
         "romaji": "saikin",
@@ -4393,9 +4393,9 @@
         "word": "もちろん",
         "meaning": {
             "en": "of course",
-            "es": ""
+            "es": "por supuesto"
         },
-        "furigana": "",
+        "furigana": "もちろん",
         "romaji": "mochiron",
         "level": 4
     },
@@ -4403,7 +4403,7 @@
         "word": "天気予報",
         "meaning": {
             "en": "weather forecast",
-            "es": ""
+            "es": "pronóstico del tiempo"
         },
         "furigana": "てんきよほう",
         "romaji": "tenkiyohō",
@@ -4413,7 +4413,7 @@
         "word": "乗り物",
         "meaning": {
             "en": "vehicle",
-            "es": ""
+            "es": "medio de transporte; vehículo"
         },
         "furigana": "のりもの",
         "romaji": "norimono",
@@ -4423,7 +4423,7 @@
         "word": "亡くなる",
         "meaning": {
             "en": "to die",
-            "es": ""
+            "es": "fallecer"
         },
         "furigana": "なくなる",
         "romaji": "nakunaru",
@@ -4433,7 +4433,7 @@
         "word": "尋ねる",
         "meaning": {
             "en": "to ask",
-            "es": ""
+            "es": "preguntar"
         },
         "furigana": "たずねる",
         "romaji": "tazuneru",
@@ -4443,7 +4443,7 @@
         "word": "髪",
         "meaning": {
             "en": "hair",
-            "es": ""
+            "es": "pelo; cabello"
         },
         "furigana": "かみ",
         "romaji": "kami",
@@ -4453,7 +4453,7 @@
         "word": "売り場",
         "meaning": {
             "en": "place where things are sold",
-            "es": ""
+            "es": "sección de ventas; mostrador"
         },
         "furigana": "うりば",
         "romaji": "uriba",
@@ -4463,7 +4463,7 @@
         "word": "下着",
         "meaning": {
             "en": "underwear",
-            "es": ""
+            "es": "ropa interior"
         },
         "furigana": "したぎ",
         "romaji": "shitagi",
@@ -4473,7 +4473,7 @@
         "word": "鳴る",
         "meaning": {
             "en": "to sound",
-            "es": ""
+            "es": "sonar"
         },
         "furigana": "なる",
         "romaji": "naru",
@@ -4483,7 +4483,7 @@
         "word": "飛行場",
         "meaning": {
             "en": "airport",
-            "es": ""
+            "es": "aeródromo"
         },
         "furigana": "ひこうじょう",
         "romaji": "hikōjō",
@@ -4493,7 +4493,7 @@
         "word": "都",
         "meaning": {
             "en": "metropolitan",
-            "es": ""
+            "es": "capital; prefectura metropolitana"
         },
         "furigana": "と",
         "romaji": "to",
@@ -4503,7 +4503,7 @@
         "word": "親切",
         "meaning": {
             "en": "kindness",
-            "es": ""
+            "es": "amabilidad"
         },
         "furigana": "しんせつ",
         "romaji": "shinsetsu",
@@ -4513,7 +4513,7 @@
         "word": "政治",
         "meaning": {
             "en": "politics, government",
-            "es": ""
+            "es": "política; gobierno"
         },
         "furigana": "せいじ",
         "romaji": "seiji",
@@ -4523,7 +4523,7 @@
         "word": "予約",
         "meaning": {
             "en": "reservation",
-            "es": ""
+            "es": "reserva"
         },
         "furigana": "よやく",
         "romaji": "yoyaku",
@@ -4533,7 +4533,7 @@
         "word": "泣く",
         "meaning": {
             "en": "to weep",
-            "es": ""
+            "es": "llorar"
         },
         "furigana": "なく",
         "romaji": "naku",
@@ -4543,9 +4543,9 @@
         "word": "すっと",
         "meaning": {
             "en": "straight, all of a sudden",
-            "es": ""
+            "es": "de forma recta; de repente"
         },
-        "furigana": "",
+        "furigana": "すっと",
         "romaji": "sutto",
         "level": 4
     },
@@ -4553,7 +4553,7 @@
         "word": "君",
         "meaning": {
             "en": "(informal) You (used by men towards women)",
-            "es": ""
+            "es": "(informal) tú (usado por hombres al dirigirse a mujeres)"
         },
         "furigana": "きみ",
         "romaji": "kimi",
@@ -4563,7 +4563,7 @@
         "word": "娘",
         "meaning": {
             "en": "(humble) daughter",
-            "es": ""
+            "es": "hija"
         },
         "furigana": "むすめ",
         "romaji": "musume",
@@ -4573,7 +4573,7 @@
         "word": "踏む",
         "meaning": {
             "en": "to step on",
-            "es": ""
+            "es": "pisar"
         },
         "furigana": "ふむ",
         "romaji": "fumu",
@@ -4583,7 +4583,7 @@
         "word": "店員",
         "meaning": {
             "en": "shop assistant",
-            "es": ""
+            "es": "dependiente; empleado de tienda"
         },
         "furigana": "てんいん",
         "romaji": "ten'in",
@@ -4593,7 +4593,7 @@
         "word": "通う",
         "meaning": {
             "en": "to commute",
-            "es": ""
+            "es": "ir regularmente; desplazarse (al trabajo o los estudios)"
         },
         "furigana": "かよう",
         "romaji": "kayō",
@@ -4603,7 +4603,7 @@
         "word": "彼女",
         "meaning": {
             "en": "she, girlfriend",
-            "es": ""
+            "es": "ella; novia"
         },
         "furigana": "かのじょ",
         "romaji": "kanojo",
@@ -4613,7 +4613,7 @@
         "word": "場所",
         "meaning": {
             "en": "location",
-            "es": ""
+            "es": "lugar; ubicación"
         },
         "furigana": "ばしょ",
         "romaji": "basho",
@@ -4623,7 +4623,7 @@
         "word": "木綿",
         "meaning": {
             "en": "cotton",
-            "es": ""
+            "es": "algodón"
         },
         "furigana": "もめん",
         "romaji": "momen",
@@ -4633,7 +4633,7 @@
         "word": "畳",
         "meaning": {
             "en": "Japanese straw mat",
-            "es": ""
+            "es": "tatami; estera japonesa de paja"
         },
         "furigana": "たたみ",
         "romaji": "tatami",
@@ -4643,7 +4643,7 @@
         "word": "裏",
         "meaning": {
             "en": "reverse side",
-            "es": ""
+            "es": "parte de atrás; reverso"
         },
         "furigana": "うら",
         "romaji": "ura",
@@ -4653,9 +4653,9 @@
         "word": "びっくり・する",
         "meaning": {
             "en": "to be surprised",
-            "es": ""
+            "es": "sorprenderse"
         },
-        "furigana": "",
+        "furigana": "びっくり・する",
         "romaji": "bikkuri-suru",
         "level": 4
     },
@@ -4663,7 +4663,7 @@
         "word": "地震",
         "meaning": {
             "en": "earthquake",
-            "es": ""
+            "es": "terremoto"
         },
         "furigana": "じしん",
         "romaji": "jishin",
@@ -4673,7 +4673,7 @@
         "word": "湖",
         "meaning": {
             "en": "lake",
-            "es": ""
+            "es": "lago"
         },
         "furigana": "みずうみ",
         "romaji": "mizūmi",
@@ -4683,7 +4683,7 @@
         "word": "危険",
         "meaning": {
             "en": "danger",
-            "es": ""
+            "es": "peligro"
         },
         "furigana": "きけん",
         "romaji": "kiken",
@@ -4693,7 +4693,7 @@
         "word": "出発",
         "meaning": {
             "en": "to depart",
-            "es": ""
+            "es": "partir; salir"
         },
         "furigana": "しゅっぱつ・する",
         "romaji": "shuppatsu-suru",
@@ -4703,7 +4703,7 @@
         "word": "予習",
         "meaning": {
             "en": "preparation for a lesson",
-            "es": ""
+            "es": "preparación anticipada de una lección"
         },
         "furigana": "よしゅう",
         "romaji": "yoshū",
@@ -4713,7 +4713,7 @@
         "word": "将来",
         "meaning": {
             "en": "future, prospects",
-            "es": ""
+            "es": "futuro; perspectivas"
         },
         "furigana": "しょうらい",
         "romaji": "shōrai",
@@ -4723,7 +4723,7 @@
         "word": "遊び",
         "meaning": {
             "en": "play",
-            "es": ""
+            "es": "juego; diversión"
         },
         "furigana": "あそび",
         "romaji": "asobi",
@@ -4733,7 +4733,7 @@
         "word": "変わる",
         "meaning": {
             "en": "to change",
-            "es": ""
+            "es": "cambiar"
         },
         "furigana": "かわる",
         "romaji": "kawaru",
@@ -4743,7 +4743,7 @@
         "word": "柔道",
         "meaning": {
             "en": "judo",
-            "es": ""
+            "es": "judo"
         },
         "furigana": "じゅうどう",
         "romaji": "jūdō",
@@ -4753,7 +4753,7 @@
         "word": "説明",
         "meaning": {
             "en": "explanation",
-            "es": ""
+            "es": "explicación"
         },
         "furigana": "せつめい",
         "romaji": "setsumei",
@@ -4763,7 +4763,7 @@
         "word": "返事",
         "meaning": {
             "en": "reply",
-            "es": ""
+            "es": "respuesta; contestación"
         },
         "furigana": "へんじ",
         "romaji": "henji",
@@ -4773,7 +4773,7 @@
         "word": "特別",
         "meaning": {
             "en": "special",
-            "es": ""
+            "es": "especial"
         },
         "furigana": "とくべつ",
         "romaji": "tokubetsu",
@@ -4783,7 +4783,7 @@
         "word": "下りる",
         "meaning": {
             "en": "to get off",
-            "es": ""
+            "es": "bajarse; descender"
         },
         "furigana": "おりる",
         "romaji": "oriru",
@@ -4793,7 +4793,7 @@
         "word": "暖房",
         "meaning": {
             "en": "heating",
-            "es": ""
+            "es": "calefacción"
         },
         "furigana": "だんぼう",
         "romaji": "danbō",
@@ -4803,7 +4803,7 @@
         "word": "伝える",
         "meaning": {
             "en": "to report",
-            "es": ""
+            "es": "transmitir; comunicar"
         },
         "furigana": "つたえる",
         "romaji": "tsutaeru",
@@ -4813,7 +4813,7 @@
         "word": "展覧会",
         "meaning": {
             "en": "exhibition",
-            "es": ""
+            "es": "exposición"
         },
         "furigana": "てんらんかい",
         "romaji": "tenrankai",
@@ -4823,9 +4823,9 @@
         "word": "ガソリン",
         "meaning": {
             "en": "petrol",
-            "es": ""
+            "es": "gasolina"
         },
-        "furigana": "",
+        "furigana": "がそりん",
         "romaji": "gasorin",
         "level": 4
     },
@@ -4833,7 +4833,7 @@
         "word": "中々",
         "meaning": {
             "en": "considerably",
-            "es": ""
+            "es": "bastante; considerablemente"
         },
         "furigana": "なかなか",
         "romaji": "nakanaka",
@@ -4843,7 +4843,7 @@
         "word": "糸",
         "meaning": {
             "en": "thread",
-            "es": ""
+            "es": "hilo"
         },
         "furigana": "いと",
         "romaji": "ito",
@@ -4853,7 +4853,7 @@
         "word": "倍",
         "meaning": {
             "en": "double",
-            "es": ""
+            "es": "el doble; dos veces más"
         },
         "furigana": "ばい",
         "romaji": "bai",
@@ -4863,7 +4863,7 @@
         "word": "課長",
         "meaning": {
             "en": "section manager",
-            "es": ""
+            "es": "jefe de sección"
         },
         "furigana": "かちょう",
         "romaji": "kachō",
@@ -4873,7 +4873,7 @@
         "word": "見物",
         "meaning": {
             "en": "sightseeing",
-            "es": ""
+            "es": "visita turística; contemplación"
         },
         "furigana": "けんぶつ",
         "romaji": "kenbutsu",
@@ -4883,9 +4883,9 @@
         "word": "ガソリンスタンド",
         "meaning": {
             "en": "petrol station",
-            "es": ""
+            "es": "gasolinera"
         },
-        "furigana": "",
+        "furigana": "がそりんすたんど",
         "romaji": "gasorinsutando",
         "level": 4
     },
@@ -4893,7 +4893,7 @@
         "word": "席",
         "meaning": {
             "en": "seat",
-            "es": ""
+            "es": "asiento; sitio"
         },
         "furigana": "せき",
         "romaji": "seki",
@@ -4903,7 +4903,7 @@
         "word": "関係",
         "meaning": {
             "en": "relationship",
-            "es": ""
+            "es": "relación"
         },
         "furigana": "かんけい",
         "romaji": "kankei",
@@ -4913,7 +4913,7 @@
         "word": "拝見",
         "meaning": {
             "en": "(humble) to look at",
-            "es": ""
+            "es": "(humilde) mirar; ver"
         },
         "furigana": "はいけん・する",
         "romaji": "haiken-suru",
@@ -4923,7 +4923,7 @@
         "word": "台風",
         "meaning": {
             "en": "typhoon",
-            "es": ""
+            "es": "tifón"
         },
         "furigana": "たいふう",
         "romaji": "taifū",
@@ -4933,7 +4933,7 @@
         "word": "片付ける",
         "meaning": {
             "en": "to tidy up",
-            "es": ""
+            "es": "ordenar; recoger"
         },
         "furigana": "かたづける",
         "romaji": "katazukeru",
@@ -4943,7 +4943,7 @@
         "word": "舟",
         "meaning": {
             "en": "ship",
-            "es": ""
+            "es": "barca; barco"
         },
         "furigana": "ふね",
         "romaji": "fune",
@@ -4953,9 +4953,9 @@
         "word": "または",
         "meaning": {
             "en": "or, otherwise",
-            "es": ""
+            "es": "o; de lo contrario"
         },
-        "furigana": "",
+        "furigana": "または",
         "romaji": "mataha",
         "level": 4
     },
@@ -4963,7 +4963,7 @@
         "word": "教育",
         "meaning": {
             "en": "education",
-            "es": ""
+            "es": "educación"
         },
         "furigana": "きょういく",
         "romaji": "kyōiku",
@@ -4973,7 +4973,7 @@
         "word": "引っ越す",
         "meaning": {
             "en": "to move house",
-            "es": ""
+            "es": "mudarse de casa"
         },
         "furigana": "ひっこす",
         "romaji": "hikkosu",
@@ -4983,7 +4983,7 @@
         "word": "会議",
         "meaning": {
             "en": "meeting",
-            "es": ""
+            "es": "reunión"
         },
         "furigana": "かいぎ",
         "romaji": "kaigi",
@@ -4993,7 +4993,7 @@
         "word": "米",
         "meaning": {
             "en": "uncooked rice",
-            "es": ""
+            "es": "arroz crudo (sin cocer)"
         },
         "furigana": "こめ",
         "romaji": "kome",
@@ -5003,9 +5003,9 @@
         "word": "もっとも",
         "meaning": {
             "en": "extremely",
-            "es": ""
+            "es": "extremadamente; sumamente"
         },
-        "furigana": "",
+        "furigana": "もっとも",
         "romaji": "mottomo",
         "level": 4
     },
@@ -5013,9 +5013,9 @@
         "word": "かまう",
         "meaning": {
             "en": "to mind",
-            "es": ""
+            "es": "importar; preocuparse por"
         },
-        "furigana": "",
+        "furigana": "かまう",
         "romaji": "kamau",
         "level": 4
     },
@@ -5023,7 +5023,7 @@
         "word": "教会",
         "meaning": {
             "en": "church",
-            "es": ""
+            "es": "iglesia"
         },
         "furigana": "きょうかい",
         "romaji": "kyōkai",
@@ -5033,7 +5033,7 @@
         "word": "落す",
         "meaning": {
             "en": "to drop",
-            "es": ""
+            "es": "dejar caer; perder"
         },
         "furigana": "おとす",
         "romaji": "otosu",
@@ -5043,9 +5043,9 @@
         "word": "まじめ",
         "meaning": {
             "en": "serious",
-            "es": ""
+            "es": "serio; aplicado"
         },
-        "furigana": "",
+        "furigana": "まじめ",
         "romaji": "majime",
         "level": 4
     },
@@ -5053,7 +5053,7 @@
         "word": "謝る",
         "meaning": {
             "en": "to apologize",
-            "es": ""
+            "es": "disculparse; pedir perdón"
         },
         "furigana": "あやまる",
         "romaji": "ayamaru",
@@ -5063,9 +5063,9 @@
         "word": "におい",
         "meaning": {
             "en": "a smell",
-            "es": ""
+            "es": "olor"
         },
-        "furigana": "",
+        "furigana": "におい",
         "romaji": "nioi",
         "level": 4
     },
@@ -5073,7 +5073,7 @@
         "word": "騒ぐ",
         "meaning": {
             "en": "to make noise, to be excited",
-            "es": ""
+            "es": "hacer ruido; alborotarse"
         },
         "furigana": "さわぐ",
         "romaji": "sawagu",
@@ -5083,7 +5083,7 @@
         "word": "島",
         "meaning": {
             "en": "island",
-            "es": ""
+            "es": "isla"
         },
         "furigana": "しま",
         "romaji": "shima",
@@ -5093,9 +5093,9 @@
         "word": "すっかり",
         "meaning": {
             "en": "completely",
-            "es": ""
+            "es": "completamente; por completo"
         },
-        "furigana": "",
+        "furigana": "すっかり",
         "romaji": "sukkari",
         "level": 4
     },
@@ -5103,7 +5103,7 @@
         "word": "答",
         "meaning": {
             "en": "response",
-            "es": ""
+            "es": "respuesta"
         },
         "furigana": "こたえ",
         "romaji": "kotae",
@@ -5113,7 +5113,7 @@
         "word": "原因",
         "meaning": {
             "en": "cause, source",
-            "es": ""
+            "es": "causa; origen"
         },
         "furigana": "げんいん",
         "romaji": "gen'in",
@@ -5123,7 +5123,7 @@
         "word": "動物園",
         "meaning": {
             "en": "zoo",
-            "es": ""
+            "es": "zoológico"
         },
         "furigana": "どうぶつえん",
         "romaji": "dōbutsuen",
@@ -5133,9 +5133,9 @@
         "word": "スーツ",
         "meaning": {
             "en": "suit",
-            "es": ""
+            "es": "traje"
         },
-        "furigana": "",
+        "furigana": "すうつ",
         "romaji": "sūtsu",
         "level": 4
     },
@@ -5143,9 +5143,9 @@
         "word": "ああ",
         "meaning": {
             "en": "like that",
-            "es": ""
+            "es": "así; de ese modo"
         },
-        "furigana": "",
+        "furigana": "ああ",
         "romaji": "aa",
         "level": 4
     },
@@ -5153,7 +5153,7 @@
         "word": "最後",
         "meaning": {
             "en": "last, end",
-            "es": ""
+            "es": "último; final"
         },
         "furigana": "さいご",
         "romaji": "saigo",
@@ -5163,9 +5163,9 @@
         "word": "うかがう",
         "meaning": {
             "en": "to visit",
-            "es": ""
+            "es": "visitar (humilde); acudir"
         },
-        "furigana": "",
+        "furigana": "うかがう",
         "romaji": "ukagau",
         "level": 4
     },
@@ -5173,9 +5173,9 @@
         "word": "ほとんど",
         "meaning": {
             "en": "mostly",
-            "es": ""
+            "es": "casi; en su mayor parte"
         },
-        "furigana": "",
+        "furigana": "ほとんど",
         "romaji": "hotondo",
         "level": 4
     },
@@ -5183,7 +5183,7 @@
         "word": "夢",
         "meaning": {
             "en": "dream",
-            "es": ""
+            "es": "sueño"
         },
         "furigana": "ゆめ",
         "romaji": "yume",
@@ -5193,9 +5193,9 @@
         "word": "つき",
         "meaning": {
             "en": "moon",
-            "es": ""
+            "es": "luna"
         },
-        "furigana": "",
+        "furigana": "つき",
         "romaji": "tsuki",
         "level": 4
     },
@@ -5203,7 +5203,7 @@
         "word": "高校",
         "meaning": {
             "en": "high school",
-            "es": ""
+            "es": "instituto; escuela secundaria superior"
         },
         "furigana": "こうこう",
         "romaji": "kōkō",
@@ -5213,7 +5213,7 @@
         "word": "気",
         "meaning": {
             "en": "spirit, mood",
-            "es": ""
+            "es": "ánimo; estado de ánimo"
         },
         "furigana": "き",
         "romaji": "ki",
@@ -5223,7 +5223,7 @@
         "word": "正しい",
         "meaning": {
             "en": "correct",
-            "es": ""
+            "es": "correcto; acertado"
         },
         "furigana": "ただしい",
         "romaji": "tadashii",
@@ -5233,7 +5233,7 @@
         "word": "輸出",
         "meaning": {
             "en": "to export",
-            "es": ""
+            "es": "exportar"
         },
         "furigana": "ゆしゅつ・する",
         "romaji": "yushutsu-suru",
@@ -5243,7 +5243,7 @@
         "word": "文化",
         "meaning": {
             "en": "culture",
-            "es": ""
+            "es": "cultura"
         },
         "furigana": "ぶんか",
         "romaji": "bunka",
@@ -5253,9 +5253,9 @@
         "word": "だめ",
         "meaning": {
             "en": "no good",
-            "es": ""
+            "es": "no está bien; inútil"
         },
-        "furigana": "",
+        "furigana": "だめ",
         "romaji": "dame",
         "level": 4
     },
@@ -5263,9 +5263,9 @@
         "word": "けれど / けれども",
         "meaning": {
             "en": "however",
-            "es": ""
+            "es": "pero; sin embargo"
         },
-        "furigana": "",
+        "furigana": "けれど / けれども",
         "romaji": "keredo / keredomo",
         "level": 4
     },
@@ -5273,7 +5273,7 @@
         "word": "飾る",
         "meaning": {
             "en": "to decorate",
-            "es": ""
+            "es": "decorar; adornar"
         },
         "furigana": "かざる",
         "romaji": "kazaru",
@@ -5283,7 +5283,7 @@
         "word": "準備",
         "meaning": {
             "en": "to prepare",
-            "es": ""
+            "es": "preparar; preparación"
         },
         "furigana": "じゅんび・する",
         "romaji": "junbi-suru",
@@ -5293,7 +5293,7 @@
         "word": "卒業",
         "meaning": {
             "en": "graduation",
-            "es": ""
+            "es": "graduación; graduarse"
         },
         "furigana": "そつぎょう",
         "romaji": "sotsugyō",
@@ -5303,7 +5303,7 @@
         "word": "間に合う",
         "meaning": {
             "en": "to be in time for",
-            "es": ""
+            "es": "llegar a tiempo; estar a tiempo para"
         },
         "furigana": "まにあう",
         "romaji": "maniau",
@@ -5313,9 +5313,9 @@
         "word": "それに",
         "meaning": {
             "en": "moreover",
-            "es": ""
+            "es": "además; encima"
         },
-        "furigana": "",
+        "furigana": "それに",
         "romaji": "soreni",
         "level": 4
     },
@@ -5323,7 +5323,7 @@
         "word": "具合",
         "meaning": {
             "en": "condition, health",
-            "es": ""
+            "es": "estado; condición (de salud)"
         },
         "furigana": "ぐあい",
         "romaji": "guai",
@@ -5333,7 +5333,7 @@
         "word": "贈り物",
         "meaning": {
             "en": "gift",
-            "es": ""
+            "es": "regalo; obsequio"
         },
         "furigana": "おくりもの",
         "romaji": "okurimono",
@@ -5343,7 +5343,7 @@
         "word": "堅 / 硬/固い",
         "meaning": {
             "en": "hard",
-            "es": ""
+            "es": "duro; firme"
         },
         "furigana": "かたい",
         "romaji": "katai",
@@ -5353,7 +5353,7 @@
         "word": "貿易",
         "meaning": {
             "en": "trade",
-            "es": ""
+            "es": "comercio (internacional)"
         },
         "furigana": "ぼうえき",
         "romaji": "bōeki",
@@ -5363,7 +5363,7 @@
         "word": "考える",
         "meaning": {
             "en": "to consider",
-            "es": ""
+            "es": "pensar; considerar"
         },
         "furigana": "かんがえる",
         "romaji": "kangaeru",
@@ -5373,7 +5373,7 @@
         "word": "別れる",
         "meaning": {
             "en": "to separate",
-            "es": ""
+            "es": "separarse; despedirse"
         },
         "furigana": "わかれる",
         "romaji": "wakareru",
@@ -5383,9 +5383,9 @@
         "word": "サラダ",
         "meaning": {
             "en": "salad",
-            "es": ""
+            "es": "ensalada"
         },
-        "furigana": "",
+        "furigana": "さらだ",
         "romaji": "sarada",
         "level": 4
     },
@@ -5393,7 +5393,7 @@
         "word": "寝坊",
         "meaning": {
             "en": "sleeping in late",
-            "es": ""
+            "es": "levantarse tarde; quedarse dormido"
         },
         "furigana": "ねぼう",
         "romaji": "nebō",
@@ -5403,7 +5403,7 @@
         "word": "科学",
         "meaning": {
             "en": "science",
-            "es": ""
+            "es": "ciencia"
         },
         "furigana": "かがく",
         "romaji": "kagaku",
@@ -5413,9 +5413,9 @@
         "word": "こう",
         "meaning": {
             "en": "this way",
-            "es": ""
+            "es": "así; de esta manera"
         },
-        "furigana": "",
+        "furigana": "こう",
         "romaji": "kō",
         "level": 4
     },
@@ -5423,7 +5423,7 @@
         "word": "光る",
         "meaning": {
             "en": "to shine, to glitter",
-            "es": ""
+            "es": "brillar; relucir"
         },
         "furigana": "ひかる",
         "romaji": "hikaru",
@@ -5433,7 +5433,7 @@
         "word": "息子",
         "meaning": {
             "en": "(humble) son",
-            "es": ""
+            "es": "hijo"
         },
         "furigana": "むすこ",
         "romaji": "musuko",
@@ -5443,7 +5443,7 @@
         "word": "育てる",
         "meaning": {
             "en": "to rear, to bring up",
-            "es": ""
+            "es": "criar; educar"
         },
         "furigana": "そだてる",
         "romaji": "sodateru",
@@ -5453,9 +5453,9 @@
         "word": "きっと",
         "meaning": {
             "en": "surely",
-            "es": ""
+            "es": "seguramente; sin duda"
         },
-        "furigana": "",
+        "furigana": "きっと",
         "romaji": "kitto",
         "level": 4
     },
@@ -5463,7 +5463,7 @@
         "word": "空く",
         "meaning": {
             "en": "to open, to become empty",
-            "es": ""
+            "es": "quedar libre; vaciarse"
         },
         "furigana": "あく",
         "romaji": "aku",
@@ -5473,7 +5473,7 @@
         "word": "冷房",
         "meaning": {
             "en": "air conditioning",
-            "es": ""
+            "es": "aire acondicionado; refrigeración"
         },
         "furigana": "れいぼう",
         "romaji": "reibō",
@@ -5483,9 +5483,9 @@
         "word": "コンサート",
         "meaning": {
             "en": "concert",
-            "es": ""
+            "es": "concierto"
         },
-        "furigana": "",
+        "furigana": "こんさーと",
         "romaji": "konsāto",
         "level": 4
     },
@@ -5493,7 +5493,7 @@
         "word": "始める",
         "meaning": {
             "en": "to begin",
-            "es": ""
+            "es": "empezar; comenzar"
         },
         "furigana": "はじめる",
         "romaji": "hajimeru",
@@ -5503,7 +5503,7 @@
         "word": "電灯",
         "meaning": {
             "en": "electric light",
-            "es": ""
+            "es": "luz eléctrica; lámpara"
         },
         "furigana": "でんとう",
         "romaji": "dentō",
@@ -5513,7 +5513,7 @@
         "word": "医学",
         "meaning": {
             "en": "medical science",
-            "es": ""
+            "es": "medicina"
         },
         "furigana": "いがく",
         "romaji": "igaku",
@@ -5523,7 +5523,7 @@
         "word": "柔らかい",
         "meaning": {
             "en": "soft",
-            "es": ""
+            "es": "blando; suave"
         },
         "furigana": "やわらかい",
         "romaji": "yawarakai",
@@ -5533,7 +5533,7 @@
         "word": "下げる",
         "meaning": {
             "en": "to hang, to lower, to move back",
-            "es": ""
+            "es": "bajar; colgar; retirar"
         },
         "furigana": "さげる",
         "romaji": "sageru",
@@ -5543,7 +5543,7 @@
         "word": "校長",
         "meaning": {
             "en": "headmaster",
-            "es": ""
+            "es": "director/a de escuela"
         },
         "furigana": "こうちょう",
         "romaji": "kōchō",
@@ -5553,7 +5553,7 @@
         "word": "新聞社",
         "meaning": {
             "en": "newspaper company",
-            "es": ""
+            "es": "empresa periodística; periódico"
         },
         "furigana": "しんぶんしゃ",
         "romaji": "shinbunsha",
@@ -5563,9 +5563,9 @@
         "word": "ファックス",
         "meaning": {
             "en": "fax",
-            "es": ""
+            "es": "fax; faximil"
         },
-        "furigana": "",
+        "furigana": "ふぁっくす",
         "romaji": "fakkusu",
         "level": 4
     },
@@ -5573,7 +5573,7 @@
         "word": "放送",
         "meaning": {
             "en": "to broadcast",
-            "es": ""
+            "es": "emitir; retransmitir"
         },
         "furigana": "ほうそう・する",
         "romaji": "hōsō-suru",
@@ -5583,9 +5583,9 @@
         "word": "やっと",
         "meaning": {
             "en": "at last",
-            "es": ""
+            "es": "por fin; finalmente"
         },
-        "furigana": "",
+        "furigana": "やっと",
         "romaji": "yatto",
         "level": 4
     },
@@ -5593,9 +5593,9 @@
         "word": "オートバイ",
         "meaning": {
             "en": "motorcycle",
-            "es": ""
+            "es": "motocicleta; moto"
         },
-        "furigana": "",
+        "furigana": "おーとばい",
         "romaji": "ōtobai",
         "level": 4
     },
@@ -5603,9 +5603,9 @@
         "word": "レポート / リポート",
         "meaning": {
             "en": "report",
-            "es": ""
+            "es": "informe; trabajo escrito"
         },
-        "furigana": "",
+        "furigana": "れぽーと / りぽーと",
         "romaji": "repōto / ripōto",
         "level": 4
     },
@@ -5613,7 +5613,7 @@
         "word": "心配",
         "meaning": {
             "en": "to worry",
-            "es": ""
+            "es": "preocuparse; preocupación"
         },
         "furigana": "しんぱい・する",
         "romaji": "shinpai-suru",
@@ -5623,7 +5623,7 @@
         "word": "急行",
         "meaning": {
             "en": "speedy, express",
-            "es": ""
+            "es": "tren expreso; rápido"
         },
         "furigana": "きゅうこう",
         "romaji": "kyūkō",
@@ -5633,7 +5633,7 @@
         "word": "拾う",
         "meaning": {
             "en": "to pick up, to gather",
-            "es": ""
+            "es": "recoger; levantar"
         },
         "furigana": "ひろう",
         "romaji": "hirō",
@@ -5643,7 +5643,7 @@
         "word": "塗る",
         "meaning": {
             "en": "to paint, to plaster",
-            "es": ""
+            "es": "pintar; untar"
         },
         "furigana": "ぬる",
         "romaji": "nuru",
@@ -5653,7 +5653,7 @@
         "word": "線",
         "meaning": {
             "en": "line",
-            "es": ""
+            "es": "línea"
         },
         "furigana": "せん",
         "romaji": "sen",
@@ -5663,7 +5663,7 @@
         "word": "用意",
         "meaning": {
             "en": "preparation",
-            "es": ""
+            "es": "preparación; preparativos"
         },
         "furigana": "ようい",
         "romaji": "yōi",
@@ -5673,7 +5673,7 @@
         "word": "生活",
         "meaning": {
             "en": "to live",
-            "es": ""
+            "es": "vivir; vida cotidiana"
         },
         "furigana": "せいかつ・する",
         "romaji": "seikatsu-suru",
@@ -5683,7 +5683,7 @@
         "word": "退院",
         "meaning": {
             "en": "to leave hospital",
-            "es": ""
+            "es": "recibir el alta; salir del hospital"
         },
         "furigana": "たいいん・する",
         "romaji": "taiin-suru",
@@ -5693,9 +5693,9 @@
         "word": "けが・する",
         "meaning": {
             "en": "to injure",
-            "es": ""
+            "es": "lesionarse; hacerse daño"
         },
-        "furigana": "",
+        "furigana": "けが・する",
         "romaji": "kega-suru",
         "level": 4
     },
@@ -5703,7 +5703,7 @@
         "word": "揺れる",
         "meaning": {
             "en": "to shake, to sway",
-            "es": ""
+            "es": "temblar; balancearse"
         },
         "furigana": "ゆれる",
         "romaji": "yureru",
@@ -5713,7 +5713,7 @@
         "word": "入学",
         "meaning": {
             "en": "to enter school or university",
-            "es": ""
+            "es": "ingresar en una escuela o universidad"
         },
         "furigana": "にゅうがく・する",
         "romaji": "nyūgaku-suru",
@@ -5723,7 +5723,7 @@
         "word": "数学",
         "meaning": {
             "en": "mathematics, arithmetic",
-            "es": ""
+            "es": "matemáticas; aritmética"
         },
         "furigana": "すうがく",
         "romaji": "sūgaku",
@@ -5733,9 +5733,9 @@
         "word": "ぜんぜん",
         "meaning": {
             "en": "not entirely (used in a negative sentence)",
-            "es": ""
+            "es": "nada; en absoluto (con negación)"
         },
-        "furigana": "",
+        "furigana": "ぜんぜん",
         "romaji": "zenzen",
         "level": 4
     },
@@ -5743,7 +5743,7 @@
         "word": "急ぐ",
         "meaning": {
             "en": "to hurry",
-            "es": ""
+            "es": "darse prisa; apresurarse"
         },
         "furigana": "いそぐ",
         "romaji": "isogu",
@@ -5753,9 +5753,9 @@
         "word": "ひどい",
         "meaning": {
             "en": "awful",
-            "es": ""
+            "es": "terrible; espantoso"
         },
-        "furigana": "",
+        "furigana": "ひどい",
         "romaji": "hidoi",
         "level": 4
     },
@@ -5763,7 +5763,7 @@
         "word": "品物",
         "meaning": {
             "en": "goods",
-            "es": ""
+            "es": "artículo; mercancía"
         },
         "furigana": "しなもの",
         "romaji": "shinamono",
@@ -5773,7 +5773,7 @@
         "word": "比べる",
         "meaning": {
             "en": "to compare",
-            "es": ""
+            "es": "comparar"
         },
         "furigana": "くらべる",
         "romaji": "kuraberu",
@@ -5783,7 +5783,7 @@
         "word": "包む",
         "meaning": {
             "en": "to wrap",
-            "es": ""
+            "es": "envolver; empaquetar"
         },
         "furigana": "つつむ",
         "romaji": "tsutsumu",
@@ -5793,7 +5793,7 @@
         "word": "十分",
         "meaning": {
             "en": "enough",
-            "es": ""
+            "es": "suficiente; bastante"
         },
         "furigana": "じゅうぶん",
         "romaji": "jūbun",
@@ -5803,9 +5803,9 @@
         "word": "ハンドバッグ",
         "meaning": {
             "en": "handbag　",
-            "es": ""
+            "es": "bolso de mano"
         },
-        "furigana": "",
+        "furigana": "はんどばっぐ",
         "romaji": "handobaggu",
         "level": 4
     },
@@ -5813,7 +5813,7 @@
         "word": "決して",
         "meaning": {
             "en": "never",
-            "es": ""
+            "es": "nunca; de ningún modo (con negación)"
         },
         "furigana": "けっして",
         "romaji": "kesshite",
@@ -5823,7 +5823,7 @@
         "word": "無くなる",
         "meaning": {
             "en": "to disappear, to get lost",
-            "es": ""
+            "es": "desaparecer; perderse"
         },
         "furigana": "なくなる",
         "romaji": "nakunaru",
@@ -5833,7 +5833,7 @@
         "word": "用事",
         "meaning": {
             "en": "things to do",
-            "es": ""
+            "es": "asunto; recado; cosas que hacer"
         },
         "furigana": "ようじ",
         "romaji": "yōji",
@@ -5843,9 +5843,9 @@
         "word": "なさる",
         "meaning": {
             "en": "(respectful) to do",
-            "es": ""
+            "es": "hacer (honorífico)"
         },
-        "furigana": "",
+        "furigana": "なさる",
         "romaji": "nasaru",
         "level": 4
     },
@@ -5853,7 +5853,7 @@
         "word": "億",
         "meaning": {
             "en": "one hundred million",
-            "es": ""
+            "es": "cien millones"
         },
         "furigana": "おく",
         "romaji": "oku",
@@ -5863,7 +5863,7 @@
         "word": "楽しみ",
         "meaning": {
             "en": "joy",
-            "es": ""
+            "es": "placer; ilusión"
         },
         "furigana": "たのしみ",
         "romaji": "tanoshimi",
@@ -5873,9 +5873,9 @@
         "word": "サンダル",
         "meaning": {
             "en": "sandal",
-            "es": ""
+            "es": "sandalia"
         },
-        "furigana": "",
+        "furigana": "さんだる",
         "romaji": "sandaru",
         "level": 4
     },
@@ -5883,7 +5883,7 @@
         "word": "客",
         "meaning": {
             "en": "guest, customer",
-            "es": ""
+            "es": "invitado; cliente"
         },
         "furigana": "きゃく",
         "romaji": "kyaku",
@@ -5893,7 +5893,7 @@
         "word": "反対",
         "meaning": {
             "en": "opposition",
-            "es": ""
+            "es": "oposición; contrario"
         },
         "furigana": "はんたい",
         "romaji": "hantai",
@@ -5903,7 +5903,7 @@
         "word": "火",
         "meaning": {
             "en": "fire",
-            "es": ""
+            "es": "fuego"
         },
         "furigana": "ひ",
         "romaji": "hi",
@@ -5913,7 +5913,7 @@
         "word": "空港",
         "meaning": {
             "en": "airport",
-            "es": ""
+            "es": "aeropuerto"
         },
         "furigana": "くうこう",
         "romaji": "kūkō",
@@ -5923,7 +5923,7 @@
         "word": "慣れる",
         "meaning": {
             "en": "to grow accustomed to",
-            "es": ""
+            "es": "acostumbrarse; habituarse"
         },
         "furigana": "なれる",
         "romaji": "nareru",
@@ -5933,7 +5933,7 @@
         "word": "旅館",
         "meaning": {
             "en": "Japanese hotel",
-            "es": ""
+            "es": "posada japonesa tradicional; ryokan"
         },
         "furigana": "りょかん",
         "romaji": "ryokan",
@@ -5943,7 +5943,7 @@
         "word": "噛む",
         "meaning": {
             "en": "to bite, to chew",
-            "es": ""
+            "es": "morder; masticar"
         },
         "furigana": "かむ",
         "romaji": "kamu",
@@ -5953,7 +5953,7 @@
         "word": "漬ける",
         "meaning": {
             "en": "to soak, to pickle",
-            "es": ""
+            "es": "sumergir; encurtir"
         },
         "furigana": "つける",
         "romaji": "tsukeru",
@@ -5963,7 +5963,7 @@
         "word": "踊り",
         "meaning": {
             "en": "a dance",
-            "es": ""
+            "es": "baile; danza"
         },
         "furigana": "おどり",
         "romaji": "odori",
@@ -5973,7 +5973,7 @@
         "word": "講義",
         "meaning": {
             "en": "lecture",
-            "es": ""
+            "es": "clase magistral; conferencia"
         },
         "furigana": "こうぎ",
         "romaji": "kōgi",
@@ -5983,7 +5983,7 @@
         "word": "送る",
         "meaning": {
             "en": "to send",
-            "es": ""
+            "es": "enviar; mandar"
         },
         "furigana": "おくる",
         "romaji": "okuru",
@@ -5993,7 +5993,7 @@
         "word": "迎える",
         "meaning": {
             "en": "to go out to meet",
-            "es": ""
+            "es": "ir a recibir; dar la bienvenida"
         },
         "furigana": "むかえる",
         "romaji": "mukaeru",
@@ -6003,7 +6003,7 @@
         "word": "凄い",
         "meaning": {
             "en": "terrific",
-            "es": ""
+            "es": "fantástico; extraordinario"
         },
         "furigana": "すごい",
         "romaji": "sugoi",
@@ -6013,7 +6013,7 @@
         "word": "以内",
         "meaning": {
             "en": "within",
-            "es": ""
+            "es": "dentro de; en un plazo de"
         },
         "furigana": "いない",
         "romaji": "inai",
@@ -6023,7 +6023,7 @@
         "word": "探す",
         "meaning": {
             "en": "to look for",
-            "es": ""
+            "es": "buscar"
         },
         "furigana": "さがす",
         "romaji": "sagasu",
@@ -6033,7 +6033,7 @@
         "word": "行う",
         "meaning": {
             "en": "to do",
-            "es": ""
+            "es": "hacer; llevar a cabo"
         },
         "furigana": "おこなう",
         "romaji": "okonau",
@@ -6043,7 +6043,7 @@
         "word": "引き出し",
         "meaning": {
             "en": "drawer, drawing out",
-            "es": ""
+            "es": "cajón; extracción"
         },
         "furigana": "ひきだし",
         "romaji": "hikidashi",
@@ -6053,7 +6053,7 @@
         "word": "焼ける",
         "meaning": {
             "en": "to burn, to be roasted",
-            "es": ""
+            "es": "quemarse; asarse"
         },
         "furigana": "やける",
         "romaji": "yakeru",
@@ -6063,9 +6063,9 @@
         "word": "けんか・する",
         "meaning": {
             "en": "to quarrel",
-            "es": ""
+            "es": "pelearse; discutir"
         },
-        "furigana": "",
+        "furigana": "けんか・する",
         "romaji": "kenka-suru",
         "level": 4
     },
@@ -6073,7 +6073,7 @@
         "word": "背中",
         "meaning": {
             "en": "back of the body",
-            "es": ""
+            "es": "espalda"
         },
         "furigana": "せなか",
         "romaji": "senaka",
@@ -6083,7 +6083,7 @@
         "word": "込む",
         "meaning": {
             "en": "to be crowded",
-            "es": ""
+            "es": "estar abarrotado; estar concurrido"
         },
         "furigana": "こむ",
         "romaji": "komu",
@@ -6093,9 +6093,9 @@
         "word": "あいさつ・する",
         "meaning": {
             "en": "to greet",
-            "es": ""
+            "es": "saludar"
         },
-        "furigana": "",
+        "furigana": "あいさつ・する",
         "romaji": "aisatsu-suru",
         "level": 4
     },
@@ -6103,7 +6103,7 @@
         "word": "負ける",
         "meaning": {
             "en": "to lose",
-            "es": ""
+            "es": "perder"
         },
         "furigana": "まける",
         "romaji": "makeru",
@@ -6113,9 +6113,9 @@
         "word": "ごらんになる",
         "meaning": {
             "en": "(respectful) to see",
-            "es": ""
+            "es": "ver (forma honorífica)"
         },
-        "furigana": "",
+        "furigana": "ごらんになる",
         "romaji": "goranninaru",
         "level": 4
     },
@@ -6123,7 +6123,7 @@
         "word": "事務所",
         "meaning": {
             "en": "office",
-            "es": ""
+            "es": "oficina; despacho"
         },
         "furigana": "じむしょ",
         "romaji": "jimusho",
@@ -6133,9 +6133,9 @@
         "word": "そろそろ",
         "meaning": {
             "en": "gradually, soon",
-            "es": ""
+            "es": "poco a poco; pronto"
         },
-        "furigana": "",
+        "furigana": "そろそろ",
         "romaji": "sorosoro",
         "level": 4
     },
@@ -6143,7 +6143,7 @@
         "word": "美術館",
         "meaning": {
             "en": "art gallery",
-            "es": ""
+            "es": "museo de arte; galería de arte"
         },
         "furigana": "びじゅつかん",
         "romaji": "bijutsukan",
@@ -6153,9 +6153,9 @@
         "word": "あ",
         "meaning": {
             "en": "Ah",
-            "es": ""
+            "es": "ah"
         },
-        "furigana": "",
+        "furigana": "あ",
         "romaji": "a",
         "level": 4
     },
@@ -6163,7 +6163,7 @@
         "word": "以外",
         "meaning": {
             "en": "with the exception of",
-            "es": ""
+            "es": "excepto; salvo"
         },
         "furigana": "いがい",
         "romaji": "igai",
@@ -6173,9 +6173,9 @@
         "word": "じゃま",
         "meaning": {
             "en": "hindrance, intrusion",
-            "es": ""
+            "es": "estorbo; molestia"
         },
-        "furigana": "",
+        "furigana": "じゃま",
         "romaji": "jama",
         "level": 4
     },
@@ -6183,7 +6183,7 @@
         "word": "安心",
         "meaning": {
             "en": "relief",
-            "es": ""
+            "es": "tranquilidad; alivio"
         },
         "furigana": "あんしん",
         "romaji": "anshin",
@@ -6193,7 +6193,7 @@
         "word": "集める",
         "meaning": {
             "en": "to collect something",
-            "es": ""
+            "es": "reunir; coleccionar"
         },
         "furigana": "あつめる",
         "romaji": "atsumeru",
@@ -6203,7 +6203,7 @@
         "word": "捨てる",
         "meaning": {
             "en": "to throw away",
-            "es": ""
+            "es": "tirar; desechar"
         },
         "furigana": "すてる",
         "romaji": "suteru",
@@ -6213,7 +6213,7 @@
         "word": "駐車場",
         "meaning": {
             "en": "parking lot",
-            "es": ""
+            "es": "aparcamiento; estacionamiento"
         },
         "furigana": "ちゅうしゃじょう",
         "romaji": "chūshajō",
@@ -6223,7 +6223,7 @@
         "word": "確か",
         "meaning": {
             "en": "definite",
-            "es": ""
+            "es": "seguro; cierto"
         },
         "furigana": "たしか",
         "romaji": "tashika",
@@ -6233,7 +6233,7 @@
         "word": "手袋",
         "meaning": {
             "en": "glove",
-            "es": ""
+            "es": "guante"
         },
         "furigana": "てぶくろ",
         "romaji": "tebukuro",
@@ -6243,7 +6243,7 @@
         "word": "熱",
         "meaning": {
             "en": "fever",
-            "es": ""
+            "es": "fiebre"
         },
         "furigana": "ねつ",
         "romaji": "netsu",
@@ -6253,7 +6253,7 @@
         "word": "指",
         "meaning": {
             "en": "finger",
-            "es": ""
+            "es": "dedo"
         },
         "furigana": "ゆび",
         "romaji": "yubi",
@@ -6263,7 +6263,7 @@
         "word": "止める",
         "meaning": {
             "en": "to stop something",
-            "es": ""
+            "es": "parar; detener"
         },
         "furigana": "とめる",
         "romaji": "tomeru",
@@ -6273,9 +6273,9 @@
         "word": "アクセサリー",
         "meaning": {
             "en": "accessory",
-            "es": ""
+            "es": "accesorio"
         },
-        "furigana": "",
+        "furigana": "あくせさりー",
         "romaji": "akusesarī",
         "level": 4
     },
@@ -6283,7 +6283,7 @@
         "word": "下る",
         "meaning": {
             "en": "to get down, to descend",
-            "es": ""
+            "es": "bajar; descender"
         },
         "furigana": "さがる",
         "romaji": "sagaru",
@@ -6293,9 +6293,9 @@
         "word": "ほめる",
         "meaning": {
             "en": "to praise",
-            "es": ""
+            "es": "alabar; elogiar"
         },
-        "furigana": "",
+        "furigana": "ほめる",
         "romaji": "homeru",
         "level": 4
     },
@@ -6303,7 +6303,7 @@
         "word": "回る",
         "meaning": {
             "en": "to go around",
-            "es": ""
+            "es": "dar la vuelta; girar"
         },
         "furigana": "まわる",
         "romaji": "mawaru",
@@ -6313,9 +6313,9 @@
         "word": "くださる",
         "meaning": {
             "en": "(respectful) to give",
-            "es": ""
+            "es": "dar (forma honorífica)"
         },
-        "furigana": "",
+        "furigana": "くださる",
         "romaji": "kudasaru",
         "level": 4
     }
