@@ -1,7 +1,6 @@
 {
-  "name": "data-source",
-  "version": "1.0.0",
-  "main": "build.js",
+  "name": "ez-nihongo-platform",
+  "version": "0.2.0",
   "license": "MIT",
   "dependencies": {
     "japanese": "^1.2.0",
