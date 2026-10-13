@@ -1,13 +1,122 @@
+using System.Threading.RateLimiting;
+using EzNihongo.Platform.Api.Authentication;
 using EzNihongo.Platform.Api.Vocabulary;
 using EzNihongo.Platform.Api.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+    options.AddDocumentTransformer((document, _, _) =>
+    {
+        document.Components ??= new Microsoft.OpenApi.OpenApiComponents();
+        document.Components!.SecuritySchemes![JwtBearerDefaults.AuthenticationScheme] =
+            new Microsoft.OpenApi.OpenApiSecurityScheme
+            {
+                Type = Microsoft.OpenApi.SecuritySchemeType.Http,
+                Scheme = "bearer",
+                BearerFormat = "JWT",
+                Description = "JWT access token"
+            };
+        return Task.CompletedTask;
+    })
+    .AddOperationTransformer((operation, context, _) =>
+    {
+        if (context.Description.RelativePath?.TrimEnd('/') == "api/v1/auth/me")
+        {
+            operation.Security =
+            [
+                new Microsoft.OpenApi.OpenApiSecurityRequirement
+                {
+                    [new Microsoft.OpenApi.OpenApiSecuritySchemeReference(
+                        JwtBearerDefaults.AuthenticationScheme, context.Document)] = []
+                }
+            ];
+        }
+
+        return Task.CompletedTask;
+    }));
 builder.Services.AddProblemDetails();
+builder.Services.AddValidation();
 builder.Services.AddSingleton<VocabularyCatalog>();
+
+builder.Services.AddOptions<JwtOptions>()
+    .Bind(builder.Configuration.GetSection(JwtOptions.SectionName))
+    .Validate(options => options.IsValid(),
+        $"'{JwtOptions.SectionName}' requires a signing key of at least 32 UTF-8 bytes, issuer, audience, and a positive token lifetime.")
+    .ValidateOnStart();
+builder.Services.AddOptions<AuthRateLimitOptions>()
+    .Bind(builder.Configuration.GetSection(AuthRateLimitOptions.SectionName))
+    .Validate(options => options.IsValid(),
+        $"'{AuthRateLimitOptions.SectionName}' requires positive PermitLimit and WindowMinutes values.")
+    .ValidateOnStart();
+
+var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Events = new JwtBearerEvents
+        {
+            OnChallenge = async context =>
+            {
+                context.HandleResponse();
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                context.Response.ContentType = "application/problem+json";
+                await context.Response.WriteAsJsonAsync(new ProblemDetails
+                {
+                    Status = StatusCodes.Status401Unauthorized,
+                    Title = "Unauthorized",
+                    Detail = "A valid bearer access token is required."
+                });
+            }
+        };
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = jwt.IsValid() ? new SymmetricSecurityKey(jwt.GetSigningKeyBytes()) : null,
+            ValidateIssuer = true,
+            ValidIssuer = jwt.Issuer,
+            ValidateAudience = true,
+            ValidAudience = jwt.Audience,
+            ValidateLifetime = true,
+            RequireExpirationTime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+builder.Services.AddAuthorization();
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+var rateLimit = builder.Configuration.GetSection(AuthRateLimitOptions.SectionName).Get<AuthRateLimitOptions>() ?? new AuthRateLimitOptions();
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.ContentType = "application/problem+json";
+        await context.HttpContext.Response.WriteAsJsonAsync(new ProblemDetails
+        {
+            Status = StatusCodes.Status429TooManyRequests,
+            Title = "Too many requests",
+            Detail = "Please wait before trying again."
+        }, cancellationToken);
+    };
+    options.AddPolicy("auth", context =>
+    {
+        var partition = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        return RateLimitPartition.GetFixedWindowLimiter(partition, _ => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = rateLimit.PermitLimit,
+            Window = TimeSpan.FromMinutes(rateLimit.WindowMinutes),
+            QueueLimit = 0,
+            AutoReplenishment = true
+        });
+    });
+});
 
 var postgres = builder.Configuration.GetSection(PostgresOptions.SectionName).Get<PostgresOptions>();
 if (string.IsNullOrWhiteSpace(postgres?.ConnectionString))
@@ -30,6 +139,9 @@ var app = builder.Build();
 _ = app.Services.GetRequiredService<VocabularyCatalog>();
 
 app.UseExceptionHandler();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseRateLimiter();
 app.MapOpenApi();
 
 app.MapGet("/health", () => TypedResults.Ok(new { status = "ok" }))
@@ -37,6 +149,8 @@ app.MapGet("/health", () => TypedResults.Ok(new { status = "ok" }))
     .WithTags("Health");
 
 var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary");
+
+app.MapAuthEndpoints();
 
 vocabulary.MapGet("/levels", (VocabularyCatalog catalog) =>
         TypedResults.Ok(catalog.GetLevelCounts()))

@@ -23,16 +23,16 @@
 
 ## Fase 3 — JWT y endpoints
 
-- [ ] Configurar autenticación JWT bearer con validación explícita de firma,
+- [x] Configurar autenticación JWT bearer con validación explícita de firma,
       emisor, audiencia y expiración.
-- [ ] Añadir DTOs de registro, login, token e identidad; no exponer entidades
+- [x] Añadir DTOs de registro, login, token e identidad; no exponer entidades
       Identity.
-- [ ] Implementar registro con `201 Created`, cuenta persistida y JWT.
-- [ ] Implementar login con `200 OK`, JWT y respuesta genérica `401`.
-- [ ] Implementar `GET /api/v1/auth/me` protegido y respuestas `401`.
-- [ ] Asegurar que vocabulario y health siguen siendo anónimos.
-- [ ] Añadir rate limiting configurable para registro y login.
-- [ ] Añadir metadatos OpenAPI de respuestas y seguridad bearer.
+- [x] Implementar registro con `201 Created`, cuenta persistida y JWT.
+- [x] Implementar login con `200 OK`, JWT y respuesta genérica `401`.
+- [x] Implementar `GET /api/v1/auth/me` protegido y respuestas `401`.
+- [x] Asegurar que vocabulario y health siguen siendo anónimos.
+- [x] Añadir rate limiting configurable para registro y login.
+- [x] Añadir metadatos OpenAPI de respuestas y seguridad bearer.
 
 ## Fase 4 — Pruebas y documentación operativa
 
