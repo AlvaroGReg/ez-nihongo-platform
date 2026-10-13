@@ -1,10 +1,30 @@
 using EzNihongo.Platform.Api.Vocabulary;
+using EzNihongo.Platform.Api.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 builder.Services.AddProblemDetails();
 builder.Services.AddSingleton<VocabularyCatalog>();
+
+var postgres = builder.Configuration.GetSection(PostgresOptions.SectionName).Get<PostgresOptions>();
+if (string.IsNullOrWhiteSpace(postgres?.ConnectionString))
+{
+    throw new InvalidOperationException(
+        $"Required configuration '{PostgresOptions.SectionName}:ConnectionString' is missing.");
+}
+
+builder.Services.AddDbContext<PlatformIdentityDbContext>(options =>
+    options.UseNpgsql(postgres.ConnectionString));
+builder.Services.AddIdentityCore<PlatformUser>(options =>
+    {
+        options.User.RequireUniqueEmail = true;
+        options.SignIn.RequireConfirmedEmail = false;
+    })
+    .AddEntityFrameworkStores<PlatformIdentityDbContext>();
+builder.Services.AddHostedService<IdentityDatabaseStartupCheck>();
 
 var app = builder.Build();
 _ = app.Services.GetRequiredService<VocabularyCatalog>();

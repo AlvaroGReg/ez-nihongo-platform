@@ -20,9 +20,37 @@ Endpoints:
   `level` is optional and `limit` is between 1 and 200.
 - `GET /api/v1/vocabulary/{contentId}` — retrieve one vocabulary entry.
 - `GET /openapi/v1.json` — machine-readable API schema.
+- Authentication endpoints are being introduced by the `auth-0.1.0` SDD; the
+  current implementation phase adds the PostgreSQL-backed identity store.
 
 Invalid query parameters return `400` Problem Details; an unknown content ID
 returns `404`.
+
+## Identity persistence (development)
+
+The API requires PostgreSQL configuration and a reachable database at startup.
+Set the connection string through user secrets for local development (never
+commit credentials):
+
+```sh
+dotnet user-secrets init --project src/EzNihongo.Platform.Api
+dotnet user-secrets set "Postgres:ConnectionString" "Host=localhost;Database=eznihongo;Username=postgres;Password=<local-password>" --project src/EzNihongo.Platform.Api
+```
+
+Create the database in PostgreSQL, then apply the versioned Identity schema from
+the repository root:
+
+```sh
+$env:Postgres__ConnectionString = "Host=localhost;Database=eznihongo;Username=postgres;Password=<local-password>"
+dotnet tool restore
+dotnet ef database update --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api
+```
+
+To add a later migration, run
+`dotnet ef migrations add <MigrationName> --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api`
+with `Postgres__ConnectionString` set. The API does not automatically apply
+migrations at startup; deploy schema changes explicitly before starting a new
+API version.
 
 ## Build Command
 

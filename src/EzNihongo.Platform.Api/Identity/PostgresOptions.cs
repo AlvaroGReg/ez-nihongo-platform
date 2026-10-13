@@ -1,0 +1,8 @@
+namespace EzNihongo.Platform.Api.Identity;
+
+public sealed class PostgresOptions
+{
+    public const string SectionName = "Postgres";
+
+    public string? ConnectionString { get; init; }
+}
