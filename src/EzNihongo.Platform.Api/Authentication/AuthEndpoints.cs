@@ -15,12 +15,10 @@ public static class AuthEndpoints
             {
                 var result = await service.RegisterAsync(request, cancellationToken);
                 if (result.IsConflict)
-                    return (IResult)TypedResults.Conflict(new ProblemDetails
-                    {
-                        Status = StatusCodes.Status409Conflict,
-                        Title = "Account already exists",
-                        Detail = "An account with this email address already exists."
-                    });
+                    return (IResult)TypedResults.Problem(
+                        statusCode: StatusCodes.Status409Conflict,
+                        title: "Account already exists",
+                        detail: "An account with this email address already exists.");
                 if (result.Errors is not null)
                     return TypedResults.ValidationProblem(result.Errors);
 

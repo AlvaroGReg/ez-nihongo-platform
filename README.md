@@ -30,8 +30,14 @@ returns `404`.
 ## Identity persistence (development)
 
 The API requires PostgreSQL and valid JWT settings at startup. For local
-development, set the connection string and JWT values through user secrets
-(never commit credentials):
+development with the integrated workspace stack, copy `.env.example` to `.env`
+at the workspace root and set `POSTGRES_PASSWORD` and `JWT_SIGNING_KEY` to local
+random values. Start the stack with `./deploy.ps1`; PostgreSQL is exposed on
+`localhost:5432` and the API waits until it is healthy. The `.env` file is
+ignored by Git and must not contain production credentials.
+
+For running the API directly outside Compose, set the connection string and JWT
+values through user secrets (never commit credentials):
 
 ```sh
 dotnet user-secrets init --project src/EzNihongo.Platform.Api
@@ -48,11 +54,12 @@ The access-token lifetime defaults to 15 minutes and can be changed with
 form, such as `Jwt__SigningKey` and `Postgres__ConnectionString`. Use a
 high-entropy signing key from a secret manager in deployed environments.
 
-Create the database in PostgreSQL, then apply the versioned Identity schema from
-the repository root:
+The Compose stack creates the PostgreSQL database, but schema updates remain an
+explicit deployment step. After starting the stack, apply the versioned Identity
+schema from this repository root:
 
 ```sh
-$env:Postgres__ConnectionString = "Host=localhost;Database=eznihongo;Username=postgres;Password=<local-password>"
+$env:Postgres__ConnectionString = "Host=localhost;Database=eznihongo;Username=eznihongo;Password=<POSTGRES_PASSWORD-from-workspace-.env>"
 dotnet tool restore
 dotnet ef database update --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api
 ```

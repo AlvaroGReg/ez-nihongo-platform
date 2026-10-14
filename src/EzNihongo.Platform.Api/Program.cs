@@ -64,14 +64,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             OnChallenge = async context =>
             {
                 context.HandleResponse();
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                context.Response.ContentType = "application/problem+json";
-                await context.Response.WriteAsJsonAsync(new ProblemDetails
-                {
-                    Status = StatusCodes.Status401Unauthorized,
-                    Title = "Unauthorized",
-                    Detail = "A valid bearer access token is required."
-                });
+                await TypedResults.Problem(
+                    statusCode: StatusCodes.Status401Unauthorized,
+                    title: "Unauthorized",
+                    detail: "A valid bearer access token is required.")
+                    .ExecuteAsync(context.HttpContext);
             }
         };
         options.TokenValidationParameters = new TokenValidationParameters
@@ -97,13 +94,11 @@ builder.Services.AddRateLimiter(options =>
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
     options.OnRejected = async (context, cancellationToken) =>
     {
-        context.HttpContext.Response.ContentType = "application/problem+json";
-        await context.HttpContext.Response.WriteAsJsonAsync(new ProblemDetails
-        {
-            Status = StatusCodes.Status429TooManyRequests,
-            Title = "Too many requests",
-            Detail = "Please wait before trying again."
-        }, cancellationToken);
+        await TypedResults.Problem(
+            statusCode: StatusCodes.Status429TooManyRequests,
+            title: "Too many requests",
+            detail: "Please wait before trying again.")
+            .ExecuteAsync(context.HttpContext);
     };
     options.AddPolicy("auth", context =>
     {

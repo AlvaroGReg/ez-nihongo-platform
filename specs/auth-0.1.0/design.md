@@ -122,11 +122,10 @@ Variables/configuración requeridas (nombres exactos a fijar al implementar):
 - Emisor, audiencia y duración del JWT.
 - Parámetros del rate limiter.
 
-La especificación se implementa en el subrepo platform. Para ejecutar el stack
-integrado será necesario actualizar `compose.yaml` del workspace con un servicio
-PostgreSQL, persistencia de datos y configuración de conexión/secretos para la
-API; ese cambio queda fuera de estos artefactos y requiere una tarea de
-integración aparte.
+La integración del workspace define PostgreSQL en `compose.yaml`, con volumen
+persistente, health check y conexión interna para la API. Las credenciales se
+inyectan desde variables locales no versionadas. El esquema continúa aplicándose
+explícitamente mediante migraciones versionadas antes de usar autenticación.
 
 ## Pruebas
 

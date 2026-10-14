@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Xunit;
 
@@ -118,7 +119,12 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
 
         Assert.Equal(HttpStatusCode.Unauthorized, existing.StatusCode);
         Assert.Equal(HttpStatusCode.Unauthorized, missing.StatusCode);
-        Assert.Equal(await existing.Content.ReadAsStringAsync(), await missing.Content.ReadAsStringAsync());
+        var existingProblem = await existing.Content.ReadFromJsonAsync<ProblemDetails>();
+        var missingProblem = await missing.Content.ReadFromJsonAsync<ProblemDetails>();
+        Assert.NotNull(existingProblem);
+        Assert.NotNull(missingProblem);
+        Assert.Equal(existingProblem.Title, missingProblem.Title);
+        Assert.Equal(existingProblem.Detail, missingProblem.Detail);
         Assert.DoesNotContain("Wrong-Password9!", await existing.Content.ReadAsStringAsync());
     }
 

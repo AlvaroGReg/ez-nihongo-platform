@@ -48,4 +48,5 @@
 - [x] Crear un archivo `.http` con ejemplos de registro, login y `/me`.
 - [x] Ejecutar `dotnet build` y las pruebas disponibles; la suite PostgreSQL
       queda omitida si `AUTH_TEST_POSTGRES_CONNECTION` no está configurada.
-- [ ] Planificar por separado la integración de PostgreSQL en Compose.
+- [x] Integrar PostgreSQL en el Compose del workspace con persistencia,
+      health check y configuración de conexión para la API.
