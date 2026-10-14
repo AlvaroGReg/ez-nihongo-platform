@@ -204,3 +204,5 @@ vocabulary.MapGet("/{contentId}", (string contentId, VocabularyCatalog catalog, 
     .WithName("GetVocabularyEntry");
 
 app.Run();
+
+public partial class Program;

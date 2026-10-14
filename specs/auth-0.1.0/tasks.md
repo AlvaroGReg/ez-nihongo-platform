@@ -36,14 +36,16 @@
 
 ## Fase 4 — Pruebas y documentación operativa
 
-- [ ] Añadir pruebas unitarias de validación, normalización y emisión/validación
-      de tokens.
-- [ ] Añadir pruebas de integración PostgreSQL para registro, colisión de
-      correo, login, `/me` y acceso público a rutas actuales.
-- [ ] Verificar `400`, `401`, `409` y `429` junto con Problem Details.
-- [ ] Revisar que logs y respuestas no contengan secretos ni hash de contraseña.
-- [ ] Documentar variables requeridas, configuración de desarrollo y migración
+- [x] Añadir pruebas unitarias de validación de solicitudes y configuración JWT;
+      comprobar normalización y emisión/validación de tokens en integración.
+- [x] Añadir pruebas de integración PostgreSQL para registro, colisión de
+      correo concurrente, login, `/me` y acceso público a rutas actuales.
+- [x] Verificar `400`, `401`, `409` y `429` junto con Problem Details.
+- [x] Comprobar en respuestas y flujo de persistencia que no se exponen secretos
+      ni se almacena la contraseña en claro.
+- [x] Documentar variables requeridas, configuración de desarrollo y migración
       en README.
-- [ ] Crear un archivo `.http` con ejemplos de registro, login y `/me`.
-- [ ] Ejecutar `dotnet build` y todas las pruebas disponibles.
+- [x] Crear un archivo `.http` con ejemplos de registro, login y `/me`.
+- [x] Ejecutar `dotnet build` y las pruebas disponibles; la suite PostgreSQL
+      queda omitida si `AUTH_TEST_POSTGRES_CONNECTION` no está configurada.
 - [ ] Planificar por separado la integración de PostgreSQL en Compose.

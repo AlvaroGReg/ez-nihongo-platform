@@ -1,0 +1,56 @@
+@baseUrl = http://localhost:5080
+@email = student@example.com
+@password = Change-this-local-password9!
+@accessToken = paste-the-access-token-from-the-login-response
+
+### Create an account
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### Duplicate account (expected 409)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### Invalid registration (expected 400 Problem Details)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "email": "invalid-email",
+  "password": "short"
+}
+
+### Login
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### Invalid login (expected 401 Problem Details)
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "incorrect-password"
+}
+
+### Current authenticated identity (paste accessToken above)
+GET {{baseUrl}}/api/v1/auth/me
+Authorization: Bearer {{accessToken}}
+
+### Current identity without token (expected 401 Problem Details)
+GET {{baseUrl}}/api/v1/auth/me

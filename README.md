@@ -20,22 +20,33 @@ Endpoints:
   `level` is optional and `limit` is between 1 and 200.
 - `GET /api/v1/vocabulary/{contentId}` — retrieve one vocabulary entry.
 - `GET /openapi/v1.json` — machine-readable API schema.
-- Authentication endpoints are being introduced by the `auth-0.1.0` SDD; the
-  current implementation phase adds the PostgreSQL-backed identity store.
+- `POST /api/v1/auth/register` — create an account and return a bearer token.
+- `POST /api/v1/auth/login` — authenticate and return a bearer token.
+- `GET /api/v1/auth/me` — return the identity associated with a bearer token.
 
 Invalid query parameters return `400` Problem Details; an unknown content ID
 returns `404`.
 
 ## Identity persistence (development)
 
-The API requires PostgreSQL configuration and a reachable database at startup.
-Set the connection string through user secrets for local development (never
-commit credentials):
+The API requires PostgreSQL and valid JWT settings at startup. For local
+development, set the connection string and JWT values through user secrets
+(never commit credentials):
 
 ```sh
 dotnet user-secrets init --project src/EzNihongo.Platform.Api
 dotnet user-secrets set "Postgres:ConnectionString" "Host=localhost;Database=eznihongo;Username=postgres;Password=<local-password>" --project src/EzNihongo.Platform.Api
+dotnet user-secrets set "Jwt:SigningKey" "<random-secret-of-at-least-32-utf8-bytes>" --project src/EzNihongo.Platform.Api
+dotnet user-secrets set "Jwt:Issuer" "ez-nihongo-local" --project src/EzNihongo.Platform.Api
+dotnet user-secrets set "Jwt:Audience" "ez-nihongo-local-client" --project src/EzNihongo.Platform.Api
 ```
+
+The access-token lifetime defaults to 15 minutes and can be changed with
+`Jwt:AccessTokenMinutes`. Authentication throttling is controlled by
+`AuthRateLimit:PermitLimit` (default 5) and `AuthRateLimit:WindowMinutes`
+(default 1). Environment variables use the corresponding double-underscore
+form, such as `Jwt__SigningKey` and `Postgres__ConnectionString`. Use a
+high-entropy signing key from a secret manager in deployed environments.
 
 Create the database in PostgreSQL, then apply the versioned Identity schema from
 the repository root:
@@ -51,6 +62,29 @@ To add a later migration, run
 with `Postgres__ConnectionString` set. The API does not automatically apply
 migrations at startup; deploy schema changes explicitly before starting a new
 API version.
+
+### Authentication requests
+
+`auth.http` contains registration, login, `/me`, and error request examples.
+Start the API and select individual requests in an HTTP client such as the
+VS Code REST Client. Replace the sample password and paste the returned access
+token into `@accessToken` before requesting `/me`.
+
+### Tests
+
+Run unit tests and the PostgreSQL integration suite from the repository root:
+
+```sh
+dotnet test tests/EzNihongo.Platform.Api.IntegrationTests
+```
+
+Set `AUTH_TEST_POSTGRES_CONNECTION` to a disposable PostgreSQL database before
+running the command to enable integration tests. The suite applies the checked-in
+migrations and creates accounts with randomized email addresses. Without that
+variable, PostgreSQL integration tests are reported as skipped; unit tests still
+run. Integration coverage includes registration and concurrent duplicate
+registration, password hashing, login, bearer validation, Problem Details,
+rate limiting, and anonymous health/vocabulary access.
 
 ## Build Command
 
