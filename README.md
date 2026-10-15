@@ -1,8 +1,9 @@
 # ez-nihongo-platform
 
 Backend platform for ez-nihongo. It currently exposes the JLPT vocabulary
-catalog over an ASP.NET Core 10 API. The source vocabulary is maintained in
-`db/` and can be rebuilt from the Anki exports with the scripts below.
+catalog over an ASP.NET Core 10 API. JLPT vocabulary is maintained in
+`db/jlpt-vocabulary/`; the hiragana and katakana source catalogs are in
+`db/kana/`.
 
 ## API
 
@@ -100,15 +101,13 @@ yarn
 yarn build
 ```
 
-## Build Flow
+## Vocabulary data
 
-- Anki files based on JLPT Level
-- ↓ `anki2tabs.sh`
-- Tabs files based on JLPT Level
-- ↓ `tabs2json.js`
-- JSON files based on JLPT Level
-- ↓ `json2db.js`
-- All in one JSON file
+The API loads the JLPT level files `db/jlpt-vocabulary/n1.json` through
+`n5.json`. The aggregate `all.json` is maintained for existing TypeScript
+consumers and can be regenerated with `yarn build`. Kana catalogs are stored
+separately in `db/kana/hiragana.json` and `db/kana/katakana.json`; corresponding
+characters share an `id`.
 
 ## Data Structure
 
@@ -125,16 +124,16 @@ yarn build
 }
 ```
 
-`meaning.en` preserves the English meaning from the source dataset. `meaning.es`
-is reserved for the Spanish translation and is currently empty. The API returns
-this data through stable `contentId` values, using source UUIDs when available
-and a word/reading identity otherwise.
+`meaning.en` and `meaning.es` preserve the available English and Spanish
+translations. The API returns this data through stable `contentId` values,
+using source UUIDs when available and a word/reading identity otherwise.
 
 ## Attribution and modifications
 
 The vocabulary data originates from [tanos.co.uk/jlpt](https://www.tanos.co.uk/jlpt/)
 and is attributed to Jonathan Waller under Creative Commons Attribution (CC BY).
-Our local modification keeps the English meaning under `meaning.en` and adds an empty `meaning.es` field for future translation; Japanese words, readings, romaji, and JLPT levels are retained.
+Our local modifications preserve available English adding Spanish translations;
+Japanese words, readings, romaji, and JLPT levels are retained.
 
 ## Run the complete workspace
 

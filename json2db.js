@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const levels = [5, 4, 3, 2, 1]
-const outDir = './db'
+const outDir = './db/jlpt-vocabulary'
 const outFile = `${outDir}/all.json`
 
 let vocab = []

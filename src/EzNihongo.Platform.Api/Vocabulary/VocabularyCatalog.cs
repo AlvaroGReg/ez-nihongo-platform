@@ -10,15 +10,19 @@ public sealed class VocabularyCatalog
 
     public VocabularyCatalog(IConfiguration configuration, IWebHostEnvironment environment)
     {
-        var configuredDirectory = configuration["Vocabulary:DataDirectory"] ?? "db";
+        var configuredDirectory = configuration["Vocabulary:DataDirectory"] ?? "db/jlpt-vocabulary";
         string[] candidateDirectories = Path.IsPathRooted(configuredDirectory)
             ? [configuredDirectory]
             : [
                 Path.GetFullPath(Path.Combine(environment.ContentRootPath, configuredDirectory)),
                 Path.GetFullPath(Path.Combine(environment.ContentRootPath, "..", "..", configuredDirectory)),
             ];
-        var dataDirectory = candidateDirectories.FirstOrDefault(Directory.Exists)
+        var configuredDataDirectory = candidateDirectories.FirstOrDefault(Directory.Exists)
             ?? candidateDirectories[0];
+        var dataDirectory = Directory.Exists(Path.Combine(configuredDataDirectory, "jlpt-vocabulary"))
+            && !File.Exists(Path.Combine(configuredDataDirectory, "n1.json"))
+                ? Path.Combine(configuredDataDirectory, "jlpt-vocabulary")
+                : configuredDataDirectory;
 
         var entries = new List<VocabularyEntry>();
         for (var level = 1; level <= 5; level++)
