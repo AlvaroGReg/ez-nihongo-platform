@@ -1,5 +1,6 @@
 using System.Threading.RateLimiting;
 using EzNihongo.Platform.Api.Authentication;
+using EzNihongo.Platform.Api.Kanji;
 using EzNihongo.Platform.Api.Vocabulary;
 using EzNihongo.Platform.Api.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -43,6 +44,7 @@ builder.Services.AddOpenApi(options =>
 builder.Services.AddProblemDetails();
 builder.Services.AddValidation();
 builder.Services.AddSingleton<VocabularyCatalog>();
+builder.Services.AddSingleton<KanjiCatalog>();
 
 builder.Services.AddOptions<JwtOptions>()
     .Bind(builder.Configuration.GetSection(JwtOptions.SectionName))
@@ -132,6 +134,7 @@ builder.Services.AddHostedService<IdentityDatabaseStartupCheck>();
 
 var app = builder.Build();
 _ = app.Services.GetRequiredService<VocabularyCatalog>();
+_ = app.Services.GetRequiredService<KanjiCatalog>();
 
 app.UseExceptionHandler();
 app.UseAuthentication();
@@ -146,6 +149,7 @@ app.MapGet("/health", () => TypedResults.Ok(new { status = "ok" }))
 var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary");
 
 app.MapAuthEndpoints();
+app.MapKanjiEndpoints();
 
 vocabulary.MapGet("/levels", (VocabularyCatalog catalog) =>
         TypedResults.Ok(catalog.GetLevelCounts()))

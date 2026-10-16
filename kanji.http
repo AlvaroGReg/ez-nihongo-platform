@@ -1,0 +1,22 @@
+@baseUrl = http://localhost:5080
+
+### Kanji counts by JLPT level plus additional kanji count
+GET {{baseUrl}}/api/v1/kanji/levels
+
+### Kanji for the dictionary or JLPT exercises
+GET {{baseUrl}}/api/v1/kanji?level=5&offset=0&limit=50
+
+### Additional kanji for dictionary and exercises
+GET {{baseUrl}}/api/v1/kanji?collection=extra&offset=0&limit=50
+
+### All kanji catalog entries
+GET {{baseUrl}}/api/v1/kanji?offset=0&limit=50
+
+### Retrieve a kanji by stable ID
+GET {{baseUrl}}/api/v1/kanji/n5-1
+
+### Unknown kanji ID (404)
+GET {{baseUrl}}/api/v1/kanji/not-a-kanji
+
+### Invalid collection (400 Problem Details)
+GET {{baseUrl}}/api/v1/kanji?collection=other
