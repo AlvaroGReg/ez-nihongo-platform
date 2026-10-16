@@ -20,6 +20,10 @@ Endpoints:
 - `GET /api/v1/vocabulary?level=5&offset=0&limit=50` — paginated vocabulary;
   `level` is optional and `limit` is between 1 and 200.
 - `GET /api/v1/vocabulary/{contentId}` — retrieve one vocabulary entry.
+- `GET /api/v1/kanji/levels` — kanji counts by JLPT level and additional catalog.
+- `GET /api/v1/kanji?level=5&offset=0&limit=50` — paginated kanji, optionally filtered by JLPT level.
+- `GET /api/v1/kanji?collection=extra&offset=0&limit=50` — kanji outside JLPT lists, for dictionaries and exercises.
+- `GET /api/v1/kanji/{id}` — retrieve one kanji entry by its stable ID.
 - `GET /openapi/v1.json` — machine-readable API schema.
 - `POST /api/v1/auth/register` — create an account and return a bearer token.
 - `POST /api/v1/auth/login` — authenticate and return a bearer token.
@@ -127,6 +131,14 @@ characters share an `id`.
 `meaning.en` and `meaning.es` preserve the available English and Spanish
 translations. The API returns this data through stable `contentId` values,
 using source UUIDs when available and a word/reading identity otherwise.
+
+## Kanji data
+
+Kanji entries are maintained in `db/kanji/` as `n1.json` through `n5.json`
+and `extra.json`. API responses preserve the web catalog field names, including
+reading and bilingual meaning arrays. Extra kanji have `jlpt: null` and IDs
+prefixed with `extra-`; filter them with `collection=extra`. Omitting both
+`level` and `collection` returns entries from both catalogs.
 
 ## Attribution and modifications
 
