@@ -69,6 +69,20 @@ docker compose down --volumes
 ./deploy.ps1
 ```
 
+To reset a local account password without deleting its account or progress, run
+the helper from this repository root while the Compose database is running:
+
+```powershell
+.\tools\Set-LocalUserPassword.ps1 -UserName "user@example.com"
+```
+
+The script prompts for the new password without echoing it. It uses the
+`POSTGRES_PASSWORD` in the workspace `.env` file (or an existing
+`Postgres__ConnectionString` environment variable), looks up the user by
+`UserName`, and changes the password through ASP.NET Core Identity. Identity
+validates the password policy and stores the hash. Optionally, pass a
+`SecureString` with `-Password (Read-Host -AsSecureString)`.
+
 To add a later schema change, create a versioned migration with
 `dotnet ef migrations add <MigrationName> --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api`
 and the API will apply it on its next start.
