@@ -44,7 +44,7 @@ public sealed class AuthService(
         return AuthOperationResult.Success(CreateToken(user));
     }
 
-    public async Task<AuthOperationResult> LoginAsync(AuthRequest request, CancellationToken cancellationToken)
+    public async Task<AuthOperationResult> LoginAsync(AuthLoginRequest request, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var email = request.Email.Trim().ToLowerInvariant();
@@ -53,6 +53,13 @@ public sealed class AuthService(
             return AuthOperationResult.Invalid(new Dictionary<string, string[]> { ["credentials"] = ["Invalid email or password."] });
 
         return AuthOperationResult.Success(CreateToken(user));
+    }
+
+    public async Task<AuthTokenResponse?> CreateAccessTokenAsync(string userId, CancellationToken cancellationToken)
+    {
+        var user = await userManager.FindByIdAsync(userId);
+        cancellationToken.ThrowIfCancellationRequested();
+        return user is null ? null : CreateToken(user);
     }
 
     private AuthTokenResponse CreateToken(PlatformUser user)

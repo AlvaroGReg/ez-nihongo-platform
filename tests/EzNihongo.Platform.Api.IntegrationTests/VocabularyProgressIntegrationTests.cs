@@ -121,6 +121,7 @@ public sealed class VocabularyProgressIntegrationTests : IAsyncLifetime
                     ["Jwt:AccessTokenMinutes"] = "15",
                     ["AuthRateLimit:PermitLimit"] = "100",
                     ["AuthRateLimit:WindowMinutes"] = "1",
+                    ["PersistentLogin:AllowedOrigins:0"] = "http://localhost",
                     ["Vocabulary:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db"))
                 }));
             builder.ConfigureServices(services =>

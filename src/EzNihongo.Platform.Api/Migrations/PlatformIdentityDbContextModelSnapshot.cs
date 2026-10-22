@@ -22,6 +22,52 @@ namespace EzNihongo.Platform.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("EzNihongo.Platform.Api.Identity.PersistentLoginSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("ExpiresAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("FamilyId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("ReplacedById")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset?>("RevokedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset?>("RotatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<byte[]>("TokenHash")
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FamilyId");
+
+                    b.HasIndex("ReplacedById");
+
+                    b.HasIndex("TokenHash")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PersistentLoginSessions", (string)null);
+                });
+
             modelBuilder.Entity("EzNihongo.Platform.Api.Identity.PlatformUser", b =>
                 {
                     b.Property<string>("Id")
@@ -199,6 +245,20 @@ namespace EzNihongo.Platform.Api.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("EzNihongo.Platform.Api.Identity.PersistentLoginSession", b =>
+                {
+                    b.HasOne("EzNihongo.Platform.Api.Identity.PersistentLoginSession", null)
+                        .WithMany()
+                        .HasForeignKey("ReplacedById")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("EzNihongo.Platform.Api.Identity.PlatformUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EzNihongo.Platform.Api.VocabularyProgress.VocabularyAttempt", b =>

@@ -36,7 +36,8 @@ Content-Type: application/json
 
 {
   "email": "{{email}}",
-  "password": "{{password}}"
+  "password": "{{password}}",
+  "rememberMe": true
 }
 
 ### Invalid login (expected 401 Problem Details)
@@ -51,6 +52,22 @@ Content-Type: application/json
 ### Current authenticated identity (paste accessToken above)
 GET {{baseUrl}}/api/v1/auth/me
 Authorization: Bearer {{accessToken}}
+
+### Refresh persistent session (cookie is supplied by the HTTP client)
+POST {{baseUrl}}/api/v1/auth/refresh
+Origin: http://localhost:8080
+X-EZ-Nihongo-Request: 1
+Content-Type: application/json
+
+{}
+
+### Logout this browser session
+POST {{baseUrl}}/api/v1/auth/logout
+Origin: http://localhost:8080
+X-EZ-Nihongo-Request: 1
+Content-Type: application/json
+
+{}
 
 ### Current identity without token (expected 401 Problem Details)
 GET {{baseUrl}}/api/v1/auth/me

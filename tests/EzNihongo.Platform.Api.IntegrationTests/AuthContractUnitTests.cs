@@ -50,4 +50,30 @@ public sealed class AuthContractUnitTests
         Assert.Contains(results, result => result.MemberNames.Contains(nameof(AuthRequest.Email)));
         Assert.Contains(results, result => result.MemberNames.Contains(nameof(AuthRequest.Password)));
     }
+
+    [Fact]
+    public void Persistent_login_requires_exact_origins_and_only_allows_insecure_cookie_in_development()
+    {
+        var options = new PersistentLoginOptions { AllowedOrigins = ["https://app.example.com"] };
+        Assert.True(options.IsValid("Production"));
+        Assert.False(new PersistentLoginOptions().IsValid("Development"));
+        Assert.False(new PersistentLoginOptions
+        {
+            AllowedOrigins = ["*"]
+        }.IsValid("Production"));
+        Assert.False(new PersistentLoginOptions
+        {
+            AllowedOrigins = ["https://app.example.com/"]
+        }.IsValid("Production"));
+        Assert.True(new PersistentLoginOptions
+        {
+            AllowedOrigins = ["http://localhost:8080"],
+            AllowInsecureDevelopmentCookie = true
+        }.IsValid("Development"));
+        Assert.False(new PersistentLoginOptions
+        {
+            AllowedOrigins = ["http://localhost:8080"],
+            AllowInsecureDevelopmentCookie = true
+        }.IsValid("Production"));
+    }
 }

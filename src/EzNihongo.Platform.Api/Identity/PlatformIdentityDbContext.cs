@@ -9,6 +9,8 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
     public DbSet<VocabularyProgress.VocabularyAttempt> VocabularyAttempts =>
         Set<VocabularyProgress.VocabularyAttempt>();
 
+    public DbSet<PersistentLoginSession> PersistentLoginSessions => Set<PersistentLoginSession>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -42,6 +44,23 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
             attempt.HasIndex(item => new { item.UserId, item.EventId })
                 .IsUnique();
             attempt.HasIndex(item => new { item.UserId, item.CreatedAt, item.Id });
+        });
+
+        builder.Entity<PersistentLoginSession>(session =>
+        {
+            session.ToTable("PersistentLoginSessions");
+            session.HasKey(item => item.Id);
+            session.Property(item => item.UserId).IsRequired();
+            session.Property(item => item.TokenHash).HasColumnType("bytea").IsRequired();
+            session.Property(item => item.CreatedAt).IsRequired();
+            session.Property(item => item.ExpiresAt).IsRequired();
+            session.HasOne<PlatformUser>().WithMany().HasForeignKey(item => item.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            session.HasOne<PersistentLoginSession>().WithMany().HasForeignKey(item => item.ReplacedById)
+                .OnDelete(DeleteBehavior.SetNull);
+            session.HasIndex(item => item.TokenHash).IsUnique();
+            session.HasIndex(item => item.FamilyId);
+            session.HasIndex(item => item.UserId);
         });
     }
 }

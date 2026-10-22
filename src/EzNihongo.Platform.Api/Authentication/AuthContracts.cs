@@ -12,6 +12,18 @@ public sealed record AuthRequest
     public required string Password { get; init; }
 }
 
+/// <summary>Credentials and persistence preference used to start a session.</summary>
+public sealed record AuthLoginRequest
+{
+    [Required, EmailAddress, MaxLength(256)]
+    public required string Email { get; init; }
+
+    [Required, MaxLength(128)]
+    public required string Password { get; init; }
+
+    public bool RememberMe { get; init; }
+}
+
 /// <summary>Public identity details for the authenticated account.</summary>
 public sealed record AuthUserResponse(string Id, string Email);
 

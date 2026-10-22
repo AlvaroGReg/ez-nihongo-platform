@@ -58,6 +58,11 @@ builder.Services.AddOptions<AuthRateLimitOptions>()
     .Validate(options => options.IsValid(),
         $"'{AuthRateLimitOptions.SectionName}' requires positive PermitLimit and WindowMinutes values.")
     .ValidateOnStart();
+builder.Services.AddOptions<PersistentLoginOptions>()
+    .Bind(builder.Configuration.GetSection(PersistentLoginOptions.SectionName))
+    .Validate(options => options.IsValid(builder.Environment.EnvironmentName),
+        $"'{PersistentLoginOptions.SectionName}:AllowedOrigins' must contain exact origins, and insecure cookies may only be enabled in Development.")
+    .ValidateOnStart();
 
 var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -91,6 +96,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IPersistentLoginSessionService, PersistentLoginSessionService>();
 builder.Services.AddScoped<IVocabularyProgressService, VocabularyProgressService>();
 
 var rateLimit = builder.Configuration.GetSection(AuthRateLimitOptions.SectionName).Get<AuthRateLimitOptions>() ?? new AuthRateLimitOptions();

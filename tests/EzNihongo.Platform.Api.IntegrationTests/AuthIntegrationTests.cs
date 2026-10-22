@@ -4,6 +4,8 @@ using System.Net.Http.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.WebUtilities;
 using EzNihongo.Platform.Api.Authentication;
 using EzNihongo.Platform.Api.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -153,6 +155,116 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
     }
 
     [PostgresFact]
+    public async Task Persistent_login_sets_hashed_cookie_and_refresh_rotates_without_extending_expiry()
+    {
+        var email = NewEmail();
+        await Register(email);
+
+        var login = await _client.PostAsJsonAsync("/api/v1/auth/login", new
+        {
+            email,
+            password = "Correct-Horse7!",
+            rememberMe = true
+        });
+        Assert.Equal(HttpStatusCode.OK, login.StatusCode);
+        var loginBody = await login.Content.ReadAsStringAsync();
+        var tokenResponse = await login.Content.ReadFromJsonAsync<AuthTokenResponse>();
+        Assert.NotNull(tokenResponse);
+        var originalToken = ReadRefreshCookie(login);
+        Assert.DoesNotContain(originalToken, loginBody);
+        var setCookie = Assert.Single(login.Headers.GetValues("Set-Cookie"));
+        Assert.Contains("httponly", setCookie, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("secure", setCookie, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("samesite=strict", setCookie, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("path=/api/v1/auth", setCookie, StringComparison.OrdinalIgnoreCase);
+
+        DateTimeOffset absoluteExpiry;
+        await using (var scope = _factory.Services.CreateAsyncScope())
+        {
+            var database = scope.ServiceProvider.GetRequiredService<PlatformIdentityDbContext>();
+            var initial = await database.PersistentLoginSessions.SingleAsync(session => session.UserId == tokenResponse.User.Id);
+            Assert.Equal(SHA256.HashData(WebEncoders.Base64UrlDecode(originalToken)), initial.TokenHash);
+            Assert.NotEqual(Encoding.UTF8.GetBytes(originalToken), initial.TokenHash);
+            absoluteExpiry = initial.ExpiresAt;
+        }
+
+        using var refresh = new HttpRequestMessage(HttpMethod.Post, "/api/v1/auth/refresh");
+        refresh.Headers.Add("Origin", "http://localhost");
+        refresh.Headers.Add("X-EZ-Nihongo-Request", "1");
+        refresh.Headers.Add("Cookie", $"ez-nihongo-refresh={originalToken}");
+        refresh.Content = JsonContent.Create(new { });
+        var refreshed = await _client.SendAsync(refresh);
+
+        Assert.Equal(HttpStatusCode.OK, refreshed.StatusCode);
+        var refreshedBody = await refreshed.Content.ReadAsStringAsync();
+        var refreshedToken = ReadRefreshCookie(refreshed);
+        Assert.NotEqual(originalToken, refreshedToken);
+        Assert.DoesNotContain(refreshedToken, refreshedBody);
+        var refreshedResponse = await refreshed.Content.ReadFromJsonAsync<AuthTokenResponse>();
+        Assert.NotNull(refreshedResponse);
+        Assert.Equal(tokenResponse.User.Id, refreshedResponse.User.Id);
+
+        await using (var scope = _factory.Services.CreateAsyncScope())
+        {
+            var database = scope.ServiceProvider.GetRequiredService<PlatformIdentityDbContext>();
+            Assert.Equal(2, await database.PersistentLoginSessions.CountAsync(session => session.UserId == tokenResponse.User.Id));
+            Assert.Equal(absoluteExpiry, await database.PersistentLoginSessions
+                .Where(session => session.UserId == tokenResponse.User.Id)
+                .Select(session => session.ExpiresAt).Distinct().SingleAsync());
+        }
+
+        await using (var scope = _factory.Services.CreateAsyncScope())
+        {
+            var sessions = scope.ServiceProvider.GetRequiredService<IPersistentLoginSessionService>();
+            var replay = await sessions.RotateAsync(originalToken, CancellationToken.None);
+            Assert.Equal(PersistentLoginSessionStatus.Reused, replay.Status);
+        }
+
+        await using (var scope = _factory.Services.CreateAsyncScope())
+        {
+            var database = scope.ServiceProvider.GetRequiredService<PlatformIdentityDbContext>();
+            Assert.All(await database.PersistentLoginSessions.Where(session => session.UserId == tokenResponse.User.Id).ToListAsync(),
+                session => Assert.NotNull(session.RevokedAt));
+        }
+    }
+
+    [PostgresFact]
+    public async Task Cookie_refresh_rejects_untrusted_origin_without_mutating_session()
+    {
+        var email = NewEmail();
+        await Register(email);
+        var login = await _client.PostAsJsonAsync("/api/v1/auth/login", new
+        {
+            email,
+            password = "Correct-Horse7!",
+            rememberMe = true
+        });
+        Assert.Equal(HttpStatusCode.OK, login.StatusCode);
+        var token = ReadRefreshCookie(login);
+
+        using var refresh = new HttpRequestMessage(HttpMethod.Post, "/api/v1/auth/refresh");
+        refresh.Headers.Add("Origin", "https://evil.example");
+        refresh.Headers.Add("X-EZ-Nihongo-Request", "1");
+        refresh.Headers.Add("Cookie", $"ez-nihongo-refresh={token}");
+        refresh.Content = JsonContent.Create(new { });
+        var response = await _client.SendAsync(refresh);
+
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+        await using var scope = _factory.Services.CreateAsyncScope();
+        var database = scope.ServiceProvider.GetRequiredService<PlatformIdentityDbContext>();
+        var userId = await database.Users.Where(user => user.Email == email).Select(user => user.Id).SingleAsync();
+        var session = await database.PersistentLoginSessions.SingleAsync(item => item.UserId == userId);
+        Assert.Null(session.RotatedAt);
+        Assert.Null(session.RevokedAt);
+    }
+
+    private static string ReadRefreshCookie(HttpResponseMessage response)
+    {
+        var setCookie = Assert.Single(response.Headers.GetValues("Set-Cookie"));
+        return setCookie.Split(';', 2)[0]["ez-nihongo-refresh=".Length..];
+    }
+
+    [PostgresFact]
     public async Task Public_health_and_vocabulary_endpoints_remain_anonymous()
     {
         Assert.Equal(HttpStatusCode.OK, (await _client.GetAsync("/health")).StatusCode);
@@ -219,6 +331,7 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
                     ["Jwt:AccessTokenMinutes"] = "15",
                     ["AuthRateLimit:PermitLimit"] = "3",
                     ["AuthRateLimit:WindowMinutes"] = "1",
+                    ["PersistentLogin:AllowedOrigins:0"] = "http://localhost",
                     ["Vocabulary:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db"))
                 }));
             builder.ConfigureServices(services =>

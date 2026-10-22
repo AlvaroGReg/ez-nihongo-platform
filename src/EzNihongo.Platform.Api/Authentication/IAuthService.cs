@@ -4,7 +4,9 @@ public interface IAuthService
 {
     Task<AuthOperationResult> RegisterAsync(AuthRequest request, CancellationToken cancellationToken);
 
-    Task<AuthOperationResult> LoginAsync(AuthRequest request, CancellationToken cancellationToken);
+    Task<AuthOperationResult> LoginAsync(AuthLoginRequest request, CancellationToken cancellationToken);
+
+    Task<AuthTokenResponse?> CreateAccessTokenAsync(string userId, CancellationToken cancellationToken);
 }
 
 public sealed record AuthOperationResult(
