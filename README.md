@@ -164,6 +164,13 @@ a disposable database. Without it, those tests are skipped and unit tests still
 run. The suite covers authentication and persistent login, vocabulary progress,
 rate limiting, Problem Details, and public health/catalog access.
 
+On Windows with Docker Desktop, run the PowerShell helper to start a temporary
+PostgreSQL container, run the suite against it, and remove the container:
+
+```powershell
+.\tests\Test-With-DisposablePostgres.ps1
+```
+
 ## Catalog data and tooling
 
 ### Vocabulary

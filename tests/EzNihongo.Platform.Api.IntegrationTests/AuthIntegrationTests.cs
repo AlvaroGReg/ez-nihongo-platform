@@ -36,7 +36,7 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
 
     public async Task InitializeAsync()
     {
-        _client = _factory.CreateClient();
+        _client = TestHost.CreateClient(_factory.CreateClient, authPermitLimit: 3);
         await using var scope = _factory.Services.CreateAsyncScope();
         var database = scope.ServiceProvider.GetRequiredService<PlatformIdentityDbContext>();
         await database.Database.MigrateAsync();
@@ -332,7 +332,8 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
                     ["AuthRateLimit:PermitLimit"] = "3",
                     ["AuthRateLimit:WindowMinutes"] = "1",
                     ["PersistentLogin:AllowedOrigins:0"] = "http://localhost",
-                    ["Vocabulary:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db"))
+                    ["Vocabulary:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db")),
+                    ["Kanji:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db/kanji"))
                 }));
             builder.ConfigureServices(services =>
             {
