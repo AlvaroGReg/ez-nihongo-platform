@@ -17,12 +17,15 @@ public sealed class IdentityDatabaseStartupCheck(
             {
                 throw new InvalidOperationException("The PostgreSQL identity database is not reachable.");
             }
+
+            await database.Database.MigrateAsync(cancellationToken);
         }
         catch (Exception exception) when (exception is not OperationCanceledException)
         {
-            logger.LogCritical("Cannot connect to the PostgreSQL identity database; the API will not start.");
+            logger.LogCritical(exception,
+                "Cannot connect to or initialize the PostgreSQL database; the API will not start.");
             throw new InvalidOperationException(
-                "The PostgreSQL identity database is not available. Verify the Postgres:ConnectionString configuration.");
+                "The PostgreSQL database is unavailable or its schema could not be initialized. Verify the Postgres:ConnectionString configuration and migrations.");
         }
     }
 

@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:5080
+@token = replace-with-access-token
+
+### Record a vocabulary attempt
+POST {{baseUrl}}/api/v1/progress/vocabulary/attempts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "eventId": "event-example-001",
+  "sessionId": "session-example-001",
+  "contentId": "replace-with-catalog-content-id",
+  "exerciseType": "reading",
+  "correct": true
+}
+
+### Get the authenticated user's vocabulary attempt history
+GET {{baseUrl}}/api/v1/progress/vocabulary/attempts?offset=0&limit=50
+Authorization: Bearer {{token}}

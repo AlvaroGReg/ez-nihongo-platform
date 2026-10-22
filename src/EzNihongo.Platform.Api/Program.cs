@@ -2,6 +2,7 @@ using System.Threading.RateLimiting;
 using EzNihongo.Platform.Api.Authentication;
 using EzNihongo.Platform.Api.Kanji;
 using EzNihongo.Platform.Api.Vocabulary;
+using EzNihongo.Platform.Api.VocabularyProgress;
 using EzNihongo.Platform.Api.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -27,7 +28,8 @@ builder.Services.AddOpenApi(options =>
     })
     .AddOperationTransformer((operation, context, _) =>
     {
-        if (context.Description.RelativePath?.TrimEnd('/') == "api/v1/auth/me")
+        var path = context.Description.RelativePath?.TrimEnd('/');
+        if (path == "api/v1/auth/me" || path?.StartsWith("api/v1/progress/vocabulary", StringComparison.Ordinal) == true)
         {
             operation.Security =
             [
@@ -89,6 +91,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IVocabularyProgressService, VocabularyProgressService>();
 
 var rateLimit = builder.Configuration.GetSection(AuthRateLimitOptions.SectionName).Get<AuthRateLimitOptions>() ?? new AuthRateLimitOptions();
 builder.Services.AddRateLimiter(options =>
@@ -150,6 +153,7 @@ var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary");
 
 app.MapAuthEndpoints();
 app.MapKanjiEndpoints();
+app.MapVocabularyProgressEndpoints();
 
 vocabulary.MapGet("/levels", (VocabularyCatalog catalog) =>
         TypedResults.Ok(catalog.GetLevelCounts()))

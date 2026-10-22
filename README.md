@@ -59,21 +59,19 @@ The access-token lifetime defaults to 15 minutes and can be changed with
 form, such as `Jwt__SigningKey` and `Postgres__ConnectionString`. Use a
 high-entropy signing key from a secret manager in deployed environments.
 
-The Compose stack creates the PostgreSQL database, but schema updates remain an
-explicit deployment step. After starting the stack, apply the versioned Identity
-schema from this repository root:
+The Compose stack creates the PostgreSQL database. The API applies pending EF
+Core migrations automatically before it starts serving requests, including the
+initial schema when the database is empty. To reset the local database and start
+again from an empty volume, run these commands from the workspace root:
 
 ```sh
-$env:Postgres__ConnectionString = "Host=localhost;Database=eznihongo;Username=eznihongo;Password=<POSTGRES_PASSWORD-from-workspace-.env>"
-dotnet tool restore
-dotnet ef database update --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api
+docker compose down --volumes
+./deploy.ps1
 ```
 
-To add a later migration, run
+To add a later schema change, create a versioned migration with
 `dotnet ef migrations add <MigrationName> --project src/EzNihongo.Platform.Api --startup-project src/EzNihongo.Platform.Api`
-with `Postgres__ConnectionString` set. The API does not automatically apply
-migrations at startup; deploy schema changes explicitly before starting a new
-API version.
+and the API will apply it on its next start.
 
 ### Authentication requests
 
