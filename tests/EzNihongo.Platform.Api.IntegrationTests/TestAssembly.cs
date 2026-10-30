@@ -8,6 +8,7 @@ internal static class TestHost
     {
         var values = new Dictionary<string, string?>
         {
+            ["Postgres__ConnectionString"] = Environment.GetEnvironmentVariable("AUTH_TEST_POSTGRES_CONNECTION"),
             ["Jwt__SigningKey"] = "integration-test-signing-key-with-more-than-32-bytes",
             ["Jwt__Issuer"] = "ez-nihongo-integration-tests",
             ["Jwt__Audience"] = "ez-nihongo-integration-tests",

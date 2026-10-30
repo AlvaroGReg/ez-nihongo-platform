@@ -159,13 +159,26 @@ Run the API test suite from this repository root:
 dotnet test tests/EzNihongo.Platform.Api.IntegrationTests
 ```
 
-PostgreSQL integration tests require `AUTH_TEST_POSTGRES_CONNECTION` to point to
-a disposable database. Without it, those tests are skipped and unit tests still
-run. The suite covers authentication and persistent login, vocabulary progress,
-rate limiting, Problem Details, and public health/catalog access.
+PostgreSQL integration tests require `AUTH_TEST_POSTGRES_CONNECTION`. It may point
+to the existing local development database when that database is intended for
+testing and its data may be changed; a separate database is not mandatory. The
+tests apply EF Core migrations and write test records to the configured database.
+Without the variable, PostgreSQL tests are skipped and unit tests still run.
 
-On Windows with Docker Desktop, run the PowerShell helper to start a temporary
-PostgreSQL container, run the suite against it, and remove the container:
+For example, in PowerShell, set the connection string to the same local database
+used by the API, then run the suite from this repository root:
+
+```powershell
+$env:AUTH_TEST_POSTGRES_CONNECTION = "Host=localhost;Port=5432;Database=eznihongo;Username=eznihongo;Password=<local-password>"
+dotnet test tests/EzNihongo.Platform.Api.IntegrationTests
+```
+
+The suite covers authentication and persistent login, vocabulary progress,
+known content, rate limiting, Problem Details, and public health/catalog access.
+
+For an isolated run instead, Windows users with Docker Desktop can run the
+PowerShell helper to start a temporary PostgreSQL container, run the suite
+against it, and remove the container:
 
 ```powershell
 .\tests\Test-With-DisposablePostgres.ps1

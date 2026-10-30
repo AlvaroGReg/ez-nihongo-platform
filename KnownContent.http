@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:5080
+@token = replace-with-access-token
+@catalogVocabularyId = replace-with-catalog-vocabulary-id
+@knownContentId = replace-with-known-content-uuid
+
+### List the authenticated user's known content
+GET {{baseUrl}}/api/v1/me/known-content?offset=0&limit=50&language=en
+Authorization: Bearer {{token}}
+
+### Add a canonical vocabulary entry
+POST {{baseUrl}}/api/v1/me/known-content/catalog?language=en
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "contentType": "vocabulary",
+  "catalogContentId": "{{catalogVocabularyId}}"
+}
+
+### Create private vocabulary
+POST {{baseUrl}}/api/v1/me/known-content/custom/vocabulary
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "word": "自作語",
+  "reading": "じさくご",
+  "romaji": "jisakugo",
+  "meaning": "my own word"
+}
+
+### Create private kanji
+POST {{baseUrl}}/api/v1/me/known-content/custom/kanji
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "kanji": "𠮟",
+  "readings": ["しかる"],
+  "meanings": ["scold"]
+}
+
+### Remove an entry (also returns 204 when absent or owned by another user)
+DELETE {{baseUrl}}/api/v1/me/known-content/{{knownContentId}}
+Authorization: Bearer {{token}}

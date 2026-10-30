@@ -11,6 +11,8 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
 
     public DbSet<PersistentLoginSession> PersistentLoginSessions => Set<PersistentLoginSession>();
 
+    public DbSet<KnownContent.UserKnownContent> UserKnownContent => Set<KnownContent.UserKnownContent>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -61,6 +63,35 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
             session.HasIndex(item => item.TokenHash).IsUnique();
             session.HasIndex(item => item.FamilyId);
             session.HasIndex(item => item.UserId);
+        });
+
+        builder.Entity<KnownContent.UserKnownContent>(item =>
+        {
+            item.ToTable("UserKnownContent", table => table.HasCheckConstraint(
+                "CK_UserKnownContent_SourceShape",
+                "(\"Source\" = 'catalog' AND \"CatalogContentId\" IS NOT NULL AND \"NormalizedWriting\" IS NULL AND \"NormalizedReading\" IS NULL AND \"Word\" IS NULL AND \"Reading\" IS NULL AND \"Romaji\" IS NULL AND \"Meaning\" IS NULL AND \"Kanji\" IS NULL AND \"Readings\" IS NULL AND \"Meanings\" IS NULL) OR (\"Source\" = 'custom' AND \"CatalogContentId\" IS NULL AND \"NormalizedWriting\" IS NOT NULL AND ((\"ContentType\" = 'vocabulary' AND \"NormalizedReading\" IS NOT NULL AND \"Word\" IS NOT NULL AND \"Reading\" IS NOT NULL AND \"Romaji\" IS NOT NULL AND \"Meaning\" IS NOT NULL AND \"Kanji\" IS NULL AND \"Readings\" IS NULL AND \"Meanings\" IS NULL) OR (\"ContentType\" = 'kanji' AND \"NormalizedReading\" IS NULL AND \"Kanji\" IS NOT NULL AND \"Readings\" IS NOT NULL AND \"Meanings\" IS NOT NULL AND \"Word\" IS NULL AND \"Reading\" IS NULL AND \"Romaji\" IS NULL AND \"Meaning\" IS NULL)))"));
+            item.HasKey(value => value.Id);
+            item.Property(value => value.UserId).IsRequired();
+            item.Property(value => value.ContentType).HasMaxLength(16).IsRequired();
+            item.Property(value => value.Source).HasMaxLength(16).IsRequired();
+            item.Property(value => value.CatalogContentId).HasMaxLength(300);
+            item.Property(value => value.Word).HasMaxLength(100);
+            item.Property(value => value.Reading).HasMaxLength(200);
+            item.Property(value => value.Romaji).HasMaxLength(200);
+            item.Property(value => value.Meaning).HasMaxLength(500);
+            item.Property(value => value.Kanji).HasMaxLength(100);
+            item.Property(value => value.NormalizedWriting).HasMaxLength(300);
+            item.Property(value => value.NormalizedReading).HasMaxLength(600);
+            item.Property(value => value.CreatedAt).IsRequired();
+            item.HasOne<PlatformUser>().WithMany().HasForeignKey(value => value.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            item.HasIndex(value => new { value.UserId, value.ContentType, value.CatalogContentId })
+                .IsUnique().HasFilter("\"Source\" = 'catalog'");
+            item.HasIndex(value => new { value.UserId, value.ContentType, value.NormalizedWriting, value.NormalizedReading })
+                .IsUnique().HasFilter("\"Source\" = 'custom' AND \"ContentType\" = 'vocabulary'");
+            item.HasIndex(value => new { value.UserId, value.ContentType, value.NormalizedWriting })
+                .IsUnique().HasFilter("\"Source\" = 'custom' AND \"ContentType\" = 'kanji'");
+            item.HasIndex(value => new { value.UserId, value.ContentType, value.CreatedAt, value.Id });
         });
     }
 }
