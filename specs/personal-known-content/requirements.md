@@ -64,14 +64,12 @@ si existe para otra cuenta y se trata de forma segura/idempotente.
 La eliminación de una entrada personalizada es definitiva; la lista es su único
 almacenamiento y no existe papelera/archivo.
 
-### REQ-06 — Elementos para ejercicios
+### REQ-06 — Consulta para el diccionario personal
 
-La consulta paginada de REQ-02 permite recuperar las entradas propias necesarias
-para formar el conjunto de preguntas de vocabulario o kanji. El parámetro `type`
-filtra el tipo y el DTO devuelve IDs estables y campos de pregunta (incluidas
-variantes de lecturas/significados de kanji). El cliente carga todas las páginas,
-combina el conjunto propio con el catálogo y aplica el modo de filtro solicitado.
-No existe un endpoint separado de elementos para ejercicios.
+La consulta paginada de REQ-02 permite presentar las entradas en la vista privada
+del diccionario. El parámetro `type` filtra el tipo y el DTO devuelve IDs estables
+y campos de presentación (incluidas variantes de lecturas/significados de kanji).
+Estas entradas no se ofrecen a los ejercicios ni se mezclan con sus catálogos.
 
 ### REQ-07 — Búsqueda del catálogo
 
@@ -93,8 +91,8 @@ respuestas y logs no deben exponer contenido ni IDs privados de otras cuentas.
 2. Dos cuentas sólo consultan y usan su propia lista.
 3. Añadir un ID de catálogo inválido o con tipo incompatible no crea datos.
 4. Añadir dos veces el mismo elemento de catálogo no duplica la pertenencia.
-5. El contenido propio cumple la validación y aparece en la lista y en el origen
-   de preguntas sólo de su propietario.
+5. El contenido propio cumple la validación y aparece en el diccionario sólo de su
+   propietario; no aparece en ejercicios.
 6. Una creación que coincide con el catálogo responde `409` con código
    `catalog-duplicate` y el ID oficial; una duplicación propia responde `409`
    con código `duplicate`.
@@ -116,3 +114,4 @@ respuestas y logs no deben exponer contenido ni IDs privados de otras cuentas.
 - Persistencia de intentos/SRS o cambios automáticos de pertenencia tras
   responder ejercicios.
 - Exponer el contenido personalizado en los endpoints públicos de catálogo.
+ - Usar contenido personal en ejercicios o ampliar sus endpoints/proveedores.

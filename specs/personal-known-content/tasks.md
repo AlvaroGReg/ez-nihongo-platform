@@ -13,7 +13,7 @@
 
 ## Fase 1 — Cierre SDD (sesión de coordinación, sin código)
 
-- [x] Sincronizar rutas, DTO, límites, unicidad, borrado y entradas de ejercicio con
+- [x] Sincronizar rutas, DTO, límites, unicidad y borrado con
       `ez-nihongo-web/specs/personal-known-content/`.
 - [x] Confirmar qué constituye exactamente un carácter kanji y normalización
       Unicode compatible con búsqueda de duplicados.
@@ -43,19 +43,20 @@
        paginación y eliminación idempotente.
 - [x] Validar: `dotnet build` y tests API relacionados.
 
-## Fase 4 — Proveedor privado para ejercicios (sesión API 3)
+## Fase 4 — Consulta privada del diccionario (sesión API 3)
 
-- [x] Implementar la consulta por tipo del conjunto personal completo, con campos
-      de pregunta tipados y límite de tamaño acordado.
+- [x] Confirmar que GET paginado por tipo expone campos de presentación del
+       diccionario, con límite de tamaño acordado.
 - [x] Verificar que contenido personalizado sólo aparece para su propietario y
-      que entradas de catálogo conservan IDs estables.
-- [x] Añadir pruebas de integración de conjunto vacío, mixto y aislamiento.
-- [x] Confirmar OpenAPI y actualizar traceability del contrato.
+       que entradas de catálogo conservan IDs estables.
+- [x] Añadir pruebas de integración de lista vacía/mixta e aislamiento.
+- [x] Confirmar OpenAPI y actualizar traceability del contrato. No se crea acceso
+       a contenido personal para ejercicios.
 
 ## Fase 5 — Integración y cierre (sesión conjunta)
 
 - [ ] Integrar consumo web y comprobar flujos con cuenta A/cuenta B, catálogo,
-      contenido propio, filtros y borrado.
+       contenido propio y borrado en diccionario.
 - [x] Ejecutar `dotnet build` y suite API con `AUTH_TEST_POSTGRES_CONNECTION`
        apuntando a la base local de desarrollo/pruebas acordada; las pruebas
        aplican migraciones y escriben registros en esa base. Usar PostgreSQL

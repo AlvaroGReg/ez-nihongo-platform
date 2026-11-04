@@ -10,10 +10,10 @@ la implementación puede comenzar siguiendo las tareas por sesión.
 
 ## Problema y objetivo
 
-Los ejercicios actuales se generan desde catálogos generales y no permiten que
-cada estudiante seleccione contenido conocido propio. Añadir una lista personal
-única permitirá guardar vocabulario y kanji del catálogo o crear contenido propio
-y usarlo como filtro al configurar ejercicios.
+Cada estudiante necesita un espacio privado para consultar y organizar vocabulario
+y kanji del catálogo, además de guardar entradas propias como diccionario personal.
+Esta fase se limita a la gestión y consulta de ese contenido; las entradas propias
+no se ofrecen a los ejercicios.
 
 ## Decisiones de alcance acordadas
 
@@ -23,8 +23,8 @@ y usarlo como filtro al configurar ejercicios.
   como contenido personalizado propiedad del usuario.
 - La lista se gestiona manualmente: añadir y quitar. El resultado de un ejercicio
   no modifica automáticamente la lista.
-- En ejercicios de vocabulario y kanji se podrá seleccionar el filtro «Todo»,
-  «Sólo contenido conocido» o «Excluir contenido conocido».
+- El contenido personal sólo se expone en la lista/diccionario autenticado; no
+  cambia los ejercicios ni los catálogos públicos.
 - No hay persistencia local anónima ni sincronización offline para esta función.
 
 ## Alcance de plataforma
@@ -35,8 +35,7 @@ y usarlo como filtro al configurar ejercicios.
   propio y eliminación de la lista.
 - Validar cada referencia de catálogo contra los catálogos de plataforma.
 - Mantener la privacidad entre cuentas, deduplicación y contratos OpenAPI.
-- Extender los proveedores de ejercicios para entregar al cliente los elementos
-  propios del usuario mediante la API autenticada.
+- No se añaden endpoints ni integración de contenido personal para ejercicios.
 
 ## Fuera de alcance
 
@@ -67,7 +66,7 @@ propio.
 
 ## Criterio de éxito
 
-Un usuario autenticado puede construir su lista con elementos propios y del
-catálogo, verla en una sesión posterior y usar las tres opciones de filtro en
-ejercicios de vocabulario y kanji. La API mantiene aislamiento por usuario y los
-ejercicios no requieren modificar ni copiar los catálogos compartidos.
+Un usuario autenticado puede construir su diccionario personal con elementos
+propios y del catálogo y volver a consultarlo. La API mantiene aislamiento por
+usuario y no modifica los catálogos compartidos ni integra el contenido propio en
+ejercicios.

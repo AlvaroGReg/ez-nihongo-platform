@@ -3,8 +3,8 @@
 ## Límites entre repositorios
 
 La plataforma posee esquema de datos, autorización, DTO, validación y APIs. La
-web posee las pantallas, búsqueda visual del catálogo, selección del filtro y
-ensamblado de preguntas. La especificación de integración del cliente está en
+web posee las pantallas y búsqueda visual del catálogo para el diccionario
+personal. La especificación de integración del cliente está en
 [`web design`](../../../ez-nihongo-web/specs/personal-known-content/design.md).
 
 ## Modelo persistido propuesto
@@ -103,7 +103,7 @@ localiza datos de catálogo de la respuesta, no afecta a la persistencia.
 ```
 
 Campos obligatorios no vacíos. Romaji es input explícito porque la web actual no
-incluye conversor kana→romaji y el ejercicio de vocabulario lo necesita. Devuelve
+incluye conversor kana→romaji y forma parte de la entrada de diccionario. Devuelve
 `201 Created` con el item; los duplicados devuelven `409`.
 
 ### `POST /api/v1/me/known-content/custom/kanji`
@@ -188,9 +188,8 @@ sin permitir enumeración de IDs ajenos.
   declarar respuestas OpenAPI.
 - Reutilizar catálogos existentes para validar y resolver referencias; no alterar
   rutas públicas actuales.
-- La web usa las entradas API para los filtros. En modo «Todo» conserva los
-  proveedores actuales y agrega contenido personalizado sin duplicar referencias
-  de catálogo.
+- La API sirve contenido personal únicamente a la vista autenticada del
+  diccionario. No se crean contratos ni proveedores para integrarlo en ejercicios.
 
 ## Decisiones de producto cerradas
 
@@ -204,9 +203,8 @@ sin permitir enumeración de IDs ajenos.
   la entrada oficial.
 - Añadir una referencia de catálogo ya presente es idempotente y devuelve
   `200 OK`; duplicado custom responde `409 Conflict`.
-- La lista paginada es el único endpoint de lectura de contenido personal; la
-  web carga sus páginas para la lista y para calcular filtros. No hay endpoint
-  separado de elementos para ejercicios.
+- La lista paginada es el endpoint de lectura de contenido personal para la vista
+  de diccionario. No hay endpoint de elementos para ejercicios.
 - El significado propio es un solo texto literal sin campo de idioma ni
   traducción. Los significados de catálogo sí respetan `language` y el fallback
   actual de cada catálogo.
@@ -214,12 +212,8 @@ sin permitir enumeración de IDs ajenos.
   de catálogo sólo elimina la pertenencia del usuario.
 - POST de catálogo responde `{item, alreadyPresent}` para que la web muestre el
   estado idempotente correcto incluso si su lista local estaba desactualizada.
-- El filtro aplica a objetivos correctos, no a distractores: kanji puede usar el
-  pool general del catálogo para construir tres alternativas plausibles.
 - La respuesta de contenido catalogado usa `language` en GET y POST de catálogo;
   la respuesta de contenido custom no cambia con ese parámetro.
-- En modo `all`, cuentas autenticadas incorporan custom propio; anónimos conservan
-  catálogo solamente. Si falla la carga de lista autenticada, la web ofrece reintentar.
 - Prefijo de API fijado en `/api/v1/me/known-content`; la fase de coordinación
   congela el contrato; la implementación verifica OpenAPI en su sesión de endpoints.
 
@@ -227,7 +221,7 @@ sin permitir enumeración de IDs ajenos.
 
 - API: `dotnet build`; unit tests para validadores/normalización; integración con
   PostgreSQL para migración, autorización, aislamiento, constraints concurrentes,
-  validación de catálogos, idempotencia, dedupe, borrado y conjunto para ejercicio.
+  validación de catálogos, idempotencia, dedupe y borrado.
 - Para desarrollo local, `AUTH_TEST_POSTGRES_CONNECTION` puede apuntar a la misma
   base de PostgreSQL de desarrollo usada por la API, siempre que esté dedicada a
   desarrollo/pruebas y se acepte que las pruebas apliquen migraciones y escriban
