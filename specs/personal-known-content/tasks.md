@@ -55,6 +55,10 @@
 
 ## Fase 5 — Integración y cierre (sesión conjunta)
 
+Estado: **En curso**. El bloqueo de navegación identificado en el cliente está
+corregido y probado; siguen pendientes los escenarios integrados de CRUD y
+aislamiento desde navegador, y la revisión final.
+
 - [ ] Integrar consumo web y comprobar flujos con cuenta A/cuenta B, catálogo,
        contenido propio y borrado en diccionario.
 - [x] Ejecutar `dotnet build` y suite API con `AUTH_TEST_POSTGRES_CONNECTION`
@@ -63,3 +67,30 @@
        temporal aislado sólo si se necesita aislamiento.
 - [ ] Revisar diffs/status de esta y la web; completar trazabilidad y enlazar
       limitaciones o decisiones diferidas.
+
+Ejecución conjunta parcial (2026-11-10): se consultó el OpenAPI servido por la
+API temporal y coincidieron las cinco rutas de contenido conocido con el diseño;
+GET de lista declara bearer. La API respondió `201` al registro y `200` al login
+desde la interfaz web, pero ésta no salió de autenticación. No se ejecutaron aquí
+los escenarios CRUD/aislamiento desde la UI. La suite PostgreSQL descartable de
+21 pruebas del 2026-11-10 ya estaba confirmada y no se repitió. Fase 5 sigue
+pendiente.
+
+Seguimiento (2026-11-10): la investigación atribuyó el bloqueo de navegación al
+guard del cliente, no al contrato ni a la API. El guard web ya conserva el bearer
+emitido por login; la prueba del flujo pasó en el repositorio web. La API activa
+responde en `/health` y el OpenAPI observado mantiene rutas/seguridad aprobadas.
+Sin cambios de plataforma no se repitieron build ni pruebas PostgreSQL. La
+aceptación UI/API de CRUD, aislamiento A/B e independencia de ejercicios continúa
+pendiente; Fase 5 no se marca completa.
+
+Intento de aceptación segura (2026-11-10): la API activa respondió `/health` y
+OpenAPI publicó las cinco rutas de contenido conocido con bearer. El único
+PostgreSQL activo pertenece al stack Compose y usa el volumen persistente
+`ez-nihongo-project_postgres-data`; al no haber un dataset de prueba aislado y
+autorizado, no se registraron cuentas ni se hicieron mutaciones. `playwright-cli`
+y Playwright local no están disponibles; Edge sí está instalado, pero la web
+activa es una imagen preexistente, no código web actual. Escenarios integrados
+1–7: **sin ejecutar**. Para completar Fase 5 se necesita web actual servida en
+navegador y API contra PostgreSQL descartable; ninguna prueba destructiva afectó
+datos compartidos.
