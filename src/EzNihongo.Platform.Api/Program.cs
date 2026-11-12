@@ -4,6 +4,7 @@ using EzNihongo.Platform.Api.Kanji;
 using EzNihongo.Platform.Api.Vocabulary;
 using EzNihongo.Platform.Api.VocabularyProgress;
 using EzNihongo.Platform.Api.Identity;
+using EzNihongo.Platform.Api.KnownContent;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,8 @@ builder.Services.AddOpenApi(options =>
     options.AddDocumentTransformer((document, _, _) =>
     {
         document.Components ??= new Microsoft.OpenApi.OpenApiComponents();
-        document.Components!.SecuritySchemes![JwtBearerDefaults.AuthenticationScheme] =
+        document.Components.SecuritySchemes ??= new Dictionary<string, Microsoft.OpenApi.IOpenApiSecurityScheme>();
+        document.Components.SecuritySchemes[JwtBearerDefaults.AuthenticationScheme] =
             new Microsoft.OpenApi.OpenApiSecurityScheme
             {
                 Type = Microsoft.OpenApi.SecuritySchemeType.Http,
@@ -29,7 +31,8 @@ builder.Services.AddOpenApi(options =>
     .AddOperationTransformer((operation, context, _) =>
     {
         var path = context.Description.RelativePath?.TrimEnd('/');
-        if (path == "api/v1/auth/me" || path?.StartsWith("api/v1/progress/vocabulary", StringComparison.Ordinal) == true)
+        if (path == "api/v1/auth/me" || path?.StartsWith("api/v1/progress/vocabulary", StringComparison.Ordinal) == true ||
+            path?.StartsWith("api/v1/me/known-content", StringComparison.Ordinal) == true)
         {
             operation.Security =
             [
@@ -98,6 +101,7 @@ builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPersistentLoginSessionService, PersistentLoginSessionService>();
 builder.Services.AddScoped<IVocabularyProgressService, VocabularyProgressService>();
+builder.Services.AddScoped<IKnownContentService, KnownContentService>();
 
 var rateLimit = builder.Configuration.GetSection(AuthRateLimitOptions.SectionName).Get<AuthRateLimitOptions>() ?? new AuthRateLimitOptions();
 builder.Services.AddRateLimiter(options =>
@@ -160,6 +164,7 @@ var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary");
 app.MapAuthEndpoints();
 app.MapKanjiEndpoints();
 app.MapVocabularyProgressEndpoints();
+app.MapKnownContentEndpoints();
 
 vocabulary.MapGet("/levels", (VocabularyCatalog catalog) =>
         TypedResults.Ok(catalog.GetLevelCounts()))

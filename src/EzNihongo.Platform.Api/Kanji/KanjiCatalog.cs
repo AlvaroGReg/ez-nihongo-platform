@@ -51,6 +51,10 @@ public sealed class KanjiCatalog
 
     public KanjiRecord? Find(string id) => _entriesById.GetValueOrDefault(id);
 
+    public KanjiRecord? FindByNormalizedCharacter(string kanji) =>
+        _entries.FirstOrDefault(entry =>
+            EzNihongo.Platform.Api.KnownContent.KnownContentNormalization.NormalizeWriting(entry.Kanji) == kanji);
+
     private static KanjiCatalogFile ReadCatalog(string filePath)
     {
         if (!File.Exists(filePath))

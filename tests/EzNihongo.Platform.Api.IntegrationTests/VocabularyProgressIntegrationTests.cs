@@ -5,6 +5,7 @@ using EzNihongo.Platform.Api.Authentication;
 using EzNihongo.Platform.Api.Identity;
 using EzNihongo.Platform.Api.Vocabulary;
 using EzNihongo.Platform.Api.VocabularyProgress;
+using EzNihongo.Platform.Api.KnownContent;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -89,6 +90,120 @@ public sealed class VocabularyProgressIntegrationTests : IAsyncLifetime
 
         var invalidPage = await firstUser.GetAsync($"{attemptsEndpoint}?limit=201");
         Assert.Equal(HttpStatusCode.BadRequest, invalidPage.StatusCode);
+    }
+
+    [PostgresFact]
+    public async Task Known_content_routes_validate_auth_catalog_custom_duplicates_paging_and_delete()
+    {
+        const string endpoint = "/api/v1/me/known-content";
+        var anonymous = await _client.GetAsync(endpoint);
+        Assert.Equal(HttpStatusCode.Unauthorized, anonymous.StatusCode);
+        var anonymousPost = await _client.PostAsJsonAsync($"{endpoint}/catalog", new
+        {
+            contentType = "vocabulary", catalogContentId = "unused"
+        });
+        Assert.Equal(HttpStatusCode.Unauthorized, anonymousPost.StatusCode);
+
+        using var firstUser = await CreateAuthenticatedClient();
+        using var secondUser = await CreateAuthenticatedClient();
+        var invalidCatalog = await firstUser.PostAsJsonAsync($"{endpoint}/catalog", new
+        {
+            contentType = "kanji", catalogContentId = "not-a-kanji-id"
+        });
+        Assert.Equal(HttpStatusCode.BadRequest, invalidCatalog.StatusCode);
+
+        var catalogPage = await firstUser.GetFromJsonAsync<VocabularyPage>("/api/v1/vocabulary?level=5&limit=1");
+        Assert.NotNull(catalogPage);
+        var catalogEntry = Assert.Single(catalogPage.Words);
+        var catalogId = catalogEntry.ContentId;
+        var catalogDuplicate = await firstUser.PostAsJsonAsync($"{endpoint}/custom/vocabulary", new
+        {
+            word = catalogEntry.Word,
+            reading = catalogEntry.Furigana,
+            romaji = catalogEntry.Romaji,
+            meaning = catalogEntry.Meaning
+        });
+        Assert.Equal(HttpStatusCode.Conflict, catalogDuplicate.StatusCode);
+        var catalogDuplicateBody = await catalogDuplicate.Content.ReadAsStringAsync();
+        Assert.Contains("catalog-duplicate", catalogDuplicateBody, StringComparison.Ordinal);
+        Assert.Contains(catalogId, catalogDuplicateBody, StringComparison.Ordinal);
+
+        var catalogRequest = new { contentType = "vocabulary", catalogContentId = catalogId };
+        var addedCatalog = await firstUser.PostAsJsonAsync($"{endpoint}/catalog", catalogRequest);
+        var repeatedCatalog = await firstUser.PostAsJsonAsync($"{endpoint}/catalog", catalogRequest);
+        Assert.Equal(HttpStatusCode.OK, addedCatalog.StatusCode);
+        Assert.Equal(HttpStatusCode.OK, repeatedCatalog.StatusCode);
+        Assert.False((await addedCatalog.Content.ReadFromJsonAsync<AddKnownCatalogResponse>())!.AlreadyPresent);
+        Assert.True((await repeatedCatalog.Content.ReadFromJsonAsync<AddKnownCatalogResponse>())!.AlreadyPresent);
+
+        var invalidCustom = await firstUser.PostAsJsonAsync($"{endpoint}/custom/vocabulary", new
+        {
+            word = "自作", reading = "kana", romaji = "test", meaning = "invalid reading"
+        });
+        Assert.Equal(HttpStatusCode.BadRequest, invalidCustom.StatusCode);
+
+        var customWord = $"自作{Guid.NewGuid():N}";
+        var customRequest = new { word = customWord, reading = "てすと", romaji = "test", meaning = "private" };
+        var created = await firstUser.PostAsJsonAsync($"{endpoint}/custom/vocabulary", customRequest);
+        Assert.Equal(HttpStatusCode.Created, created.StatusCode);
+        var custom = await created.Content.ReadFromJsonAsync<KnownContentItemResponse>();
+        Assert.NotNull(custom);
+        Assert.Equal("custom", custom.Source);
+        Assert.Null(custom.CatalogContentId);
+        var duplicate = await firstUser.PostAsJsonAsync($"{endpoint}/custom/vocabulary", customRequest);
+        Assert.Equal(HttpStatusCode.Conflict, duplicate.StatusCode);
+        var duplicateBody = await duplicate.Content.ReadAsStringAsync();
+        Assert.Contains("duplicate", duplicateBody, StringComparison.Ordinal);
+
+        var customKanjiResponse = await firstUser.PostAsJsonAsync($"{endpoint}/custom/kanji", new
+        {
+            kanji = "𠀀",
+            readings = new[] { "しかる" },
+            meanings = new[] { "scold" }
+        });
+        Assert.Equal(HttpStatusCode.Created, customKanjiResponse.StatusCode);
+        var customKanji = await customKanjiResponse.Content.ReadFromJsonAsync<KnownContentItemResponse>();
+        Assert.NotNull(customKanji);
+        Assert.Equal("kanji", customKanji.ContentType);
+        Assert.Equal("custom", customKanji.Source);
+        Assert.Null(customKanji.CatalogContentId);
+
+        var page = await firstUser.GetFromJsonAsync<KnownContentPageResponse>($"{endpoint}?type=vocabulary&offset=0&limit=1");
+        Assert.NotNull(page);
+        Assert.Equal(2, page.Total);
+        Assert.Single(page.Items);
+        var exerciseSet = await firstUser.GetFromJsonAsync<KnownContentPageResponse>($"{endpoint}?offset=0&limit=200");
+        Assert.NotNull(exerciseSet);
+        Assert.Equal(3, exerciseSet.Total);
+        Assert.Equal(3, exerciseSet.Items.Count);
+        Assert.Contains(exerciseSet.Items, item => item.Source == "catalog" && item.CatalogContentId == catalogId);
+        Assert.Contains(exerciseSet.Items, item => item.Id == custom.Id && item.ContentType == "vocabulary");
+        Assert.Contains(exerciseSet.Items, item => item.Id == customKanji.Id && item.ContentType == "kanji");
+        var kanjiSet = await firstUser.GetFromJsonAsync<KnownContentPageResponse>($"{endpoint}?type=kanji&offset=0&limit=200");
+        Assert.NotNull(kanjiSet);
+        Assert.Single(kanjiSet.Items);
+        Assert.Equal(customKanji.Id, kanjiSet.Items[0].Id);
+        Assert.Equal(HttpStatusCode.OK, (await firstUser.GetAsync("/openapi/v1.json")).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest,
+            (await firstUser.GetAsync($"{endpoint}?type=invalid")).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest,
+            (await firstUser.GetAsync($"{endpoint}?language=fr")).StatusCode);
+        var otherPage = await secondUser.GetFromJsonAsync<KnownContentPageResponse>(endpoint);
+        Assert.NotNull(otherPage);
+        Assert.Equal(0, otherPage.Total);
+
+        var otherUserRemoval = await secondUser.DeleteAsync($"{endpoint}/{custom.Id}");
+        Assert.Equal(HttpStatusCode.NoContent, otherUserRemoval.StatusCode);
+        var stillPresent = await firstUser.GetFromJsonAsync<KnownContentPageResponse>(endpoint);
+        Assert.NotNull(stillPresent);
+        Assert.Contains(stillPresent.Items, item => item.Id == custom.Id);
+
+        var removed = await firstUser.DeleteAsync($"{endpoint}/{custom.Id}");
+        var repeatedRemoval = await firstUser.DeleteAsync($"{endpoint}/{custom.Id}");
+        Assert.Equal(HttpStatusCode.NoContent, removed.StatusCode);
+        Assert.Equal(HttpStatusCode.NoContent, repeatedRemoval.StatusCode);
+        var invalidLimit = await firstUser.GetAsync($"{endpoint}?limit=201");
+        Assert.Equal(HttpStatusCode.BadRequest, invalidLimit.StatusCode);
     }
 
     private async Task<HttpClient> CreateAuthenticatedClient()

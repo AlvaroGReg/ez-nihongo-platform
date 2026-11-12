@@ -78,6 +78,11 @@ public sealed class VocabularyCatalog
     public VocabularyEntry? Find(string contentId, string language) =>
         _entriesById.GetValueOrDefault(contentId)?.ForLocale(language);
 
+    public VocabularyEntry? FindByNormalizedContent(string word, string reading, string language) =>
+        _entries.FirstOrDefault(entry =>
+            EzNihongo.Platform.Api.KnownContent.KnownContentNormalization.NormalizeWriting(entry.Word) == word &&
+            EzNihongo.Platform.Api.KnownContent.KnownContentNormalization.NormalizeReading(entry.Furigana) == reading)?.ForLocale(language);
+
     private static string CreateContentId(string word, string furigana) =>
         $"vocabulary:{Uri.EscapeDataString(word.Normalize())}:{Uri.EscapeDataString(furigana.Normalize())}";
 

@@ -133,6 +133,89 @@ namespace EzNihongo.Platform.Api.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
+            modelBuilder.Entity("EzNihongo.Platform.Api.KnownContent.UserKnownContent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CatalogContentId")
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Kanji")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Meaning")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.PrimitiveCollection<string[]>("Meanings")
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("NormalizedReading")
+                        .HasMaxLength(600)
+                        .HasColumnType("character varying(600)");
+
+                    b.Property<string>("NormalizedWriting")
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<string>("Reading")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.PrimitiveCollection<string[]>("Readings")
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Romaji")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Source")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Word")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId", "ContentType", "CatalogContentId")
+                        .IsUnique()
+                        .HasFilter("\"Source\" = 'catalog'");
+
+                    b.HasIndex("UserId", "ContentType", "NormalizedWriting")
+                        .IsUnique()
+                        .HasFilter("\"Source\" = 'custom' AND \"ContentType\" = 'kanji'");
+
+                    b.HasIndex("UserId", "ContentType", "CreatedAt", "Id");
+
+                    b.HasIndex("UserId", "ContentType", "NormalizedWriting", "NormalizedReading")
+                        .IsUnique()
+                        .HasFilter("\"Source\" = 'custom' AND \"ContentType\" = 'vocabulary'");
+
+                    b.ToTable("UserKnownContent", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_UserKnownContent_SourceShape", "(\"Source\" = 'catalog' AND \"CatalogContentId\" IS NOT NULL AND \"NormalizedWriting\" IS NULL AND \"NormalizedReading\" IS NULL AND \"Word\" IS NULL AND \"Reading\" IS NULL AND \"Romaji\" IS NULL AND \"Meaning\" IS NULL AND \"Kanji\" IS NULL AND \"Readings\" IS NULL AND \"Meanings\" IS NULL) OR (\"Source\" = 'custom' AND \"CatalogContentId\" IS NULL AND \"NormalizedWriting\" IS NOT NULL AND ((\"ContentType\" = 'vocabulary' AND \"NormalizedReading\" IS NOT NULL AND \"Word\" IS NOT NULL AND \"Reading\" IS NOT NULL AND \"Romaji\" IS NOT NULL AND \"Meaning\" IS NOT NULL AND \"Kanji\" IS NULL AND \"Readings\" IS NULL AND \"Meanings\" IS NULL) OR (\"ContentType\" = 'kanji' AND \"NormalizedReading\" IS NULL AND \"Kanji\" IS NOT NULL AND \"Readings\" IS NOT NULL AND \"Meanings\" IS NOT NULL AND \"Word\" IS NULL AND \"Reading\" IS NULL AND \"Romaji\" IS NULL AND \"Meaning\" IS NULL)))");
+                        });
+                });
+
             modelBuilder.Entity("EzNihongo.Platform.Api.VocabularyProgress.VocabularyAttempt", b =>
                 {
                     b.Property<long>("Id")
@@ -254,6 +337,15 @@ namespace EzNihongo.Platform.Api.Migrations
                         .HasForeignKey("ReplacedById")
                         .OnDelete(DeleteBehavior.SetNull);
 
+                    b.HasOne("EzNihongo.Platform.Api.Identity.PlatformUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EzNihongo.Platform.Api.KnownContent.UserKnownContent", b =>
+                {
                     b.HasOne("EzNihongo.Platform.Api.Identity.PlatformUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
