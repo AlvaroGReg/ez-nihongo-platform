@@ -22,6 +22,19 @@ namespace EzNihongo.Platform.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("EzNihongo.Platform.Api.Identity.DailyRegistrationUsage", b =>
+                {
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Date");
+
+                    b.ToTable("DailyRegistrationUsage", (string)null);
+                });
+
             modelBuilder.Entity("EzNihongo.Platform.Api.Identity.PersistentLoginSession", b =>
                 {
                     b.Property<Guid>("Id")

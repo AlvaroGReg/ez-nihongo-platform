@@ -13,6 +13,8 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
 
     public DbSet<KnownContent.UserKnownContent> UserKnownContent => Set<KnownContent.UserKnownContent>();
 
+    public DbSet<DailyRegistrationUsage> DailyRegistrationUsages => Set<DailyRegistrationUsage>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -23,6 +25,14 @@ public sealed class PlatformIdentityDbContext(DbContextOptions<PlatformIdentityD
             user.HasIndex(account => account.NormalizedEmail)
                 .HasDatabaseName("EmailIndex")
                 .IsUnique();
+        });
+
+        builder.Entity<DailyRegistrationUsage>(usage =>
+        {
+            usage.ToTable("DailyRegistrationUsage");
+            usage.HasKey(item => item.Date);
+            usage.Property(item => item.Date).HasColumnType("date");
+            usage.Property(item => item.Count).IsRequired();
         });
 
         builder.Entity<Microsoft.AspNetCore.Identity.IdentityUserClaim<string>>().ToTable("UserClaims");

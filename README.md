@@ -120,6 +120,54 @@ Refresh and logout require JSON, an exact allowed `Origin`, and
 `X-EZ-Nihongo-Request: 1`. `PersistentLogin:AllowedOrigins` must be configured
 for every deployment. Do not enable wildcard credentialed CORS.
 
+## Deploy to Railway
+
+The existing root `Dockerfile` listens on port `8080` (`ASPNETCORE_HTTP_PORTS`)
+and exposes `GET /health` as a public liveness endpoint. Configure the Railway
+service's HTTP target port as `8080` and its health check path as `/health`.
+The API checks PostgreSQL connectivity and applies pending EF Core migrations
+before it starts serving requests.
+
+Set these service variables in Railway:
+
+- `Postgres__ConnectionString` — an Npgsql keyword/value connection string, not
+  Railway's `postgresql://...` `DATABASE_URL`. Prefer Railway's private Postgres
+  variables and construct it as
+  `Host=${{Postgres.PGHOST}};Port=${{Postgres.PGPORT}};Database=${{Postgres.PGDATABASE}};Username=${{Postgres.PGUSER}};Password=${{Postgres.PGPASSWORD}}`
+  (replace `Postgres` with the actual database service name).
+- `Jwt__SigningKey` — a secret of at least 32 UTF-8 bytes.
+- `Jwt__Issuer` — the configured token issuer.
+- `Jwt__Audience` — the configured token audience.
+- `PersistentLogin__AllowedOrigins__0` — the exact public frontend origin, such
+  as `https://app.example.com` (scheme and host, with an optional port; no path
+  or trailing slash). Add further indexed variables only for additional exact
+  frontend origins.
+
+For same-origin deployment, have the frontend proxy forward `/api/*` to this
+service and preserve request `Origin` and response `Set-Cookie` headers. Configure
+the allowed origin as the public frontend origin. Browser requests then remain
+same-origin; no API CORS policy or public browser-to-API access is needed. The
+refresh cookie is `Secure` in the default non-Development environment.
+
+The API limits authentication to 5 requests per IP per minute. Public reads,
+`/health`, and OpenAPI use a token bucket allowing a burst of 20 requests and
+replenishing 20 tokens every 20 seconds. Successful account creation is limited
+to 3 accounts per UTC day across service instances; rejected/invalid registrations
+do not consume the daily quota. Request bodies are capped at 64 KiB globally and
+8 KiB on authentication routes. Public vocabulary and kanji pagination offsets
+are limited to 10,000. Defaults can be adjusted with
+`PublicReadRateLimit__TokenLimit`, `PublicReadRateLimit__TokensPerPeriod`,
+`PublicReadRateLimit__ReplenishmentPeriodSeconds`, and
+`RegistrationLimit__DailyLimit`.
+
+To use the real client IP for limits, configure
+`ForwardedHeaders__KnownProxies__0` (and additional indexed values if needed) with
+the exact Railway ingress proxy IPs confirmed for the service. Forwarded headers
+are processed for one trusted hop only; do not configure a wildcard or trust
+client-supplied `X-Forwarded-For` values. Until a trusted ingress address is
+configured, forwarded IP headers are ignored and requests share the connection
+address seen by the API.
+
 `auth.http` contains request examples. Refresh and logout examples require the
 HTTP client to retain the cookie set by a persistent login. Use a REST client
 such as the VS Code REST Client, and replace the sample password before using

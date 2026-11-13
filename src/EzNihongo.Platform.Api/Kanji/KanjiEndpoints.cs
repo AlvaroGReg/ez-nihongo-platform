@@ -4,7 +4,9 @@ public static class KanjiEndpoints
 {
     public static WebApplication MapKanjiEndpoints(this WebApplication app)
     {
-        var kanji = app.MapGroup("/api/v1/kanji").WithTags("Kanji");
+        var kanji = app.MapGroup("/api/v1/kanji")
+            .WithTags("Kanji")
+            .RequireRateLimiting("public-read");
 
         kanji.MapGet("/levels", (KanjiCatalog catalog) => TypedResults.Ok(catalog.GetCounts()))
             .WithName("GetKanjiCounts")
@@ -22,9 +24,9 @@ public static class KanjiEndpoints
             if (collection == "extra" && level.HasValue)
                 return (IResult)TypedResults.Problem(statusCode: StatusCodes.Status400BadRequest,
                     title: "Invalid kanji filters", detail: "Extra kanji do not have a JLPT level.");
-            if (offset < 0 || limit is < 1 or > 200)
+            if (offset is < 0 or > 10_000 || limit is < 1 or > 200)
                 return (IResult)TypedResults.Problem(statusCode: StatusCodes.Status400BadRequest,
-                    title: "Invalid pagination", detail: "Offset must be zero or greater and limit must be between 1 and 200.");
+                    title: "Invalid pagination", detail: "Offset must be between 0 and 10000 and limit must be between 1 and 200.");
 
             return (IResult)TypedResults.Ok(catalog.GetPage(level, collection, offset, limit));
         })

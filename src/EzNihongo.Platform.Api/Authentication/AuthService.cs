@@ -11,10 +11,13 @@ namespace EzNihongo.Platform.Api.Authentication;
 
 public sealed class AuthService(
     UserManager<PlatformUser> userManager,
+    PlatformIdentityDbContext database,
     IOptions<JwtOptions> jwtOptions,
+    IOptions<RegistrationLimitOptions> registrationLimitOptions,
     TimeProvider timeProvider) : IAuthService
 {
     private readonly JwtOptions _jwt = jwtOptions.Value;
+    private readonly RegistrationLimitOptions _registrationLimit = registrationLimitOptions.Value;
 
     public async Task<AuthOperationResult> RegisterAsync(AuthRequest request, CancellationToken cancellationToken)
     {
@@ -22,17 +25,35 @@ public sealed class AuthService(
         var email = request.Email.Trim().ToLowerInvariant();
         var user = new PlatformUser { UserName = email, Email = email };
         IdentityResult result;
+        await using var transaction = await database.Database.BeginTransactionAsync(cancellationToken);
+        var utcDate = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime);
+        var registrationSlot = await database.Database.ExecuteSqlInterpolatedAsync($"""
+            INSERT INTO "DailyRegistrationUsage" ("Date", "Count")
+            VALUES ({utcDate}, 1)
+            ON CONFLICT ("Date") DO UPDATE
+            SET "Count" = "DailyRegistrationUsage"."Count" + 1
+            WHERE "DailyRegistrationUsage"."Count" < {_registrationLimit.DailyLimit}
+            """, cancellationToken);
+
+        if (registrationSlot == 0)
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return AuthOperationResult.RateLimited();
+        }
+
         try
         {
             result = await userManager.CreateAsync(user, request.Password);
         }
         catch (DbUpdateException exception) when (IsUniqueConstraintViolation(exception))
         {
+            await transaction.RollbackAsync(cancellationToken);
             return AuthOperationResult.Conflict();
         }
 
         if (!result.Succeeded)
         {
+            await transaction.RollbackAsync(cancellationToken);
             if (result.Errors.Any(error => error.Code is "DuplicateEmail" or "DuplicateUserName"))
                 return AuthOperationResult.Conflict();
 
@@ -41,6 +62,7 @@ public sealed class AuthService(
                 .ToDictionary(group => group.Key, group => group.Select(error => SafeIdentityError(error.Code)).Distinct().ToArray()));
         }
 
+        await transaction.CommitAsync(cancellationToken);
         return AuthOperationResult.Success(CreateToken(user));
     }
 

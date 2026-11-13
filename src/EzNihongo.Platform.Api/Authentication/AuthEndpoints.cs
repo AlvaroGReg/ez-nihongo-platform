@@ -14,11 +14,17 @@ public static class AuthEndpoints
     {
         var auth = app.MapGroup("/api/v1/auth")
             .WithTags("Authentication")
-            .RequireRateLimiting("auth");
+            .RequireRateLimiting("auth")
+            .WithMetadata(new RequestSizeLimitAttribute(8 * 1024));
 
         auth.MapPost("/register", async (AuthRequest request, IAuthService service, CancellationToken cancellationToken) =>
             {
                 var result = await service.RegisterAsync(request, cancellationToken);
+                if (result.IsRateLimited)
+                    return (IResult)TypedResults.Problem(
+                        statusCode: StatusCodes.Status429TooManyRequests,
+                        title: "Registration limit reached",
+                        detail: "The daily account registration limit has been reached.");
                 if (result.IsConflict)
                     return (IResult)TypedResults.Problem(
                         statusCode: StatusCodes.Status409Conflict,

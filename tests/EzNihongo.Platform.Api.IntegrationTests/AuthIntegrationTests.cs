@@ -296,6 +296,72 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
         Assert.Equal("application/problem+json", limitedResponse.Content.Headers.ContentType?.MediaType);
     }
 
+    [PostgresFact]
+    public async Task Public_reads_are_rate_limited_and_forwarded_ip_headers_from_clients_do_not_bypass_limit()
+    {
+        var responses = new List<HttpResponseMessage>();
+        for (var index = 0; index < 21; index++)
+        {
+            using var request = new HttpRequestMessage(HttpMethod.Get, "/api/v1/kanji/levels");
+            request.Headers.TryAddWithoutValidation("X-Forwarded-For", $"198.51.100.{index + 1}");
+            responses.Add(await _client.SendAsync(request));
+        }
+
+        Assert.All(responses.Take(20), response => Assert.Equal(HttpStatusCode.OK, response.StatusCode));
+        Assert.Equal(HttpStatusCode.TooManyRequests, responses[20].StatusCode);
+        Assert.Equal("application/problem+json", responses[20].Content.Headers.ContentType?.MediaType);
+        foreach (var response in responses)
+            response.Dispose();
+    }
+
+    [PostgresFact]
+    public async Task Public_catalog_offset_is_bounded()
+    {
+        var vocabulary = await _client.GetAsync("/api/v1/vocabulary?offset=10001");
+        var kanji = await _client.GetAsync("/api/v1/kanji?offset=10001");
+
+        Assert.Equal(HttpStatusCode.BadRequest, vocabulary.StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, kanji.StatusCode);
+    }
+
+    [PostgresFact]
+    public async Task Registration_is_limited_to_three_successful_accounts_per_utc_day_and_resets_next_day()
+    {
+        var firstUtcDay = DateTimeOffset.UtcNow.AddYears(2).AddDays(Random.Shared.Next(1, 100_000));
+        var testClock = new MutableTimeProvider(firstUtcDay);
+        await using var factory = new TestApiFactory(_connectionString, authPermitLimit: 100,
+            registrationDailyLimit: 3, timeProvider: testClock);
+        using var client = factory.CreateClient();
+
+        var invalid = await client.PostAsJsonAsync("/api/v1/auth/register", new
+        {
+            email = NewEmail(),
+            password = "short"
+        });
+        Assert.Equal(HttpStatusCode.BadRequest, invalid.StatusCode);
+
+        var registrations = await Task.WhenAll(Enumerable.Range(0, 4).Select(index =>
+            client.PostAsJsonAsync("/api/v1/auth/register", new
+            {
+                email = $"{Guid.NewGuid():N}@example.test",
+                password = "Correct-Horse7!"
+            })));
+
+        Assert.Equal(3, registrations.Count(response => response.StatusCode == HttpStatusCode.Created));
+        Assert.Single(registrations, response => response.StatusCode == HttpStatusCode.TooManyRequests);
+
+        testClock.Advance(TimeSpan.FromDays(1));
+        var nextDay = await client.PostAsJsonAsync("/api/v1/auth/register", new
+        {
+            email = NewEmail(),
+            password = "Correct-Horse7!"
+        });
+        Assert.Equal(HttpStatusCode.Created, nextDay.StatusCode);
+
+        foreach (var response in registrations)
+            response.Dispose();
+    }
+
     private async Task Register(string email)
     {
         var response = await _client.PostAsJsonAsync("/api/v1/auth/register", new { email, password = "Correct-Horse7!" });
@@ -317,7 +383,11 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    private sealed class TestApiFactory(string connectionString) : WebApplicationFactory<Program>
+    private sealed class TestApiFactory(
+        string connectionString,
+        int authPermitLimit = 3,
+        int registrationDailyLimit = 1000,
+        TimeProvider? timeProvider = null) : WebApplicationFactory<Program>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
@@ -329,8 +399,9 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
                     ["Jwt:Issuer"] = "ez-nihongo-integration-tests",
                     ["Jwt:Audience"] = "ez-nihongo-integration-tests",
                     ["Jwt:AccessTokenMinutes"] = "15",
-                    ["AuthRateLimit:PermitLimit"] = "3",
+                    ["AuthRateLimit:PermitLimit"] = authPermitLimit.ToString(),
                     ["AuthRateLimit:WindowMinutes"] = "1",
+                    ["RegistrationLimit:DailyLimit"] = registrationDailyLimit.ToString(),
                     ["PersistentLogin:AllowedOrigins:0"] = "http://localhost",
                     ["Vocabulary:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db")),
                     ["Kanji:DataDirectory"] = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../db/kanji"))
@@ -339,8 +410,22 @@ public sealed class AuthIntegrationTests : IAsyncLifetime
             {
                 services.RemoveAll<DbContextOptions<PlatformIdentityDbContext>>();
                 services.AddDbContext<PlatformIdentityDbContext>(options => options.UseNpgsql(connectionString));
+                if (timeProvider is not null)
+                {
+                    services.RemoveAll<TimeProvider>();
+                    services.AddSingleton(timeProvider);
+                }
             });
         }
+    }
+
+    private sealed class MutableTimeProvider(DateTimeOffset now) : TimeProvider
+    {
+        private DateTimeOffset _now = now;
+
+        public override DateTimeOffset GetUtcNow() => _now;
+
+        public void Advance(TimeSpan duration) => _now += duration;
     }
 }
 

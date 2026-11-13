@@ -6,6 +6,7 @@ using EzNihongo.Platform.Api.VocabularyProgress;
 using EzNihongo.Platform.Api.Identity;
 using EzNihongo.Platform.Api.KnownContent;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -61,6 +62,16 @@ builder.Services.AddOptions<AuthRateLimitOptions>()
     .Validate(options => options.IsValid(),
         $"'{AuthRateLimitOptions.SectionName}' requires positive PermitLimit and WindowMinutes values.")
     .ValidateOnStart();
+builder.Services.AddOptions<PublicReadRateLimitOptions>()
+    .Bind(builder.Configuration.GetSection(PublicReadRateLimitOptions.SectionName))
+    .Validate(options => options.IsValid(),
+        $"'{PublicReadRateLimitOptions.SectionName}' requires positive token and replenishment values.")
+    .ValidateOnStart();
+builder.Services.AddOptions<RegistrationLimitOptions>()
+    .Bind(builder.Configuration.GetSection(RegistrationLimitOptions.SectionName))
+    .Validate(options => options.DailyLimit > 0,
+        $"'{RegistrationLimitOptions.SectionName}:DailyLimit' must be positive.")
+    .ValidateOnStart();
 builder.Services.AddOptions<PersistentLoginOptions>()
     .Bind(builder.Configuration.GetSection(PersistentLoginOptions.SectionName))
     .Validate(options => options.IsValid(builder.Environment.EnvironmentName),
@@ -104,6 +115,7 @@ builder.Services.AddScoped<IVocabularyProgressService, VocabularyProgressService
 builder.Services.AddScoped<IKnownContentService, KnownContentService>();
 
 var rateLimit = builder.Configuration.GetSection(AuthRateLimitOptions.SectionName).Get<AuthRateLimitOptions>() ?? new AuthRateLimitOptions();
+var publicReadRateLimit = builder.Configuration.GetSection(PublicReadRateLimitOptions.SectionName).Get<PublicReadRateLimitOptions>() ?? new PublicReadRateLimitOptions();
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
@@ -126,6 +138,32 @@ builder.Services.AddRateLimiter(options =>
             AutoReplenishment = true
         });
     });
+    options.AddPolicy("public-read", context =>
+    {
+        var partition = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        return RateLimitPartition.GetTokenBucketLimiter(partition, _ => new TokenBucketRateLimiterOptions
+        {
+            TokenLimit = publicReadRateLimit.TokenLimit,
+            TokensPerPeriod = publicReadRateLimit.TokensPerPeriod,
+            ReplenishmentPeriod = TimeSpan.FromSeconds(publicReadRateLimit.ReplenishmentPeriodSeconds),
+            QueueLimit = 0,
+            AutoReplenishment = true
+        });
+    });
+});
+
+builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = 64 * 1024);
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.ForwardLimit = 1;
+    foreach (var value in builder.Configuration.GetSection("ForwardedHeaders:KnownProxies").Get<string[]>() ?? [])
+    {
+        if (!System.Net.IPAddress.TryParse(value, out var address))
+            throw new InvalidOperationException("'ForwardedHeaders:KnownProxies' must contain valid IP addresses.");
+        options.KnownProxies.Add(address);
+    }
 });
 
 var postgres = builder.Configuration.GetSection(PostgresOptions.SectionName).Get<PostgresOptions>();
@@ -149,17 +187,19 @@ var app = builder.Build();
 _ = app.Services.GetRequiredService<VocabularyCatalog>();
 _ = app.Services.GetRequiredService<KanjiCatalog>();
 
+app.UseForwardedHeaders();
 app.UseExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseRateLimiter();
-app.MapOpenApi();
+app.MapOpenApi().RequireRateLimiting("public-read");
 
 app.MapGet("/health", () => TypedResults.Ok(new { status = "ok" }))
     .WithName("GetHealth")
-    .WithTags("Health");
+    .WithTags("Health")
+    .RequireRateLimiting("public-read");
 
-var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary");
+var vocabulary = app.MapGroup("/api/v1/vocabulary").WithTags("Vocabulary").RequireRateLimiting("public-read");
 
 app.MapAuthEndpoints();
 app.MapKanjiEndpoints();
@@ -180,12 +220,12 @@ vocabulary.MapGet("/", (VocabularyCatalog catalog, int? level = null, int offset
                 detail: "The level query parameter must be between 1 and 5.");
         }
 
-        if (offset < 0 || limit is < 1 or > 200)
+        if (offset is < 0 or > 10_000 || limit is < 1 or > 200)
         {
             return (IResult)TypedResults.Problem(
                 statusCode: StatusCodes.Status400BadRequest,
                 title: "Invalid pagination",
-                detail: "Offset must be zero or greater and limit must be between 1 and 200.");
+                detail: "Offset must be between 0 and 10000 and limit must be between 1 and 200.");
         }
 
         if (language is not ("en" or "es"))
